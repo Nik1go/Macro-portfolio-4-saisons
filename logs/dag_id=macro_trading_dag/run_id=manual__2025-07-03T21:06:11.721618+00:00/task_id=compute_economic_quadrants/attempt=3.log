@@ -1,0 +1,289 @@
+[2025-07-07T13:31:32.331+0200] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2025-07-07T13:31:32.346+0200] {taskinstance.py:2073} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: macro_trading_dag.compute_economic_quadrants manual__2025-07-03T21:06:11.721618+00:00 [queued]>
+[2025-07-07T13:31:32.352+0200] {taskinstance.py:2073} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: macro_trading_dag.compute_economic_quadrants manual__2025-07-03T21:06:11.721618+00:00 [queued]>
+[2025-07-07T13:31:32.352+0200] {taskinstance.py:2303} INFO - Starting attempt 3 of 3
+[2025-07-07T13:31:32.373+0200] {taskinstance.py:2327} INFO - Executing <Task(SparkSubmitOperator): compute_economic_quadrants> on 2025-07-03 21:06:11.721618+00:00
+[2025-07-07T13:31:32.380+0200] {standard_task_runner.py:90} INFO - Running: ['airflow', 'tasks', 'run', 'macro_trading_dag', 'compute_economic_quadrants', 'manual__2025-07-03T21:06:11.721618+00:00', '--job-id', '691', '--raw', '--subdir', 'DAGS_FOLDER/macro_trading_dag.py', '--cfg-path', '/tmp/tmpc066rcxr']
+[2025-07-07T13:31:32.380+0200] {standard_task_runner.py:91} INFO - Job 691: Subtask compute_economic_quadrants
+[2025-07-07T13:31:32.383+0200] {logging_mixin.py:188} WARNING - /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/task/task_runner/standard_task_runner.py:61 DeprecationWarning: This process (pid=7529) is multi-threaded, use of fork() may lead to deadlocks in the child.
+[2025-07-07T13:31:32.383+0200] {standard_task_runner.py:63} INFO - Started process 7561 to run task
+[2025-07-07T13:31:32.439+0200] {task_command.py:426} INFO - Running <TaskInstance: macro_trading_dag.compute_economic_quadrants manual__2025-07-03T21:06:11.721618+00:00 [running]> on host N15I711-16GR512.localdomain
+[2025-07-07T13:31:32.498+0200] {taskinstance.py:2644} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='airflow' AIRFLOW_CTX_DAG_ID='macro_trading_dag' AIRFLOW_CTX_TASK_ID='compute_economic_quadrants' AIRFLOW_CTX_EXECUTION_DATE='2025-07-03T21:06:11.721618+00:00' AIRFLOW_CTX_TRY_NUMBER='3' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-07-03T21:06:11.721618+00:00'
+[2025-07-07T13:31:32.498+0200] {taskinstance.py:430} INFO - ::endgroup::
+[2025-07-07T13:31:32.502+0200] {base.py:84} INFO - Using connection ID 'spark_local' for task execution.
+[2025-07-07T13:31:32.503+0200] {spark_submit.py:351} INFO - Spark-Submit cmd: spark-submit --master local[*] --conf spark.pyspark.python=/home/leoja/airflow_venv/bin/python --conf spark.pyspark.driver.python=/home/leoja/airflow_venv/bin/python --name compute_economic_quadrants /home/leoja/airflow/spark_jobs/compute_quadrants.py /home/leoja/airflow/data/Indicators.parquet /home/leoja/airflow/data/quadrants.parquet /home/leoja/airflow/data/quadrants.csv
+[2025-07-07T13:31:33.557+0200] {spark_submit.py:521} INFO - 25/07/07 13:31:33 WARN Utils: Your hostname, N15I711-16GR512 resolves to a loopback address: 127.0.1.1; using 10.255.255.254 instead (on interface lo)
+[2025-07-07T13:31:33.559+0200] {spark_submit.py:521} INFO - 25/07/07 13:31:33 WARN Utils: Set SPARK_LOCAL_IP if you need to bind to another address
+[2025-07-07T13:31:34.446+0200] {spark_submit.py:521} INFO - 25/07/07 13:31:34 INFO SparkContext: Running Spark version 3.5.5
+[2025-07-07T13:31:34.446+0200] {spark_submit.py:521} INFO - 25/07/07 13:31:34 INFO SparkContext: OS info Linux, 6.6.87.2-microsoft-standard-WSL2, amd64
+[2025-07-07T13:31:34.446+0200] {spark_submit.py:521} INFO - 25/07/07 13:31:34 INFO SparkContext: Java version 17.0.15
+[2025-07-07T13:31:34.491+0200] {spark_submit.py:521} INFO - 25/07/07 13:31:34 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+[2025-07-07T13:31:34.559+0200] {spark_submit.py:521} INFO - 25/07/07 13:31:34 INFO ResourceUtils: ==============================================================
+[2025-07-07T13:31:34.559+0200] {spark_submit.py:521} INFO - 25/07/07 13:31:34 INFO ResourceUtils: No custom resources configured for spark.driver.
+[2025-07-07T13:31:34.559+0200] {spark_submit.py:521} INFO - 25/07/07 13:31:34 INFO ResourceUtils: ==============================================================
+[2025-07-07T13:31:34.560+0200] {spark_submit.py:521} INFO - 25/07/07 13:31:34 INFO SparkContext: Submitted application: ComputeEconomicQuadrants
+[2025-07-07T13:31:34.579+0200] {spark_submit.py:521} INFO - 25/07/07 13:31:34 INFO ResourceProfile: Default ResourceProfile created, executor resources: Map(cores -> name: cores, amount: 1, script: , vendor: , memory -> name: memory, amount: 1024, script: , vendor: , offHeap -> name: offHeap, amount: 0, script: , vendor: ), task resources: Map(cpus -> name: cpus, amount: 1.0)
+[2025-07-07T13:31:34.585+0200] {spark_submit.py:521} INFO - 25/07/07 13:31:34 INFO ResourceProfile: Limiting resource is cpu
+[2025-07-07T13:31:34.586+0200] {spark_submit.py:521} INFO - 25/07/07 13:31:34 INFO ResourceProfileManager: Added ResourceProfile id: 0
+[2025-07-07T13:31:34.628+0200] {spark_submit.py:521} INFO - 25/07/07 13:31:34 INFO SecurityManager: Changing view acls to: leoja
+[2025-07-07T13:31:34.629+0200] {spark_submit.py:521} INFO - 25/07/07 13:31:34 INFO SecurityManager: Changing modify acls to: leoja
+[2025-07-07T13:31:34.629+0200] {spark_submit.py:521} INFO - 25/07/07 13:31:34 INFO SecurityManager: Changing view acls groups to:
+[2025-07-07T13:31:34.629+0200] {spark_submit.py:521} INFO - 25/07/07 13:31:34 INFO SecurityManager: Changing modify acls groups to:
+[2025-07-07T13:31:34.630+0200] {spark_submit.py:521} INFO - 25/07/07 13:31:34 INFO SecurityManager: SecurityManager: authentication disabled; ui acls disabled; users with view permissions: leoja; groups with view permissions: EMPTY; users with modify permissions: leoja; groups with modify permissions: EMPTY
+[2025-07-07T13:31:34.833+0200] {spark_submit.py:521} INFO - 25/07/07 13:31:34 INFO Utils: Successfully started service 'sparkDriver' on port 36657.
+[2025-07-07T13:31:34.855+0200] {spark_submit.py:521} INFO - 25/07/07 13:31:34 INFO SparkEnv: Registering MapOutputTracker
+[2025-07-07T13:31:34.886+0200] {spark_submit.py:521} INFO - 25/07/07 13:31:34 INFO SparkEnv: Registering BlockManagerMaster
+[2025-07-07T13:31:34.902+0200] {spark_submit.py:521} INFO - 25/07/07 13:31:34 INFO BlockManagerMasterEndpoint: Using org.apache.spark.storage.DefaultTopologyMapper for getting topology information
+[2025-07-07T13:31:34.902+0200] {spark_submit.py:521} INFO - 25/07/07 13:31:34 INFO BlockManagerMasterEndpoint: BlockManagerMasterEndpoint up
+[2025-07-07T13:31:34.907+0200] {spark_submit.py:521} INFO - 25/07/07 13:31:34 INFO SparkEnv: Registering BlockManagerMasterHeartbeat
+[2025-07-07T13:31:34.928+0200] {spark_submit.py:521} INFO - 25/07/07 13:31:34 INFO DiskBlockManager: Created local directory at /tmp/blockmgr-23e8194e-685c-4127-af00-57362e61cd94
+[2025-07-07T13:31:34.940+0200] {spark_submit.py:521} INFO - 25/07/07 13:31:34 INFO MemoryStore: MemoryStore started with capacity 434.4 MiB
+[2025-07-07T13:31:34.952+0200] {spark_submit.py:521} INFO - 25/07/07 13:31:34 INFO SparkEnv: Registering OutputCommitCoordinator
+[2025-07-07T13:31:35.061+0200] {spark_submit.py:521} INFO - 25/07/07 13:31:35 INFO JettyUtils: Start Jetty 0.0.0.0:4040 for SparkUI
+[2025-07-07T13:31:35.115+0200] {spark_submit.py:521} INFO - 25/07/07 13:31:35 INFO Utils: Successfully started service 'SparkUI' on port 4040.
+[2025-07-07T13:31:35.210+0200] {spark_submit.py:521} INFO - 25/07/07 13:31:35 INFO Executor: Starting executor ID driver on host 10.255.255.254
+[2025-07-07T13:31:35.211+0200] {spark_submit.py:521} INFO - 25/07/07 13:31:35 INFO Executor: OS info Linux, 6.6.87.2-microsoft-standard-WSL2, amd64
+[2025-07-07T13:31:35.211+0200] {spark_submit.py:521} INFO - 25/07/07 13:31:35 INFO Executor: Java version 17.0.15
+[2025-07-07T13:31:35.217+0200] {spark_submit.py:521} INFO - 25/07/07 13:31:35 INFO Executor: Starting executor with user classpath (userClassPathFirst = false): ''
+[2025-07-07T13:31:35.218+0200] {spark_submit.py:521} INFO - 25/07/07 13:31:35 INFO Executor: Created or updated repl class loader org.apache.spark.util.MutableURLClassLoader@2074c0e5 for default.
+[2025-07-07T13:31:35.237+0200] {spark_submit.py:521} INFO - 25/07/07 13:31:35 INFO Utils: Successfully started service 'org.apache.spark.network.netty.NettyBlockTransferService' on port 40439.
+[2025-07-07T13:31:35.238+0200] {spark_submit.py:521} INFO - 25/07/07 13:31:35 INFO NettyBlockTransferService: Server created on 10.255.255.254:40439
+[2025-07-07T13:31:35.239+0200] {spark_submit.py:521} INFO - 25/07/07 13:31:35 INFO BlockManager: Using org.apache.spark.storage.RandomBlockReplicationPolicy for block replication policy
+[2025-07-07T13:31:35.246+0200] {spark_submit.py:521} INFO - 25/07/07 13:31:35 INFO BlockManagerMaster: Registering BlockManager BlockManagerId(driver, 10.255.255.254, 40439, None)
+[2025-07-07T13:31:35.249+0200] {spark_submit.py:521} INFO - 25/07/07 13:31:35 INFO BlockManagerMasterEndpoint: Registering block manager 10.255.255.254:40439 with 434.4 MiB RAM, BlockManagerId(driver, 10.255.255.254, 40439, None)
+[2025-07-07T13:31:35.251+0200] {spark_submit.py:521} INFO - 25/07/07 13:31:35 INFO BlockManagerMaster: Registered BlockManager BlockManagerId(driver, 10.255.255.254, 40439, None)
+[2025-07-07T13:31:35.252+0200] {spark_submit.py:521} INFO - 25/07/07 13:31:35 INFO BlockManager: Initialized BlockManager: BlockManagerId(driver, 10.255.255.254, 40439, None)
+[2025-07-07T13:31:35.626+0200] {spark_submit.py:521} INFO - 25/07/07 13:31:35 INFO SharedState: Setting hive.metastore.warehouse.dir ('null') to the value of spark.sql.warehouse.dir.
+[2025-07-07T13:31:35.633+0200] {spark_submit.py:521} INFO - 25/07/07 13:31:35 INFO SharedState: Warehouse path is 'file:/home/leoja/airflow/airflow_venv/spark-warehouse'.
+[2025-07-07T13:31:36.297+0200] {spark_submit.py:521} INFO - 25/07/07 13:31:36 INFO InMemoryFileIndex: It took 37 ms to list leaf files for 1 paths.
+[2025-07-07T13:31:36.689+0200] {spark_submit.py:521} INFO - 25/07/07 13:31:36 INFO SparkContext: Starting job: parquet at NativeMethodAccessorImpl.java:0
+[2025-07-07T13:31:36.702+0200] {spark_submit.py:521} INFO - 25/07/07 13:31:36 INFO DAGScheduler: Got job 0 (parquet at NativeMethodAccessorImpl.java:0) with 1 output partitions
+[2025-07-07T13:31:36.702+0200] {spark_submit.py:521} INFO - 25/07/07 13:31:36 INFO DAGScheduler: Final stage: ResultStage 0 (parquet at NativeMethodAccessorImpl.java:0)
+[2025-07-07T13:31:36.703+0200] {spark_submit.py:521} INFO - 25/07/07 13:31:36 INFO DAGScheduler: Parents of final stage: List()
+[2025-07-07T13:31:36.703+0200] {spark_submit.py:521} INFO - 25/07/07 13:31:36 INFO DAGScheduler: Missing parents: List()
+[2025-07-07T13:31:36.707+0200] {spark_submit.py:521} INFO - 25/07/07 13:31:36 INFO DAGScheduler: Submitting ResultStage 0 (MapPartitionsRDD[1] at parquet at NativeMethodAccessorImpl.java:0), which has no missing parents
+[2025-07-07T13:31:36.763+0200] {spark_submit.py:521} INFO - 25/07/07 13:31:36 INFO MemoryStore: Block broadcast_0 stored as values in memory (estimated size 103.5 KiB, free 434.3 MiB)
+[2025-07-07T13:31:36.794+0200] {spark_submit.py:521} INFO - 25/07/07 13:31:36 INFO MemoryStore: Block broadcast_0_piece0 stored as bytes in memory (estimated size 37.3 KiB, free 434.3 MiB)
+[2025-07-07T13:31:36.797+0200] {spark_submit.py:521} INFO - 25/07/07 13:31:36 INFO BlockManagerInfo: Added broadcast_0_piece0 in memory on 10.255.255.254:40439 (size: 37.3 KiB, free: 434.4 MiB)
+[2025-07-07T13:31:36.801+0200] {spark_submit.py:521} INFO - 25/07/07 13:31:36 INFO SparkContext: Created broadcast 0 from broadcast at DAGScheduler.scala:1585
+[2025-07-07T13:31:36.819+0200] {spark_submit.py:521} INFO - 25/07/07 13:31:36 INFO DAGScheduler: Submitting 1 missing tasks from ResultStage 0 (MapPartitionsRDD[1] at parquet at NativeMethodAccessorImpl.java:0) (first 15 tasks are for partitions Vector(0))
+[2025-07-07T13:31:36.820+0200] {spark_submit.py:521} INFO - 25/07/07 13:31:36 INFO TaskSchedulerImpl: Adding task set 0.0 with 1 tasks resource profile 0
+[2025-07-07T13:31:36.875+0200] {spark_submit.py:521} INFO - 25/07/07 13:31:36 INFO TaskSetManager: Starting task 0.0 in stage 0.0 (TID 0) (10.255.255.254, executor driver, partition 0, PROCESS_LOCAL, 9142 bytes)
+[2025-07-07T13:31:36.890+0200] {spark_submit.py:521} INFO - 25/07/07 13:31:36 INFO Executor: Running task 0.0 in stage 0.0 (TID 0)
+[2025-07-07T13:31:37.147+0200] {spark_submit.py:521} INFO - 25/07/07 13:31:37 INFO Executor: Finished task 0.0 in stage 0.0 (TID 0). 1978 bytes result sent to driver
+[2025-07-07T13:31:37.155+0200] {spark_submit.py:521} INFO - 25/07/07 13:31:37 INFO TaskSetManager: Finished task 0.0 in stage 0.0 (TID 0) in 298 ms on 10.255.255.254 (executor driver) (1/1)
+[2025-07-07T13:31:37.156+0200] {spark_submit.py:521} INFO - 25/07/07 13:31:37 INFO TaskSchedulerImpl: Removed TaskSet 0.0, whose tasks have all completed, from pool
+[2025-07-07T13:31:37.159+0200] {spark_submit.py:521} INFO - 25/07/07 13:31:37 INFO DAGScheduler: ResultStage 0 (parquet at NativeMethodAccessorImpl.java:0) finished in 0.441 s
+[2025-07-07T13:31:37.162+0200] {spark_submit.py:521} INFO - 25/07/07 13:31:37 INFO DAGScheduler: Job 0 is finished. Cancelling potential speculative or zombie tasks for this job
+[2025-07-07T13:31:37.162+0200] {spark_submit.py:521} INFO - 25/07/07 13:31:37 INFO TaskSchedulerImpl: Killing all running tasks in stage 0: Stage finished
+[2025-07-07T13:31:37.164+0200] {spark_submit.py:521} INFO - 25/07/07 13:31:37 INFO DAGScheduler: Job 0 finished: parquet at NativeMethodAccessorImpl.java:0, took 0.474591 s
+[2025-07-07T13:31:37.209+0200] {spark_submit.py:521} INFO - 25/07/07 13:31:37 INFO BlockManagerInfo: Removed broadcast_0_piece0 on 10.255.255.254:40439 in memory (size: 37.3 KiB, free: 434.4 MiB)
+[2025-07-07T13:31:37.768+0200] {spark_submit.py:521} INFO - 25/07/07 13:31:37 INFO InMemoryFileIndex: It took 2 ms to list leaf files for 1 paths.
+[2025-07-07T13:31:37.807+0200] {spark_submit.py:521} INFO - 25/07/07 13:31:37 INFO SparkContext: Starting job: parquet at NativeMethodAccessorImpl.java:0
+[2025-07-07T13:31:37.808+0200] {spark_submit.py:521} INFO - 25/07/07 13:31:37 INFO DAGScheduler: Got job 1 (parquet at NativeMethodAccessorImpl.java:0) with 1 output partitions
+[2025-07-07T13:31:37.808+0200] {spark_submit.py:521} INFO - 25/07/07 13:31:37 INFO DAGScheduler: Final stage: ResultStage 1 (parquet at NativeMethodAccessorImpl.java:0)
+[2025-07-07T13:31:37.809+0200] {spark_submit.py:521} INFO - 25/07/07 13:31:37 INFO DAGScheduler: Parents of final stage: List()
+[2025-07-07T13:31:37.809+0200] {spark_submit.py:521} INFO - 25/07/07 13:31:37 INFO DAGScheduler: Missing parents: List()
+[2025-07-07T13:31:37.809+0200] {spark_submit.py:521} INFO - 25/07/07 13:31:37 INFO DAGScheduler: Submitting ResultStage 1 (MapPartitionsRDD[3] at parquet at NativeMethodAccessorImpl.java:0), which has no missing parents
+[2025-07-07T13:31:37.818+0200] {spark_submit.py:521} INFO - 25/07/07 13:31:37 INFO MemoryStore: Block broadcast_1 stored as values in memory (estimated size 103.5 KiB, free 434.3 MiB)
+[2025-07-07T13:31:37.826+0200] {spark_submit.py:521} INFO - 25/07/07 13:31:37 INFO MemoryStore: Block broadcast_1_piece0 stored as bytes in memory (estimated size 37.3 KiB, free 434.3 MiB)
+[2025-07-07T13:31:37.826+0200] {spark_submit.py:521} INFO - 25/07/07 13:31:37 INFO BlockManagerInfo: Added broadcast_1_piece0 in memory on 10.255.255.254:40439 (size: 37.3 KiB, free: 434.4 MiB)
+[2025-07-07T13:31:37.827+0200] {spark_submit.py:521} INFO - 25/07/07 13:31:37 INFO SparkContext: Created broadcast 1 from broadcast at DAGScheduler.scala:1585
+[2025-07-07T13:31:37.829+0200] {spark_submit.py:521} INFO - 25/07/07 13:31:37 INFO DAGScheduler: Submitting 1 missing tasks from ResultStage 1 (MapPartitionsRDD[3] at parquet at NativeMethodAccessorImpl.java:0) (first 15 tasks are for partitions Vector(0))
+[2025-07-07T13:31:37.829+0200] {spark_submit.py:521} INFO - 25/07/07 13:31:37 INFO TaskSchedulerImpl: Adding task set 1.0 with 1 tasks resource profile 0
+[2025-07-07T13:31:37.832+0200] {spark_submit.py:521} INFO - 25/07/07 13:31:37 INFO TaskSetManager: Starting task 0.0 in stage 1.0 (TID 1) (10.255.255.254, executor driver, partition 0, PROCESS_LOCAL, 9141 bytes)
+[2025-07-07T13:31:37.833+0200] {spark_submit.py:521} INFO - 25/07/07 13:31:37 INFO Executor: Running task 0.0 in stage 1.0 (TID 1)
+[2025-07-07T13:31:37.877+0200] {spark_submit.py:521} INFO - 25/07/07 13:31:37 INFO Executor: Finished task 0.0 in stage 1.0 (TID 1). 3970 bytes result sent to driver
+[2025-07-07T13:31:37.880+0200] {spark_submit.py:521} INFO - 25/07/07 13:31:37 INFO TaskSetManager: Finished task 0.0 in stage 1.0 (TID 1) in 49 ms on 10.255.255.254 (executor driver) (1/1)
+[2025-07-07T13:31:37.880+0200] {spark_submit.py:521} INFO - 25/07/07 13:31:37 INFO TaskSchedulerImpl: Removed TaskSet 1.0, whose tasks have all completed, from pool
+[2025-07-07T13:31:37.881+0200] {spark_submit.py:521} INFO - 25/07/07 13:31:37 INFO DAGScheduler: ResultStage 1 (parquet at NativeMethodAccessorImpl.java:0) finished in 0.071 s
+[2025-07-07T13:31:37.882+0200] {spark_submit.py:521} INFO - 25/07/07 13:31:37 INFO DAGScheduler: Job 1 is finished. Cancelling potential speculative or zombie tasks for this job
+[2025-07-07T13:31:37.882+0200] {spark_submit.py:521} INFO - 25/07/07 13:31:37 INFO TaskSchedulerImpl: Killing all running tasks in stage 1: Stage finished
+[2025-07-07T13:31:37.882+0200] {spark_submit.py:521} INFO - 25/07/07 13:31:37 INFO DAGScheduler: Job 1 finished: parquet at NativeMethodAccessorImpl.java:0, took 0.075258 s
+[2025-07-07T13:31:38.195+0200] {spark_submit.py:521} INFO - 25/07/07 13:31:38 INFO FileSourceStrategy: Pushed Filters:
+[2025-07-07T13:31:38.196+0200] {spark_submit.py:521} INFO - 25/07/07 13:31:38 INFO FileSourceStrategy: Post-Scan Filters:
+[2025-07-07T13:31:38.236+0200] {spark_submit.py:521} INFO - 25/07/07 13:31:38 INFO BlockManagerInfo: Removed broadcast_1_piece0 on 10.255.255.254:40439 in memory (size: 37.3 KiB, free: 434.4 MiB)
+[2025-07-07T13:31:38.579+0200] {spark_submit.py:521} INFO - 25/07/07 13:31:38 INFO CodeGenerator: Code generated in 182.486402 ms
+[2025-07-07T13:31:38.603+0200] {spark_submit.py:521} INFO - 25/07/07 13:31:38 INFO MemoryStore: Block broadcast_2 stored as values in memory (estimated size 201.2 KiB, free 434.2 MiB)
+[2025-07-07T13:31:38.614+0200] {spark_submit.py:521} INFO - 25/07/07 13:31:38 INFO MemoryStore: Block broadcast_2_piece0 stored as bytes in memory (estimated size 35.0 KiB, free 434.2 MiB)
+[2025-07-07T13:31:38.615+0200] {spark_submit.py:521} INFO - 25/07/07 13:31:38 INFO BlockManagerInfo: Added broadcast_2_piece0 in memory on 10.255.255.254:40439 (size: 35.0 KiB, free: 434.4 MiB)
+[2025-07-07T13:31:38.617+0200] {spark_submit.py:521} INFO - 25/07/07 13:31:38 INFO SparkContext: Created broadcast 2 from collect at /home/leoja/airflow/spark_jobs/compute_quadrants.py:99
+[2025-07-07T13:31:38.629+0200] {spark_submit.py:521} INFO - 25/07/07 13:31:38 INFO FileSourceScanExec: Planning scan with bin packing, max size: 4194304 bytes, open cost is considered as scanning 4194304 bytes.
+[2025-07-07T13:31:38.684+0200] {spark_submit.py:521} INFO - 25/07/07 13:31:38 INFO DAGScheduler: Registering RDD 7 (collect at /home/leoja/airflow/spark_jobs/compute_quadrants.py:99) as input to shuffle 0
+[2025-07-07T13:31:38.688+0200] {spark_submit.py:521} INFO - 25/07/07 13:31:38 INFO DAGScheduler: Got map stage job 2 (collect at /home/leoja/airflow/spark_jobs/compute_quadrants.py:99) with 1 output partitions
+[2025-07-07T13:31:38.689+0200] {spark_submit.py:521} INFO - 25/07/07 13:31:38 INFO DAGScheduler: Final stage: ShuffleMapStage 2 (collect at /home/leoja/airflow/spark_jobs/compute_quadrants.py:99)
+[2025-07-07T13:31:38.689+0200] {spark_submit.py:521} INFO - 25/07/07 13:31:38 INFO DAGScheduler: Parents of final stage: List()
+[2025-07-07T13:31:38.690+0200] {spark_submit.py:521} INFO - 25/07/07 13:31:38 INFO DAGScheduler: Missing parents: List()
+[2025-07-07T13:31:38.691+0200] {spark_submit.py:521} INFO - 25/07/07 13:31:38 INFO DAGScheduler: Submitting ShuffleMapStage 2 (MapPartitionsRDD[7] at collect at /home/leoja/airflow/spark_jobs/compute_quadrants.py:99), which has no missing parents
+[2025-07-07T13:31:38.726+0200] {spark_submit.py:521} INFO - 25/07/07 13:31:38 INFO MemoryStore: Block broadcast_3 stored as values in memory (estimated size 18.6 KiB, free 434.2 MiB)
+[2025-07-07T13:31:38.734+0200] {spark_submit.py:521} INFO - 25/07/07 13:31:38 INFO MemoryStore: Block broadcast_3_piece0 stored as bytes in memory (estimated size 8.3 KiB, free 434.1 MiB)
+[2025-07-07T13:31:38.735+0200] {spark_submit.py:521} INFO - 25/07/07 13:31:38 INFO BlockManagerInfo: Added broadcast_3_piece0 in memory on 10.255.255.254:40439 (size: 8.3 KiB, free: 434.4 MiB)
+[2025-07-07T13:31:38.736+0200] {spark_submit.py:521} INFO - 25/07/07 13:31:38 INFO SparkContext: Created broadcast 3 from broadcast at DAGScheduler.scala:1585
+[2025-07-07T13:31:38.738+0200] {spark_submit.py:521} INFO - 25/07/07 13:31:38 INFO DAGScheduler: Submitting 1 missing tasks from ShuffleMapStage 2 (MapPartitionsRDD[7] at collect at /home/leoja/airflow/spark_jobs/compute_quadrants.py:99) (first 15 tasks are for partitions Vector(0))
+[2025-07-07T13:31:38.738+0200] {spark_submit.py:521} INFO - 25/07/07 13:31:38 INFO TaskSchedulerImpl: Adding task set 2.0 with 1 tasks resource profile 0
+[2025-07-07T13:31:38.743+0200] {spark_submit.py:521} INFO - 25/07/07 13:31:38 INFO TaskSetManager: Starting task 0.0 in stage 2.0 (TID 2) (10.255.255.254, executor driver, partition 0, PROCESS_LOCAL, 9600 bytes)
+[2025-07-07T13:31:38.745+0200] {spark_submit.py:521} INFO - 25/07/07 13:31:38 INFO Executor: Running task 0.0 in stage 2.0 (TID 2)
+[2025-07-07T13:31:38.803+0200] {spark_submit.py:521} INFO - 25/07/07 13:31:38 INFO CodeGenerator: Code generated in 17.553138 ms
+[2025-07-07T13:31:38.813+0200] {spark_submit.py:521} INFO - 25/07/07 13:31:38 INFO FileScanRDD: Reading File path: file:///home/leoja/airflow/data/quadrants.parquet, range: 0-44072, partition values: [empty row]
+[2025-07-07T13:31:38.910+0200] {spark_submit.py:521} INFO - 25/07/07 13:31:38 INFO CodecPool: Got brand-new decompressor [.snappy]
+[2025-07-07T13:31:39.050+0200] {spark_submit.py:521} INFO - 25/07/07 13:31:39 INFO Executor: Finished task 0.0 in stage 2.0 (TID 2). 2181 bytes result sent to driver
+[2025-07-07T13:31:39.053+0200] {spark_submit.py:521} INFO - 25/07/07 13:31:39 INFO TaskSetManager: Finished task 0.0 in stage 2.0 (TID 2) in 314 ms on 10.255.255.254 (executor driver) (1/1)
+[2025-07-07T13:31:39.054+0200] {spark_submit.py:521} INFO - 25/07/07 13:31:39 INFO TaskSchedulerImpl: Removed TaskSet 2.0, whose tasks have all completed, from pool
+[2025-07-07T13:31:39.056+0200] {spark_submit.py:521} INFO - 25/07/07 13:31:39 INFO DAGScheduler: ShuffleMapStage 2 (collect at /home/leoja/airflow/spark_jobs/compute_quadrants.py:99) finished in 0.360 s
+[2025-07-07T13:31:39.056+0200] {spark_submit.py:521} INFO - 25/07/07 13:31:39 INFO DAGScheduler: looking for newly runnable stages
+[2025-07-07T13:31:39.057+0200] {spark_submit.py:521} INFO - 25/07/07 13:31:39 INFO DAGScheduler: running: Set()
+[2025-07-07T13:31:39.057+0200] {spark_submit.py:521} INFO - 25/07/07 13:31:39 INFO DAGScheduler: waiting: Set()
+[2025-07-07T13:31:39.058+0200] {spark_submit.py:521} INFO - 25/07/07 13:31:39 INFO DAGScheduler: failed: Set()
+[2025-07-07T13:31:39.096+0200] {spark_submit.py:521} INFO - 25/07/07 13:31:39 INFO CodeGenerator: Code generated in 11.015615 ms
+[2025-07-07T13:31:39.115+0200] {spark_submit.py:521} INFO - 25/07/07 13:31:39 INFO SparkContext: Starting job: collect at /home/leoja/airflow/spark_jobs/compute_quadrants.py:99
+[2025-07-07T13:31:39.118+0200] {spark_submit.py:521} INFO - 25/07/07 13:31:39 INFO DAGScheduler: Got job 3 (collect at /home/leoja/airflow/spark_jobs/compute_quadrants.py:99) with 1 output partitions
+[2025-07-07T13:31:39.118+0200] {spark_submit.py:521} INFO - 25/07/07 13:31:39 INFO DAGScheduler: Final stage: ResultStage 4 (collect at /home/leoja/airflow/spark_jobs/compute_quadrants.py:99)
+[2025-07-07T13:31:39.118+0200] {spark_submit.py:521} INFO - 25/07/07 13:31:39 INFO DAGScheduler: Parents of final stage: List(ShuffleMapStage 3)
+[2025-07-07T13:31:39.118+0200] {spark_submit.py:521} INFO - 25/07/07 13:31:39 INFO DAGScheduler: Missing parents: List()
+[2025-07-07T13:31:39.119+0200] {spark_submit.py:521} INFO - 25/07/07 13:31:39 INFO DAGScheduler: Submitting ResultStage 4 (MapPartitionsRDD[10] at collect at /home/leoja/airflow/spark_jobs/compute_quadrants.py:99), which has no missing parents
+[2025-07-07T13:31:39.126+0200] {spark_submit.py:521} INFO - 25/07/07 13:31:39 INFO MemoryStore: Block broadcast_4 stored as values in memory (estimated size 13.1 KiB, free 434.1 MiB)
+[2025-07-07T13:31:39.134+0200] {spark_submit.py:521} INFO - 25/07/07 13:31:39 INFO MemoryStore: Block broadcast_4_piece0 stored as bytes in memory (estimated size 6.1 KiB, free 434.1 MiB)
+[2025-07-07T13:31:39.135+0200] {spark_submit.py:521} INFO - 25/07/07 13:31:39 INFO BlockManagerInfo: Added broadcast_4_piece0 in memory on 10.255.255.254:40439 (size: 6.1 KiB, free: 434.4 MiB)
+[2025-07-07T13:31:39.136+0200] {spark_submit.py:521} INFO - 25/07/07 13:31:39 INFO BlockManagerInfo: Removed broadcast_3_piece0 on 10.255.255.254:40439 in memory (size: 8.3 KiB, free: 434.4 MiB)
+[2025-07-07T13:31:39.136+0200] {spark_submit.py:521} INFO - 25/07/07 13:31:39 INFO SparkContext: Created broadcast 4 from broadcast at DAGScheduler.scala:1585
+[2025-07-07T13:31:39.137+0200] {spark_submit.py:521} INFO - 25/07/07 13:31:39 INFO DAGScheduler: Submitting 1 missing tasks from ResultStage 4 (MapPartitionsRDD[10] at collect at /home/leoja/airflow/spark_jobs/compute_quadrants.py:99) (first 15 tasks are for partitions Vector(0))
+[2025-07-07T13:31:39.137+0200] {spark_submit.py:521} INFO - 25/07/07 13:31:39 INFO TaskSchedulerImpl: Adding task set 4.0 with 1 tasks resource profile 0
+[2025-07-07T13:31:39.142+0200] {spark_submit.py:521} INFO - 25/07/07 13:31:39 INFO TaskSetManager: Starting task 0.0 in stage 4.0 (TID 3) (10.255.255.254, executor driver, partition 0, NODE_LOCAL, 8999 bytes)
+[2025-07-07T13:31:39.143+0200] {spark_submit.py:521} INFO - 25/07/07 13:31:39 INFO Executor: Running task 0.0 in stage 4.0 (TID 3)
+[2025-07-07T13:31:39.175+0200] {spark_submit.py:521} INFO - 25/07/07 13:31:39 INFO ShuffleBlockFetcherIterator: Getting 1 (60.0 B) non-empty blocks including 1 (60.0 B) local and 0 (0.0 B) host-local and 0 (0.0 B) push-merged-local and 0 (0.0 B) remote blocks
+[2025-07-07T13:31:39.176+0200] {spark_submit.py:521} INFO - 25/07/07 13:31:39 INFO ShuffleBlockFetcherIterator: Started 0 remote fetches in 7 ms
+[2025-07-07T13:31:39.190+0200] {spark_submit.py:521} INFO - 25/07/07 13:31:39 INFO CodeGenerator: Code generated in 11.709135 ms
+[2025-07-07T13:31:39.212+0200] {spark_submit.py:521} INFO - 25/07/07 13:31:39 INFO Executor: Finished task 0.0 in stage 4.0 (TID 3). 4081 bytes result sent to driver
+[2025-07-07T13:31:39.215+0200] {spark_submit.py:521} INFO - 25/07/07 13:31:39 INFO TaskSetManager: Finished task 0.0 in stage 4.0 (TID 3) in 74 ms on 10.255.255.254 (executor driver) (1/1)
+[2025-07-07T13:31:39.215+0200] {spark_submit.py:521} INFO - 25/07/07 13:31:39 INFO TaskSchedulerImpl: Removed TaskSet 4.0, whose tasks have all completed, from pool
+[2025-07-07T13:31:39.217+0200] {spark_submit.py:521} INFO - 25/07/07 13:31:39 INFO DAGScheduler: ResultStage 4 (collect at /home/leoja/airflow/spark_jobs/compute_quadrants.py:99) finished in 0.092 s
+[2025-07-07T13:31:39.217+0200] {spark_submit.py:521} INFO - 25/07/07 13:31:39 INFO DAGScheduler: Job 3 is finished. Cancelling potential speculative or zombie tasks for this job
+[2025-07-07T13:31:39.217+0200] {spark_submit.py:521} INFO - 25/07/07 13:31:39 INFO TaskSchedulerImpl: Killing all running tasks in stage 4: Stage finished
+[2025-07-07T13:31:39.218+0200] {spark_submit.py:521} INFO - 25/07/07 13:31:39 INFO DAGScheduler: Job 3 finished: collect at /home/leoja/airflow/spark_jobs/compute_quadrants.py:99, took 0.101839 s
+[2025-07-07T13:31:39.377+0200] {spark_submit.py:521} INFO - 25/07/07 13:31:39 INFO FileSourceStrategy: Pushed Filters:
+[2025-07-07T13:31:39.379+0200] {spark_submit.py:521} INFO - 25/07/07 13:31:39 INFO FileSourceStrategy: Post-Scan Filters: (gettimestamp(date#0, yyyy-MM-dd, TimestampType, Some(Europe/Paris), false) >= 2025-07-01 00:00:00)
+[2025-07-07T13:31:39.450+0200] {spark_submit.py:521} INFO - 25/07/07 13:31:39 INFO CodeGenerator: Code generated in 35.563113 ms
+[2025-07-07T13:31:39.459+0200] {spark_submit.py:521} INFO - 25/07/07 13:31:39 INFO MemoryStore: Block broadcast_5 stored as values in memory (estimated size 202.3 KiB, free 434.0 MiB)
+[2025-07-07T13:31:39.468+0200] {spark_submit.py:521} INFO - 25/07/07 13:31:39 INFO BlockManagerInfo: Removed broadcast_4_piece0 on 10.255.255.254:40439 in memory (size: 6.1 KiB, free: 434.4 MiB)
+[2025-07-07T13:31:39.472+0200] {spark_submit.py:521} INFO - 25/07/07 13:31:39 INFO MemoryStore: Block broadcast_5_piece0 stored as bytes in memory (estimated size 35.3 KiB, free 433.9 MiB)
+[2025-07-07T13:31:39.473+0200] {spark_submit.py:521} INFO - 25/07/07 13:31:39 INFO BlockManagerInfo: Added broadcast_5_piece0 in memory on 10.255.255.254:40439 (size: 35.3 KiB, free: 434.3 MiB)
+[2025-07-07T13:31:39.474+0200] {spark_submit.py:521} INFO - 25/07/07 13:31:39 INFO SparkContext: Created broadcast 5 from javaToPython at NativeMethodAccessorImpl.java:0
+[2025-07-07T13:31:39.476+0200] {spark_submit.py:521} INFO - 25/07/07 13:31:39 INFO FileSourceScanExec: Planning scan with bin packing, max size: 4194304 bytes, open cost is considered as scanning 4194304 bytes.
+[2025-07-07T13:31:39.507+0200] {spark_submit.py:521} INFO - 25/07/07 13:31:39 INFO CodeGenerator: Code generated in 15.055623 ms
+[2025-07-07T13:31:39.534+0200] {spark_submit.py:521} INFO - 25/07/07 13:31:39 INFO SparkContext: Starting job: javaToPython at NativeMethodAccessorImpl.java:0
+[2025-07-07T13:31:39.535+0200] {spark_submit.py:521} INFO - 25/07/07 13:31:39 INFO DAGScheduler: Got job 4 (javaToPython at NativeMethodAccessorImpl.java:0) with 1 output partitions
+[2025-07-07T13:31:39.536+0200] {spark_submit.py:521} INFO - 25/07/07 13:31:39 INFO DAGScheduler: Final stage: ResultStage 5 (javaToPython at NativeMethodAccessorImpl.java:0)
+[2025-07-07T13:31:39.536+0200] {spark_submit.py:521} INFO - 25/07/07 13:31:39 INFO DAGScheduler: Parents of final stage: List()
+[2025-07-07T13:31:39.536+0200] {spark_submit.py:521} INFO - 25/07/07 13:31:39 INFO DAGScheduler: Missing parents: List()
+[2025-07-07T13:31:39.537+0200] {spark_submit.py:521} INFO - 25/07/07 13:31:39 INFO DAGScheduler: Submitting ResultStage 5 (MapPartitionsRDD[16] at javaToPython at NativeMethodAccessorImpl.java:0), which has no missing parents
+[2025-07-07T13:31:39.540+0200] {spark_submit.py:521} INFO - 25/07/07 13:31:39 INFO MemoryStore: Block broadcast_6 stored as values in memory (estimated size 24.4 KiB, free 433.9 MiB)
+[2025-07-07T13:31:39.545+0200] {spark_submit.py:521} INFO - 25/07/07 13:31:39 INFO MemoryStore: Block broadcast_6_piece0 stored as bytes in memory (estimated size 9.6 KiB, free 433.9 MiB)
+[2025-07-07T13:31:39.547+0200] {spark_submit.py:521} INFO - 25/07/07 13:31:39 INFO BlockManagerInfo: Added broadcast_6_piece0 in memory on 10.255.255.254:40439 (size: 9.6 KiB, free: 434.3 MiB)
+[2025-07-07T13:31:39.548+0200] {spark_submit.py:521} INFO - 25/07/07 13:31:39 INFO SparkContext: Created broadcast 6 from broadcast at DAGScheduler.scala:1585
+[2025-07-07T13:31:39.548+0200] {spark_submit.py:521} INFO - 25/07/07 13:31:39 INFO DAGScheduler: Submitting 1 missing tasks from ResultStage 5 (MapPartitionsRDD[16] at javaToPython at NativeMethodAccessorImpl.java:0) (first 15 tasks are for partitions Vector(0))
+[2025-07-07T13:31:39.549+0200] {spark_submit.py:521} INFO - 25/07/07 13:31:39 INFO TaskSchedulerImpl: Adding task set 5.0 with 1 tasks resource profile 0
+[2025-07-07T13:31:39.550+0200] {spark_submit.py:521} INFO - 25/07/07 13:31:39 INFO TaskSetManager: Starting task 0.0 in stage 5.0 (TID 4) (10.255.255.254, executor driver, partition 0, PROCESS_LOCAL, 9612 bytes)
+[2025-07-07T13:31:39.551+0200] {spark_submit.py:521} INFO - 25/07/07 13:31:39 INFO Executor: Running task 0.0 in stage 5.0 (TID 4)
+[2025-07-07T13:31:39.581+0200] {spark_submit.py:521} INFO - 25/07/07 13:31:39 INFO CodeGenerator: Code generated in 17.772438 ms
+[2025-07-07T13:31:39.593+0200] {spark_submit.py:521} INFO - 25/07/07 13:31:39 INFO CodeGenerator: Code generated in 6.391998 ms
+[2025-07-07T13:31:39.595+0200] {spark_submit.py:521} INFO - 25/07/07 13:31:39 INFO FileScanRDD: Reading File path: file:///home/leoja/airflow/data/Indicators.parquet, range: 0-16068, partition values: [empty row]
+[2025-07-07T13:31:39.633+0200] {spark_submit.py:521} INFO - 25/07/07 13:31:39 INFO Executor: Finished task 0.0 in stage 5.0 (TID 4). 2041 bytes result sent to driver
+[2025-07-07T13:31:39.635+0200] {spark_submit.py:521} INFO - 25/07/07 13:31:39 INFO TaskSetManager: Finished task 0.0 in stage 5.0 (TID 4) in 85 ms on 10.255.255.254 (executor driver) (1/1)
+[2025-07-07T13:31:39.635+0200] {spark_submit.py:521} INFO - 25/07/07 13:31:39 INFO TaskSchedulerImpl: Removed TaskSet 5.0, whose tasks have all completed, from pool
+[2025-07-07T13:31:39.636+0200] {spark_submit.py:521} INFO - 25/07/07 13:31:39 INFO DAGScheduler: ResultStage 5 (javaToPython at NativeMethodAccessorImpl.java:0) finished in 0.097 s
+[2025-07-07T13:31:39.636+0200] {spark_submit.py:521} INFO - 25/07/07 13:31:39 INFO DAGScheduler: Job 4 is finished. Cancelling potential speculative or zombie tasks for this job
+[2025-07-07T13:31:39.637+0200] {spark_submit.py:521} INFO - 25/07/07 13:31:39 INFO TaskSchedulerImpl: Killing all running tasks in stage 5: Stage finished
+[2025-07-07T13:31:39.637+0200] {spark_submit.py:521} INFO - 25/07/07 13:31:39 INFO DAGScheduler: Job 4 finished: javaToPython at NativeMethodAccessorImpl.java:0, took 0.102446 s
+[2025-07-07T13:31:39.644+0200] {spark_submit.py:521} INFO - 25/07/07 13:31:39 INFO DAGScheduler: Registering RDD 17 (javaToPython at NativeMethodAccessorImpl.java:0) as input to shuffle 1
+[2025-07-07T13:31:39.644+0200] {spark_submit.py:521} INFO - 25/07/07 13:31:39 INFO DAGScheduler: Got map stage job 5 (javaToPython at NativeMethodAccessorImpl.java:0) with 1 output partitions
+[2025-07-07T13:31:39.645+0200] {spark_submit.py:521} INFO - 25/07/07 13:31:39 INFO DAGScheduler: Final stage: ShuffleMapStage 6 (javaToPython at NativeMethodAccessorImpl.java:0)
+[2025-07-07T13:31:39.645+0200] {spark_submit.py:521} INFO - 25/07/07 13:31:39 INFO DAGScheduler: Parents of final stage: List()
+[2025-07-07T13:31:39.645+0200] {spark_submit.py:521} INFO - 25/07/07 13:31:39 INFO DAGScheduler: Missing parents: List()
+[2025-07-07T13:31:39.645+0200] {spark_submit.py:521} INFO - 25/07/07 13:31:39 INFO DAGScheduler: Submitting ShuffleMapStage 6 (MapPartitionsRDD[17] at javaToPython at NativeMethodAccessorImpl.java:0), which has no missing parents
+[2025-07-07T13:31:39.651+0200] {spark_submit.py:521} INFO - 25/07/07 13:31:39 INFO MemoryStore: Block broadcast_7 stored as values in memory (estimated size 26.2 KiB, free 433.9 MiB)
+[2025-07-07T13:31:39.660+0200] {spark_submit.py:521} INFO - 25/07/07 13:31:39 INFO MemoryStore: Block broadcast_7_piece0 stored as bytes in memory (estimated size 10.6 KiB, free 433.9 MiB)
+[2025-07-07T13:31:39.661+0200] {spark_submit.py:521} INFO - 25/07/07 13:31:39 INFO BlockManagerInfo: Added broadcast_7_piece0 in memory on 10.255.255.254:40439 (size: 10.6 KiB, free: 434.3 MiB)
+[2025-07-07T13:31:39.661+0200] {spark_submit.py:521} INFO - 25/07/07 13:31:39 INFO BlockManagerInfo: Removed broadcast_6_piece0 on 10.255.255.254:40439 in memory (size: 9.6 KiB, free: 434.3 MiB)
+[2025-07-07T13:31:39.662+0200] {spark_submit.py:521} INFO - 25/07/07 13:31:39 INFO SparkContext: Created broadcast 7 from broadcast at DAGScheduler.scala:1585
+[2025-07-07T13:31:39.662+0200] {spark_submit.py:521} INFO - 25/07/07 13:31:39 INFO DAGScheduler: Submitting 1 missing tasks from ShuffleMapStage 6 (MapPartitionsRDD[17] at javaToPython at NativeMethodAccessorImpl.java:0) (first 15 tasks are for partitions Vector(0))
+[2025-07-07T13:31:39.663+0200] {spark_submit.py:521} INFO - 25/07/07 13:31:39 INFO TaskSchedulerImpl: Adding task set 6.0 with 1 tasks resource profile 0
+[2025-07-07T13:31:39.665+0200] {spark_submit.py:521} INFO - 25/07/07 13:31:39 INFO TaskSetManager: Starting task 0.0 in stage 6.0 (TID 5) (10.255.255.254, executor driver, partition 0, PROCESS_LOCAL, 9601 bytes)
+[2025-07-07T13:31:39.666+0200] {spark_submit.py:521} INFO - 25/07/07 13:31:39 INFO Executor: Running task 0.0 in stage 6.0 (TID 5)
+[2025-07-07T13:31:39.686+0200] {spark_submit.py:521} INFO - 25/07/07 13:31:39 INFO CodeGenerator: Code generated in 7.549437 ms
+[2025-07-07T13:31:39.694+0200] {spark_submit.py:521} INFO - 25/07/07 13:31:39 INFO FileScanRDD: Reading File path: file:///home/leoja/airflow/data/Indicators.parquet, range: 0-16068, partition values: [empty row]
+[2025-07-07T13:31:39.715+0200] {spark_submit.py:521} INFO - 25/07/07 13:31:39 INFO Executor: Finished task 0.0 in stage 6.0 (TID 5). 2053 bytes result sent to driver
+[2025-07-07T13:31:39.716+0200] {spark_submit.py:521} INFO - 25/07/07 13:31:39 INFO TaskSetManager: Finished task 0.0 in stage 6.0 (TID 5) in 52 ms on 10.255.255.254 (executor driver) (1/1)
+[2025-07-07T13:31:39.716+0200] {spark_submit.py:521} INFO - 25/07/07 13:31:39 INFO TaskSchedulerImpl: Removed TaskSet 6.0, whose tasks have all completed, from pool
+[2025-07-07T13:31:39.717+0200] {spark_submit.py:521} INFO - 25/07/07 13:31:39 INFO DAGScheduler: ShuffleMapStage 6 (javaToPython at NativeMethodAccessorImpl.java:0) finished in 0.071 s
+[2025-07-07T13:31:39.717+0200] {spark_submit.py:521} INFO - 25/07/07 13:31:39 INFO DAGScheduler: looking for newly runnable stages
+[2025-07-07T13:31:39.717+0200] {spark_submit.py:521} INFO - 25/07/07 13:31:39 INFO DAGScheduler: running: Set()
+[2025-07-07T13:31:39.718+0200] {spark_submit.py:521} INFO - 25/07/07 13:31:39 INFO DAGScheduler: waiting: Set()
+[2025-07-07T13:31:39.718+0200] {spark_submit.py:521} INFO - 25/07/07 13:31:39 INFO DAGScheduler: failed: Set()
+[2025-07-07T13:31:39.734+0200] {spark_submit.py:521} INFO - 25/07/07 13:31:39 INFO ShufflePartitionsUtil: For shuffle(1), advisory target size: 67108864, actual target size 1048576, minimum partition size: 1048576
+[2025-07-07T13:31:39.805+0200] {spark_submit.py:521} INFO - 25/07/07 13:31:39 INFO SparkContext: Starting job: runJob at PythonRDD.scala:181
+[2025-07-07T13:31:39.807+0200] {spark_submit.py:521} INFO - 25/07/07 13:31:39 INFO DAGScheduler: Got job 6 (runJob at PythonRDD.scala:181) with 1 output partitions
+[2025-07-07T13:31:39.808+0200] {spark_submit.py:521} INFO - 25/07/07 13:31:39 INFO DAGScheduler: Final stage: ResultStage 8 (runJob at PythonRDD.scala:181)
+[2025-07-07T13:31:39.808+0200] {spark_submit.py:521} INFO - 25/07/07 13:31:39 INFO DAGScheduler: Parents of final stage: List(ShuffleMapStage 7)
+[2025-07-07T13:31:39.808+0200] {spark_submit.py:521} INFO - 25/07/07 13:31:39 INFO DAGScheduler: Missing parents: List()
+[2025-07-07T13:31:39.808+0200] {spark_submit.py:521} INFO - 25/07/07 13:31:39 INFO DAGScheduler: Submitting ResultStage 8 (PythonRDD[22] at RDD at PythonRDD.scala:53), which has no missing parents
+[2025-07-07T13:31:39.821+0200] {spark_submit.py:521} INFO - 25/07/07 13:31:39 INFO MemoryStore: Block broadcast_8 stored as values in memory (estimated size 15.6 KiB, free 433.9 MiB)
+[2025-07-07T13:31:39.822+0200] {spark_submit.py:521} INFO - 25/07/07 13:31:39 INFO MemoryStore: Block broadcast_8_piece0 stored as bytes in memory (estimated size 7.9 KiB, free 433.9 MiB)
+[2025-07-07T13:31:39.823+0200] {spark_submit.py:521} INFO - 25/07/07 13:31:39 INFO BlockManagerInfo: Added broadcast_8_piece0 in memory on 10.255.255.254:40439 (size: 7.9 KiB, free: 434.3 MiB)
+[2025-07-07T13:31:39.824+0200] {spark_submit.py:521} INFO - 25/07/07 13:31:39 INFO SparkContext: Created broadcast 8 from broadcast at DAGScheduler.scala:1585
+[2025-07-07T13:31:39.825+0200] {spark_submit.py:521} INFO - 25/07/07 13:31:39 INFO DAGScheduler: Submitting 1 missing tasks from ResultStage 8 (PythonRDD[22] at RDD at PythonRDD.scala:53) (first 15 tasks are for partitions Vector(0))
+[2025-07-07T13:31:39.825+0200] {spark_submit.py:521} INFO - 25/07/07 13:31:39 INFO TaskSchedulerImpl: Adding task set 8.0 with 1 tasks resource profile 0
+[2025-07-07T13:31:39.828+0200] {spark_submit.py:521} INFO - 25/07/07 13:31:39 INFO TaskSetManager: Starting task 0.0 in stage 8.0 (TID 6) (10.255.255.254, executor driver, partition 0, NODE_LOCAL, 9018 bytes)
+[2025-07-07T13:31:39.828+0200] {spark_submit.py:521} INFO - 25/07/07 13:31:39 INFO Executor: Running task 0.0 in stage 8.0 (TID 6)
+[2025-07-07T13:31:39.860+0200] {spark_submit.py:521} INFO - 25/07/07 13:31:39 INFO ShuffleBlockFetcherIterator: Getting 1 (117.0 B) non-empty blocks including 1 (117.0 B) local and 0 (0.0 B) host-local and 0 (0.0 B) push-merged-local and 0 (0.0 B) remote blocks
+[2025-07-07T13:31:39.861+0200] {spark_submit.py:521} INFO - 25/07/07 13:31:39 INFO ShuffleBlockFetcherIterator: Started 0 remote fetches in 1 ms
+[2025-07-07T13:31:40.547+0200] {spark_submit.py:521} INFO - 25/07/07 13:31:40 INFO PythonRunner: Times: total = 680, boot = 552, init = 128, finish = 0
+[2025-07-07T13:31:40.549+0200] {spark_submit.py:521} INFO - 25/07/07 13:31:40 INFO Executor: Finished task 0.0 in stage 8.0 (TID 6). 4238 bytes result sent to driver
+[2025-07-07T13:31:40.551+0200] {spark_submit.py:521} INFO - 25/07/07 13:31:40 INFO TaskSetManager: Finished task 0.0 in stage 8.0 (TID 6) in 723 ms on 10.255.255.254 (executor driver) (1/1)
+[2025-07-07T13:31:40.551+0200] {spark_submit.py:521} INFO - 25/07/07 13:31:40 INFO TaskSchedulerImpl: Removed TaskSet 8.0, whose tasks have all completed, from pool
+[2025-07-07T13:31:40.552+0200] {spark_submit.py:521} INFO - 25/07/07 13:31:40 INFO PythonAccumulatorV2: Connected to AccumulatorServer at host: 127.0.0.1 port: 45349
+[2025-07-07T13:31:40.554+0200] {spark_submit.py:521} INFO - 25/07/07 13:31:40 INFO DAGScheduler: ResultStage 8 (runJob at PythonRDD.scala:181) finished in 0.744 s
+[2025-07-07T13:31:40.554+0200] {spark_submit.py:521} INFO - 25/07/07 13:31:40 INFO DAGScheduler: Job 6 is finished. Cancelling potential speculative or zombie tasks for this job
+[2025-07-07T13:31:40.555+0200] {spark_submit.py:521} INFO - 25/07/07 13:31:40 INFO TaskSchedulerImpl: Killing all running tasks in stage 8: Stage finished
+[2025-07-07T13:31:40.555+0200] {spark_submit.py:521} INFO - 25/07/07 13:31:40 INFO DAGScheduler: Job 6 finished: runJob at PythonRDD.scala:181, took 0.749989 s
+[2025-07-07T13:31:40.574+0200] {spark_submit.py:521} INFO - Traceback (most recent call last):
+[2025-07-07T13:31:40.575+0200] {spark_submit.py:521} INFO - File "/home/leoja/airflow/spark_jobs/compute_quadrants.py", line 250, in <module>
+[2025-07-07T13:31:40.575+0200] {spark_submit.py:521} INFO - main(indicators_path, output_parquet, output_csv)
+[2025-07-07T13:31:40.575+0200] {spark_submit.py:521} INFO - File "/home/leoja/airflow/spark_jobs/compute_quadrants.py", line 123, in main
+[2025-07-07T13:31:40.575+0200] {spark_submit.py:521} INFO - last_two = full_df.orderBy("date", ascending=False).limit(2).orderBy("date")
+[2025-07-07T13:31:40.575+0200] {spark_submit.py:521} INFO - ^^^^^^^^^^^^^^^
+[2025-07-07T13:31:40.575+0200] {spark_submit.py:521} INFO - AttributeError: 'NoneType' object has no attribute 'orderBy'
+[2025-07-07T13:31:40.626+0200] {spark_submit.py:521} INFO - 25/07/07 13:31:40 INFO SparkContext: Invoking stop() from shutdown hook
+[2025-07-07T13:31:40.626+0200] {spark_submit.py:521} INFO - 25/07/07 13:31:40 INFO SparkContext: SparkContext is stopping with exitCode 0.
+[2025-07-07T13:31:40.637+0200] {spark_submit.py:521} INFO - 25/07/07 13:31:40 INFO SparkUI: Stopped Spark web UI at http://10.255.255.254:4040
+[2025-07-07T13:31:40.647+0200] {spark_submit.py:521} INFO - 25/07/07 13:31:40 INFO MapOutputTrackerMasterEndpoint: MapOutputTrackerMasterEndpoint stopped!
+[2025-07-07T13:31:40.662+0200] {spark_submit.py:521} INFO - 25/07/07 13:31:40 INFO MemoryStore: MemoryStore cleared
+[2025-07-07T13:31:40.663+0200] {spark_submit.py:521} INFO - 25/07/07 13:31:40 INFO BlockManager: BlockManager stopped
+[2025-07-07T13:31:40.666+0200] {spark_submit.py:521} INFO - 25/07/07 13:31:40 INFO BlockManagerMaster: BlockManagerMaster stopped
+[2025-07-07T13:31:40.669+0200] {spark_submit.py:521} INFO - 25/07/07 13:31:40 INFO OutputCommitCoordinator$OutputCommitCoordinatorEndpoint: OutputCommitCoordinator stopped!
+[2025-07-07T13:31:40.677+0200] {spark_submit.py:521} INFO - 25/07/07 13:31:40 INFO SparkContext: Successfully stopped SparkContext
+[2025-07-07T13:31:40.678+0200] {spark_submit.py:521} INFO - 25/07/07 13:31:40 INFO ShutdownHookManager: Shutdown hook called
+[2025-07-07T13:31:40.678+0200] {spark_submit.py:521} INFO - 25/07/07 13:31:40 INFO ShutdownHookManager: Deleting directory /tmp/spark-f55cea3c-cd85-4e87-96f7-3ad56e19f7c5/pyspark-4c2e756c-ce75-4460-8782-38c883ad9fcb
+[2025-07-07T13:31:40.682+0200] {spark_submit.py:521} INFO - 25/07/07 13:31:40 INFO ShutdownHookManager: Deleting directory /tmp/spark-f55cea3c-cd85-4e87-96f7-3ad56e19f7c5
+[2025-07-07T13:31:40.686+0200] {spark_submit.py:521} INFO - 25/07/07 13:31:40 INFO ShutdownHookManager: Deleting directory /tmp/spark-d4914767-8dc8-4cd7-9120-ff43b80680ea
+[2025-07-07T13:31:40.742+0200] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2025-07-07T13:31:40.747+0200] {taskinstance.py:2890} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 465, in _execute_task
+    result = _execute_callable(context=context, **execute_callable_kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 432, in _execute_callable
+    return execute_callable(context=context, **execute_callable_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/models/baseoperator.py", line 400, in wrapper
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/providers/apache/spark/operators/spark_submit.py", line 156, in execute
+    self._hook.submit(self._application)
+  File "/home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/providers/apache/spark/hooks/spark_submit.py", line 452, in submit
+    raise AirflowException(
+airflow.exceptions.AirflowException: Cannot execute: spark-submit --master local[*] --conf spark.pyspark.python=/home/leoja/airflow_venv/bin/python --conf spark.pyspark.driver.python=/home/leoja/airflow_venv/bin/python --name compute_economic_quadrants /home/leoja/airflow/spark_jobs/compute_quadrants.py /home/leoja/airflow/data/Indicators.parquet /home/leoja/airflow/data/quadrants.parquet /home/leoja/airflow/data/quadrants.csv. Error code is: 1.
+[2025-07-07T13:31:40.750+0200] {taskinstance.py:1205} INFO - Marking task as FAILED. dag_id=macro_trading_dag, task_id=compute_economic_quadrants, execution_date=20250703T210611, start_date=20250707T113132, end_date=20250707T113140
+[2025-07-07T13:31:40.779+0200] {standard_task_runner.py:110} ERROR - Failed to execute job 691 for task compute_economic_quadrants (Cannot execute: spark-submit --master local[*] --conf spark.pyspark.python=/home/leoja/airflow_venv/bin/python --conf spark.pyspark.driver.python=/home/leoja/airflow_venv/bin/python --name compute_economic_quadrants /home/leoja/airflow/spark_jobs/compute_quadrants.py /home/leoja/airflow/data/Indicators.parquet /home/leoja/airflow/data/quadrants.parquet /home/leoja/airflow/data/quadrants.csv. Error code is: 1.; 7561)
+[2025-07-07T13:31:40.791+0200] {local_task_job_runner.py:240} INFO - Task exited with return code 1
+[2025-07-07T13:31:40.803+0200] {taskinstance.py:3482} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2025-07-07T13:31:40.813+0200] {local_task_job_runner.py:222} INFO - ::endgroup::

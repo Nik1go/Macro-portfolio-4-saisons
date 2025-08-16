@@ -1,0 +1,20 @@
+[2025-07-03T22:44:52.477+0200] {processor.py:161} INFO - Started process (PID=1751) to work on /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/plugins/workday.py
+[2025-07-03T22:44:52.478+0200] {processor.py:830} INFO - Processing file /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/plugins/workday.py for tasks to queue
+[2025-07-03T22:44:52.480+0200] {logging_mixin.py:188} INFO - [2025-07-03T22:44:52.479+0200] {dagbag.py:540} INFO - Filling up the DagBag from /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/plugins/workday.py
+[2025-07-03T22:44:53.232+0200] {processor.py:842} WARNING - No viable dags retrieved from /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/plugins/workday.py
+[2025-07-03T22:44:53.242+0200] {processor.py:183} INFO - Processing /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/plugins/workday.py took 0.771 seconds
+[2025-07-03T22:45:48.116+0200] {processor.py:161} INFO - Started process (PID=2459) to work on /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/plugins/workday.py
+[2025-07-03T22:45:48.117+0200] {processor.py:830} INFO - Processing file /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/plugins/workday.py for tasks to queue
+[2025-07-03T22:45:48.119+0200] {logging_mixin.py:188} INFO - [2025-07-03T22:45:48.118+0200] {dagbag.py:540} INFO - Filling up the DagBag from /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/plugins/workday.py
+[2025-07-03T22:45:48.698+0200] {processor.py:842} WARNING - No viable dags retrieved from /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/plugins/workday.py
+[2025-07-03T22:45:48.711+0200] {processor.py:183} INFO - Processing /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/plugins/workday.py took 0.601 seconds
+[2025-07-03T22:46:44.353+0200] {processor.py:161} INFO - Started process (PID=2872) to work on /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/plugins/workday.py
+[2025-07-03T22:46:44.434+0200] {processor.py:830} INFO - Processing file /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/plugins/workday.py for tasks to queue
+[2025-07-03T22:46:44.436+0200] {logging_mixin.py:188} INFO - [2025-07-03T22:46:44.436+0200] {dagbag.py:540} INFO - Filling up the DagBag from /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/plugins/workday.py
+[2025-07-03T23:04:18.529+0200] {processor.py:842} WARNING - No viable dags retrieved from /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/plugins/workday.py
+[2025-07-03T23:04:18.550+0200] {processor.py:183} INFO - Processing /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/plugins/workday.py took 2.848 seconds
+[2025-07-03T23:07:16.313+0200] {processor.py:161} INFO - Started process (PID=4285) to work on /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/plugins/workday.py
+[2025-07-03T23:07:16.314+0200] {processor.py:830} INFO - Processing file /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/plugins/workday.py for tasks to queue
+[2025-07-03T23:07:16.315+0200] {logging_mixin.py:188} INFO - [2025-07-03T23:07:16.315+0200] {dagbag.py:540} INFO - Filling up the DagBag from /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/plugins/workday.py
+[2025-07-03T23:07:18.346+0200] {processor.py:842} WARNING - No viable dags retrieved from /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/plugins/workday.py
+[2025-07-03T23:07:18.351+0200] {processor.py:183} INFO - Processing /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/plugins/workday.py took 2.046 seconds

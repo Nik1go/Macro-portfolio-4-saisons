@@ -1,0 +1,32 @@
+[2025-07-27T19:39:38.180+0200] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2025-07-27T19:39:38.207+0200] {taskinstance.py:2073} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: macro_trading_dag.fetch_data scheduled__2025-07-26T08:00:00+00:00 [queued]>
+[2025-07-27T19:39:38.243+0200] {taskinstance.py:2073} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: macro_trading_dag.fetch_data scheduled__2025-07-26T08:00:00+00:00 [queued]>
+[2025-07-27T19:39:38.244+0200] {taskinstance.py:2303} INFO - Starting attempt 1 of 3
+[2025-07-27T19:39:38.301+0200] {taskinstance.py:2327} INFO - Executing <Task(PythonOperator): fetch_data> on 2025-07-26 08:00:00+00:00
+[2025-07-27T19:39:38.325+0200] {standard_task_runner.py:90} INFO - Running: ['airflow', 'tasks', 'run', 'macro_trading_dag', 'fetch_data', 'scheduled__2025-07-26T08:00:00+00:00', '--job-id', '744', '--raw', '--subdir', 'DAGS_FOLDER/macro_trading_dag.py', '--cfg-path', '/tmp/tmpokx6vn41']
+[2025-07-27T19:39:38.332+0200] {standard_task_runner.py:91} INFO - Job 744: Subtask fetch_data
+[2025-07-27T19:39:38.333+0200] {logging_mixin.py:188} WARNING - /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/task/task_runner/standard_task_runner.py:61 DeprecationWarning: This process (pid=1435) is multi-threaded, use of fork() may lead to deadlocks in the child.
+[2025-07-27T19:39:38.334+0200] {standard_task_runner.py:63} INFO - Started process 1511 to run task
+[2025-07-27T19:39:38.506+0200] {task_command.py:426} INFO - Running <TaskInstance: macro_trading_dag.fetch_data scheduled__2025-07-26T08:00:00+00:00 [running]> on host N15I711-16GR512.localdomain
+[2025-07-27T19:39:38.724+0200] {taskinstance.py:2644} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='airflow' AIRFLOW_CTX_DAG_ID='macro_trading_dag' AIRFLOW_CTX_TASK_ID='fetch_data' AIRFLOW_CTX_EXECUTION_DATE='2025-07-26T08:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2025-07-26T08:00:00+00:00'
+[2025-07-27T19:39:38.730+0200] {taskinstance.py:430} INFO - ::endgroup::
+[2025-07-27T19:39:39.228+0200] {logging_mixin.py:188} INFO - Données mises à jour pour INFLATION (CPIAUCSL)
+[2025-07-27T19:39:39.489+0200] {logging_mixin.py:188} INFO - Données mises à jour pour UNEMPLOYMENT (UNRATE)
+[2025-07-27T19:39:39.758+0200] {logging_mixin.py:188} INFO - Données mises à jour pour High_Yield_Bond_SPREAD (BAMLH0A0HYM2)
+[2025-07-27T19:39:40.034+0200] {logging_mixin.py:188} INFO - Données mises à jour pour 10-2Year_Treasury_Yield_Bond (T10Y2Y)
+[2025-07-27T19:39:40.264+0200] {logging_mixin.py:188} INFO - Données mises à jour pour CONSUMER_SENTIMENT (UMCSENT)
+[2025-07-27T19:39:40.509+0200] {logging_mixin.py:188} INFO - Données mises à jour pour TAUX_FED (FEDFUNDS)
+[2025-07-27T19:39:40.734+0200] {logging_mixin.py:188} INFO - Données mises à jour pour Real_Gross_Domestic_Product (GDPC1)
+[2025-07-27T19:39:41.347+0200] {logging_mixin.py:188} INFO - Données mises à jour pour S&P500(LARGE CAP) (SP500)
+[2025-07-27T19:39:41.471+0200] {logging_mixin.py:188} INFO - Données mises à jour pour GOLD_OZ_USD (GOLD_OZ_USD)
+[2025-07-27T19:39:41.617+0200] {logging_mixin.py:188} INFO - Données mises à jour pour RUSSELL2000(Small CAP) (SmallCAP)
+[2025-07-27T19:39:41.788+0200] {logging_mixin.py:188} INFO - Données mises à jour pour REITs(Immobilier US) (US_REIT_VNQ)
+[2025-07-27T19:39:41.941+0200] {logging_mixin.py:188} INFO - Données mises à jour pour US_TREASURY_10Y (TREASURY_10Y)
+[2025-07-27T19:39:42.057+0200] {logging_mixin.py:188} INFO - Données mises à jour pour BARREL PETROL (ENERGY)
+[2025-07-27T19:39:42.243+0200] {logging_mixin.py:188} INFO - Données mises à jour pour OBLIGATION ENTREPRISE (OBLIGATION)
+[2025-07-27T19:39:42.244+0200] {python.py:237} INFO - Done. Returned value was: None
+[2025-07-27T19:39:42.244+0200] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2025-07-27T19:39:42.249+0200] {taskinstance.py:1205} INFO - Marking task as SUCCESS. dag_id=macro_trading_dag, task_id=fetch_data, execution_date=20250726T080000, start_date=20250727T173938, end_date=20250727T173942
+[2025-07-27T19:39:42.297+0200] {local_task_job_runner.py:240} INFO - Task exited with return code 0
+[2025-07-27T19:39:42.317+0200] {taskinstance.py:3482} INFO - 2 downstream tasks scheduled from follow-on schedule check
+[2025-07-27T19:39:42.326+0200] {local_task_job_runner.py:222} INFO - ::endgroup::

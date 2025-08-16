@@ -3,6 +3,7 @@ import os
 import sys
 import pandas as pd
 import numpy as np
+from pyspark.sql.connect.functions import years
 
 """ compute_assets_performance.py
 
@@ -33,7 +34,7 @@ Exemple de sortie :
 Usage :
 Ce script attend 3 arguments :
 ```bash
-spark-submit compute_assets_performance.py <quadrants.parquet> <assets_daily.parquet> <output_summary.parquet> """
+spark-submit spark_jobs/compute_assets_performance.py data/quadrants.parquet data/assets_daily.parquet dataoutput_summary.parquet> """
 
 def main():
     if len(sys.argv) != 4:
@@ -91,36 +92,34 @@ def main():
 
     rows = []
     grouped = df_merged.groupby(['asset_id', 'assigned_quadrant'])
+
     for (asset, quadrant), sub in grouped:
         sub = sub.sort_values('date')
         daily_ret = sub['ret'].dropna()
         if len(daily_ret) < 1:
             continue
 
-        first_close    = sub['close'].iloc[0]
-        last_close     = sub['close'].iloc[-1]
-        monthly_return = (last_close / first_close) - 1
+        # Moyenne des rendements journaliers
+        mean_ret = daily_ret.mean()
+        std_ret = daily_ret.std()
 
-        cumprod     = (1 + daily_ret).cumprod()
-        rolling_max = cumprod.cummax()
-        drawdown    = (cumprod - rolling_max) / rolling_max
-        max_dd      = drawdown.min()
-
-        mean_ret  = daily_ret.mean()
-        std_ret   = daily_ret.std()
+        # ✅ Calcul du rendement annualisé moyen (basé sur moyenne journalière)
+        annual_return = mean_ret * 252
+        # ✅ Sharpe annualisé
         sharpe_annualized = (mean_ret / std_ret) * np.sqrt(252) if std_ret > 0 else np.nan
-        sharpe_mensuel = sharpe_monthly = mean_ret / std_ret if std_ret > 0 else np.nan
+
+        # ✅ Max Drawdown calculé sur série de richesse simulée
+        cumprod = (1 + daily_ret).cumprod()
+        rolling_max = cumprod.cummax()
+        drawdown = (cumprod - rolling_max) / rolling_max
+        max_dd = drawdown.min()
 
         rows.append({
-            'asset_id'           : asset,
-            'assigned_quadrant'  : quadrant,
-            'start_date'         : sub['date'].min(),
-            'end_date'           : sub['date'].max(),
-            'monthly_return'     : monthly_return,
-            'max_drawdown'       : max_dd,
-            'sharpe_annualized'  : sharpe_annualized,
-            'sharpe mensuel'     : sharpe_monthly
-
+            'asset': asset,
+            'quadrant': quadrant,
+            'annual_return': annual_return,
+            'sharpe': sharpe_annualized,
+            'max_drawdown': -max_dd
         })
 
     df_summary = pd.DataFrame(rows)

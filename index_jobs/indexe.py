@@ -28,37 +28,39 @@ HEADERS = {
 DATA_DIR = os.path.expanduser("~/airflow/data")
 
 mapping_q = {
-  "properties": {
-    "date": {"type":"date","format":"yyyy-MM-dd"},
-    **{fld: {"type":"float"} for fld in [
-       "INFLATION","UNEMPLOYMENT","CONSUMER_SENTIMENT",
-       "High_Yield_Bond_SPREAD","10-2Year_Treasury_Yield_Bond","TAUX_FED"
-    ]},
-    **{f"{fld}_{suf}": {"type":"float"}
-       for fld in ["INFLATION","UNEMPLOYMENT","CONSUMER_SENTIMENT",
-                   "High_Yield_Bond_SPREAD","10-2Year_Treasury_Yield_Bond","TAUX_FED"]
-       for suf in ["delta","zscore","pos_score","var_score","combined"]
-    },
-    **{f"score_Q{i}": {"type":"float"} for i in (1,2,3,4)},
-    "assigned_quadrant": {"type":"keyword"}
-  }
+    "properties": {
+        "date": {"type": "date", "format": "yyyy-MM-dd"},
+        **{fld: {"type": "float"} for fld in [
+            "INFLATION", "UNEMPLOYMENT", "CONSUMER_SENTIMENT",
+            "High_Yield_Bond_SPREAD", "10-2Year_Treasury_Yield_Bond", "TAUX_FED",
+            "Real_Gross_Domestic_Product"
+        ]},
+        **{f"{fld}_{suf}": {"type": "float"}
+           for fld in [
+               "INFLATION", "UNEMPLOYMENT", "CONSUMER_SENTIMENT",
+               "High_Yield_Bond_SPREAD", "10-2Year_Treasury_Yield_Bond", "TAUX_FED",
+               "Real_Gross_Domestic_Product"
+           ]
+           for suf in ["delta", "zscore", "pos_score", "var_score", "combined"]
+           },
+        **{f"score_Q{i}": {"type": "float"} for i in (1, 2, 3, 4)},
+        "assigned_quadrant": {"type": "keyword"}
+    }
 }
 
 mapping_a = {
   "properties": {
-    "asset_id":          {"type":"keyword"},
-    "assigned_quadrant": {"type":"keyword"},
-    "start_date":        {"type":"date","format":"yyyy-MM-dd"},
-    "end_date":          {"type":"date","format":"yyyy-MM-dd"},
-    "monthly_return":    {"type":"float"},
-    "max_drawdown":      {"type":"float"},
-    "sharpe_annualized": {"type":"float"},
-    "sharpe_mensuel":    {"type":"float"}
+      "asset": {"type": "keyword"},
+      "quadrant": {"type": "keyword"},
+      "annual_return": {"type": "float"},
+      "sharpe": {"type": "float"},
+      "max_drawdown": {"type": "float"}
   }
 }
 mapping_bt_timeseries = {
   "properties": {
     "year_month":        {"type":"date","format":"yyyy-MM-dd"},
+    "quadrant":          {"type":"keyword"},
     "SP500_ret":         {"type":"float"},
     "GOLD_OZ_USD_ret":   {"type":"float"},
     "portfolio_return":  {"type":"float"},

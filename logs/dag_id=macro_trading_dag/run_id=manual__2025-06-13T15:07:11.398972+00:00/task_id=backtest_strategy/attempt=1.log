@@ -1,0 +1,24 @@
+[2025-06-13T17:08:05.288+0200] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2025-06-13T17:08:05.300+0200] {taskinstance.py:2073} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: macro_trading_dag.backtest_strategy manual__2025-06-13T15:07:11.398972+00:00 [queued]>
+[2025-06-13T17:08:05.304+0200] {taskinstance.py:2073} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: macro_trading_dag.backtest_strategy manual__2025-06-13T15:07:11.398972+00:00 [queued]>
+[2025-06-13T17:08:05.304+0200] {taskinstance.py:2303} INFO - Starting attempt 1 of 3
+[2025-06-13T17:08:05.315+0200] {taskinstance.py:2327} INFO - Executing <Task(SparkSubmitOperator): backtest_strategy> on 2025-06-13 15:07:11.398972+00:00
+[2025-06-13T17:08:05.324+0200] {standard_task_runner.py:90} INFO - Running: ['airflow', 'tasks', 'run', 'macro_trading_dag', 'backtest_strategy', 'manual__2025-06-13T15:07:11.398972+00:00', '--job-id', '527', '--raw', '--subdir', 'DAGS_FOLDER/macro_trading_dag.py', '--cfg-path', '/tmp/tmpns2z0yhc']
+[2025-06-13T17:08:05.325+0200] {standard_task_runner.py:91} INFO - Job 527: Subtask backtest_strategy
+[2025-06-13T17:08:05.331+0200] {logging_mixin.py:188} WARNING - /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/task/task_runner/standard_task_runner.py:61 DeprecationWarning: This process (pid=475946) is multi-threaded, use of fork() may lead to deadlocks in the child.
+[2025-06-13T17:08:05.331+0200] {standard_task_runner.py:63} INFO - Started process 476021 to run task
+[2025-06-13T17:08:05.359+0200] {task_command.py:426} INFO - Running <TaskInstance: macro_trading_dag.backtest_strategy manual__2025-06-13T15:07:11.398972+00:00 [running]> on host N15I711-16GR512.localdomain
+[2025-06-13T17:08:05.426+0200] {taskinstance.py:2644} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='airflow' AIRFLOW_CTX_DAG_ID='macro_trading_dag' AIRFLOW_CTX_TASK_ID='backtest_strategy' AIRFLOW_CTX_EXECUTION_DATE='2025-06-13T15:07:11.398972+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-06-13T15:07:11.398972+00:00'
+[2025-06-13T17:08:05.426+0200] {taskinstance.py:430} INFO - ::endgroup::
+[2025-06-13T17:08:05.430+0200] {base.py:84} INFO - Using connection ID 'spark_local' for task execution.
+[2025-06-13T17:08:05.431+0200] {spark_submit.py:351} INFO - Spark-Submit cmd: spark-submit --master local[*] --conf spark.pyspark.python=/home/leoja/airflow_venv/bin/python --conf spark.pyspark.driver.python=/home/leoja/airflow_venv/bin/python --name backtest_strategy /home/leoja/airflow/spark_jobs/backtest_strategy.py /home/leoja/airflow/data/quadrants.csv /home/leoja/airflow/data/Assets_daily.parquet 1000 /home/leoja/airflow/data/backtest_results
+[2025-06-13T17:08:06.611+0200] {spark_submit.py:521} INFO - 25/06/13 17:08:06 WARN Utils: Your hostname, N15I711-16GR512 resolves to a loopback address: 127.0.1.1; using 10.255.255.254 instead (on interface lo)
+[2025-06-13T17:08:06.614+0200] {spark_submit.py:521} INFO - 25/06/13 17:08:06 WARN Utils: Set SPARK_LOCAL_IP if you need to bind to another address
+[2025-06-13T17:08:07.373+0200] {spark_submit.py:521} INFO - Backtest terminé. Stats : {'strategy_vol_annual': np.float64(0.12327643032554796), 'strategy_sharpe_annual': np.float64(0.8831674661071984), 'strategy_max_drawdown': np.float64(0.20463585295771478), 'strategy_avg_year_return': np.float64(0.1088737326013548), 'SP500_vol_annual': np.float64(0.15016098557126575), 'SP500_sharpe_annual': np.float64(0.6100639103424066), 'SP500_max_drawdown': np.float64(0.5255585947031325), 'SP500_avg_year_return': np.float64(0.09160779803847607), 'GOLD_vol_annual': np.float64(0.16674825960834988), 'GOLD_sharpe_annual': np.float64(0.6967387542109919), 'GOLD_max_drawdown': np.float64(0.420125759459598), 'GOLD_avg_year_return': np.float64(0.11617997466637275)}
+[2025-06-13T17:08:07.449+0200] {spark_submit.py:521} INFO - 25/06/13 17:08:07 INFO ShutdownHookManager: Shutdown hook called
+[2025-06-13T17:08:07.449+0200] {spark_submit.py:521} INFO - 25/06/13 17:08:07 INFO ShutdownHookManager: Deleting directory /tmp/spark-f2b15d9a-bc04-4b77-be75-2197a13bb24c
+[2025-06-13T17:08:07.486+0200] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2025-06-13T17:08:07.489+0200] {taskinstance.py:1205} INFO - Marking task as SUCCESS. dag_id=macro_trading_dag, task_id=backtest_strategy, execution_date=20250613T150711, start_date=20250613T150805, end_date=20250613T150807
+[2025-06-13T17:08:07.517+0200] {local_task_job_runner.py:240} INFO - Task exited with return code 0
+[2025-06-13T17:08:07.530+0200] {taskinstance.py:3482} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2025-06-13T17:08:07.537+0200] {local_task_job_runner.py:222} INFO - ::endgroup::

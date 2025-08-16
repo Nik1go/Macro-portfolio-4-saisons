@@ -1,0 +1,37 @@
+[2025-06-13T17:07:35.625+0200] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2025-06-13T17:07:35.637+0200] {taskinstance.py:2073} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: macro_trading_dag.format_assets_data manual__2025-06-13T15:07:11.398972+00:00 [queued]>
+[2025-06-13T17:07:35.640+0200] {taskinstance.py:2073} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: macro_trading_dag.format_assets_data manual__2025-06-13T15:07:11.398972+00:00 [queued]>
+[2025-06-13T17:07:35.640+0200] {taskinstance.py:2303} INFO - Starting attempt 1 of 3
+[2025-06-13T17:07:35.653+0200] {taskinstance.py:2327} INFO - Executing <Task(PythonOperator): format_assets_data> on 2025-06-13 15:07:11.398972+00:00
+[2025-06-13T17:07:35.662+0200] {standard_task_runner.py:90} INFO - Running: ['airflow', 'tasks', 'run', 'macro_trading_dag', 'format_assets_data', 'manual__2025-06-13T15:07:11.398972+00:00', '--job-id', '524', '--raw', '--subdir', 'DAGS_FOLDER/macro_trading_dag.py', '--cfg-path', '/tmp/tmp6kbr5ch4']
+[2025-06-13T17:07:35.663+0200] {standard_task_runner.py:91} INFO - Job 524: Subtask format_assets_data
+[2025-06-13T17:07:35.669+0200] {logging_mixin.py:188} WARNING - /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/task/task_runner/standard_task_runner.py:61 DeprecationWarning: This process (pid=475549) is multi-threaded, use of fork() may lead to deadlocks in the child.
+[2025-06-13T17:07:35.670+0200] {standard_task_runner.py:63} INFO - Started process 475559 to run task
+[2025-06-13T17:07:35.697+0200] {task_command.py:426} INFO - Running <TaskInstance: macro_trading_dag.format_assets_data manual__2025-06-13T15:07:11.398972+00:00 [running]> on host N15I711-16GR512.localdomain
+[2025-06-13T17:07:35.754+0200] {taskinstance.py:2644} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='airflow' AIRFLOW_CTX_DAG_ID='macro_trading_dag' AIRFLOW_CTX_TASK_ID='format_assets_data' AIRFLOW_CTX_EXECUTION_DATE='2025-06-13T15:07:11.398972+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-06-13T15:07:11.398972+00:00'
+[2025-06-13T17:07:35.755+0200] {taskinstance.py:430} INFO - ::endgroup::
+[2025-06-13T17:07:35.755+0200] {logging_mixin.py:188} INFO - → format_and_clean_data_daily: on lit le fichier CSV : /home/leoja/airflow/data/combined_assets.csv
+[2025-06-13T17:07:35.773+0200] {logging_mixin.py:188} INFO -    Colonnes lues dans df : ['date', 'SP500', 'GOLD_OZ_USD', 'SmallCAP', 'US_REIT_VNQ', 'TREASURY_10Y', 'BARREL_PETROL', 'OBLIGATION']
+[2025-06-13T17:07:35.811+0200] {logging_mixin.py:188} INFO - Données Assets journalières nettoyées sauvegardées : /home/leoja/airflow/data/Assets_daily.parquet
+[2025-06-13T17:07:35.821+0200] {logging_mixin.py:188} INFO -          date        SP500  ...  BARREL_PETROL  OBLIGATION
+1  2005-01-04  1188.050049  ...          40.75   49.241142
+2  2005-01-05  1183.739990  ...          41.00   49.280857
+3  2005-01-06  1187.890015  ...          43.25   49.316124
+4  2005-01-07  1186.189941  ...          43.28   49.294071
+5  2005-01-10  1190.250000  ...          44.71   49.210205
+
+[5 rows x 8 columns]
+[2025-06-13T17:07:35.826+0200] {logging_mixin.py:188} INFO -             date        SP500  ...  BARREL_PETROL  OBLIGATION
+5329  2025-06-06  6000.359863  ...      68.020000  106.919998
+5330  2025-06-09  6005.879883  ...      68.730000  107.239998
+5331  2025-06-10  6038.810059  ...      64.980003  107.500000
+5332  2025-06-11  6022.240234  ...      68.150002  107.839996
+5333  2025-06-12  6045.259766  ...      68.040001  108.440002
+
+[5 rows x 8 columns]
+[2025-06-13T17:07:35.826+0200] {python.py:237} INFO - Done. Returned value was: /home/leoja/airflow/data/Assets_daily.parquet
+[2025-06-13T17:07:35.826+0200] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2025-06-13T17:07:35.842+0200] {taskinstance.py:1205} INFO - Marking task as SUCCESS. dag_id=macro_trading_dag, task_id=format_assets_data, execution_date=20250613T150711, start_date=20250613T150735, end_date=20250613T150735
+[2025-06-13T17:07:35.883+0200] {local_task_job_runner.py:240} INFO - Task exited with return code 0
+[2025-06-13T17:07:35.896+0200] {taskinstance.py:3482} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2025-06-13T17:07:35.897+0200] {local_task_job_runner.py:222} INFO - ::endgroup::

@@ -1,0 +1,245 @@
+[2025-06-12T18:21:04.732+0200] {processor.py:161} INFO - Started process (PID=390922) to work on /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_complex.py
+[2025-06-12T18:21:04.734+0200] {processor.py:830} INFO - Processing file /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_complex.py for tasks to queue
+[2025-06-12T18:21:04.737+0200] {logging_mixin.py:188} INFO - [2025-06-12T18:21:04.736+0200] {dagbag.py:540} INFO - Filling up the DagBag from /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_complex.py
+[2025-06-12T18:21:04.768+0200] {processor.py:840} INFO - DAG(s) 'example_complex' retrieved from /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_complex.py
+[2025-06-12T18:21:05.926+0200] {logging_mixin.py:188} INFO - [2025-06-12T18:21:05.925+0200] {dag.py:3096} INFO - Sync 1 DAGs
+[2025-06-12T18:21:05.939+0200] {logging_mixin.py:188} INFO - [2025-06-12T18:21:05.939+0200] {dag.py:3954} INFO - Setting next_dagrun for example_complex to None, run_after=None
+[2025-06-12T18:21:05.969+0200] {processor.py:183} INFO - Processing /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_complex.py took 0.456 seconds
+[2025-06-12T18:22:00.966+0200] {processor.py:161} INFO - Started process (PID=391277) to work on /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_complex.py
+[2025-06-12T18:22:00.968+0200] {processor.py:830} INFO - Processing file /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_complex.py for tasks to queue
+[2025-06-12T18:22:00.971+0200] {logging_mixin.py:188} INFO - [2025-06-12T18:22:00.970+0200] {dagbag.py:540} INFO - Filling up the DagBag from /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_complex.py
+[2025-06-12T18:22:00.992+0200] {processor.py:840} INFO - DAG(s) 'example_complex' retrieved from /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_complex.py
+[2025-06-12T18:22:01.084+0200] {logging_mixin.py:188} INFO - [2025-06-12T18:22:01.083+0200] {dag.py:3096} INFO - Sync 1 DAGs
+[2025-06-12T18:22:01.133+0200] {logging_mixin.py:188} INFO - [2025-06-12T18:22:01.133+0200] {dag.py:3954} INFO - Setting next_dagrun for example_complex to None, run_after=None
+[2025-06-12T18:22:01.199+0200] {processor.py:183} INFO - Processing /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_complex.py took 0.250 seconds
+[2025-06-12T18:23:50.550+0200] {processor.py:161} INFO - Started process (PID=392871) to work on /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_complex.py
+[2025-06-12T18:23:50.552+0200] {processor.py:830} INFO - Processing file /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_complex.py for tasks to queue
+[2025-06-12T18:23:50.562+0200] {logging_mixin.py:188} INFO - [2025-06-12T18:23:50.561+0200] {dagbag.py:540} INFO - Filling up the DagBag from /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_complex.py
+[2025-06-12T18:23:50.574+0200] {processor.py:840} INFO - DAG(s) 'example_complex' retrieved from /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_complex.py
+[2025-06-12T18:23:50.623+0200] {logging_mixin.py:188} INFO - [2025-06-12T18:23:50.622+0200] {dag.py:3096} INFO - Sync 1 DAGs
+[2025-06-12T18:23:50.656+0200] {logging_mixin.py:188} INFO - [2025-06-12T18:23:50.656+0200] {dag.py:3954} INFO - Setting next_dagrun for example_complex to None, run_after=None
+[2025-06-12T18:23:50.705+0200] {processor.py:183} INFO - Processing /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_complex.py took 0.163 seconds
+[2025-06-12T18:24:55.236+0200] {processor.py:161} INFO - Started process (PID=393296) to work on /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_complex.py
+[2025-06-12T18:24:55.238+0200] {processor.py:830} INFO - Processing file /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_complex.py for tasks to queue
+[2025-06-12T18:24:55.240+0200] {logging_mixin.py:188} INFO - [2025-06-12T18:24:55.239+0200] {dagbag.py:540} INFO - Filling up the DagBag from /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_complex.py
+[2025-06-12T18:24:55.248+0200] {processor.py:840} INFO - DAG(s) 'example_complex' retrieved from /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_complex.py
+[2025-06-12T18:24:55.266+0200] {logging_mixin.py:188} INFO - [2025-06-12T18:24:55.265+0200] {dag.py:3096} INFO - Sync 1 DAGs
+[2025-06-12T18:24:55.275+0200] {logging_mixin.py:188} INFO - [2025-06-12T18:24:55.274+0200] {dag.py:3954} INFO - Setting next_dagrun for example_complex to None, run_after=None
+[2025-06-12T18:24:55.295+0200] {processor.py:183} INFO - Processing /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_complex.py took 0.063 seconds
+[2025-06-12T18:26:08.978+0200] {processor.py:161} INFO - Started process (PID=393624) to work on /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_complex.py
+[2025-06-12T18:26:08.980+0200] {processor.py:830} INFO - Processing file /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_complex.py for tasks to queue
+[2025-06-12T18:26:08.982+0200] {logging_mixin.py:188} INFO - [2025-06-12T18:26:08.982+0200] {dagbag.py:540} INFO - Filling up the DagBag from /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_complex.py
+[2025-06-12T18:26:08.989+0200] {processor.py:840} INFO - DAG(s) 'example_complex' retrieved from /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_complex.py
+[2025-06-12T18:26:09.004+0200] {logging_mixin.py:188} INFO - [2025-06-12T18:26:09.003+0200] {dag.py:3096} INFO - Sync 1 DAGs
+[2025-06-12T18:26:09.011+0200] {logging_mixin.py:188} INFO - [2025-06-12T18:26:09.011+0200] {dag.py:3954} INFO - Setting next_dagrun for example_complex to None, run_after=None
+[2025-06-12T18:26:09.029+0200] {processor.py:183} INFO - Processing /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_complex.py took 0.055 seconds
+[2025-06-12T18:27:25.953+0200] {processor.py:161} INFO - Started process (PID=394052) to work on /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_complex.py
+[2025-06-12T18:27:25.954+0200] {processor.py:830} INFO - Processing file /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_complex.py for tasks to queue
+[2025-06-12T18:27:25.956+0200] {logging_mixin.py:188} INFO - [2025-06-12T18:27:25.956+0200] {dagbag.py:540} INFO - Filling up the DagBag from /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_complex.py
+[2025-06-12T18:27:25.965+0200] {processor.py:840} INFO - DAG(s) 'example_complex' retrieved from /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_complex.py
+[2025-06-12T18:27:25.984+0200] {logging_mixin.py:188} INFO - [2025-06-12T18:27:25.984+0200] {dag.py:3096} INFO - Sync 1 DAGs
+[2025-06-12T18:27:25.994+0200] {logging_mixin.py:188} INFO - [2025-06-12T18:27:25.994+0200] {dag.py:3954} INFO - Setting next_dagrun for example_complex to None, run_after=None
+[2025-06-12T18:27:26.014+0200] {processor.py:183} INFO - Processing /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_complex.py took 0.065 seconds
+[2025-06-12T18:28:22.147+0200] {processor.py:161} INFO - Started process (PID=394364) to work on /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_complex.py
+[2025-06-12T18:28:22.149+0200] {processor.py:830} INFO - Processing file /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_complex.py for tasks to queue
+[2025-06-12T18:28:22.151+0200] {logging_mixin.py:188} INFO - [2025-06-12T18:28:22.150+0200] {dagbag.py:540} INFO - Filling up the DagBag from /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_complex.py
+[2025-06-12T18:28:22.159+0200] {processor.py:840} INFO - DAG(s) 'example_complex' retrieved from /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_complex.py
+[2025-06-12T18:28:22.180+0200] {logging_mixin.py:188} INFO - [2025-06-12T18:28:22.180+0200] {dag.py:3096} INFO - Sync 1 DAGs
+[2025-06-12T18:28:22.190+0200] {logging_mixin.py:188} INFO - [2025-06-12T18:28:22.189+0200] {dag.py:3954} INFO - Setting next_dagrun for example_complex to None, run_after=None
+[2025-06-12T18:28:22.213+0200] {processor.py:183} INFO - Processing /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_complex.py took 0.072 seconds
+[2025-06-12T18:29:20.785+0200] {processor.py:161} INFO - Started process (PID=394640) to work on /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_complex.py
+[2025-06-12T18:29:20.790+0200] {processor.py:830} INFO - Processing file /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_complex.py for tasks to queue
+[2025-06-12T18:29:20.793+0200] {logging_mixin.py:188} INFO - [2025-06-12T18:29:20.792+0200] {dagbag.py:540} INFO - Filling up the DagBag from /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_complex.py
+[2025-06-12T18:29:20.809+0200] {processor.py:840} INFO - DAG(s) 'example_complex' retrieved from /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_complex.py
+[2025-06-12T18:29:20.849+0200] {logging_mixin.py:188} INFO - [2025-06-12T18:29:20.848+0200] {dag.py:3096} INFO - Sync 1 DAGs
+[2025-06-12T18:29:20.872+0200] {logging_mixin.py:188} INFO - [2025-06-12T18:29:20.872+0200] {dag.py:3954} INFO - Setting next_dagrun for example_complex to None, run_after=None
+[2025-06-12T18:29:20.983+0200] {processor.py:183} INFO - Processing /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_complex.py took 0.206 seconds
+[2025-06-12T18:31:40.513+0200] {processor.py:161} INFO - Started process (PID=395999) to work on /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_complex.py
+[2025-06-12T18:31:40.515+0200] {processor.py:830} INFO - Processing file /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_complex.py for tasks to queue
+[2025-06-12T18:31:40.516+0200] {logging_mixin.py:188} INFO - [2025-06-12T18:31:40.516+0200] {dagbag.py:540} INFO - Filling up the DagBag from /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_complex.py
+[2025-06-12T18:31:40.522+0200] {processor.py:840} INFO - DAG(s) 'example_complex' retrieved from /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_complex.py
+[2025-06-12T18:31:40.538+0200] {logging_mixin.py:188} INFO - [2025-06-12T18:31:40.538+0200] {dag.py:3096} INFO - Sync 1 DAGs
+[2025-06-12T18:31:40.545+0200] {logging_mixin.py:188} INFO - [2025-06-12T18:31:40.545+0200] {dag.py:3954} INFO - Setting next_dagrun for example_complex to None, run_after=None
+[2025-06-12T18:31:40.566+0200] {processor.py:183} INFO - Processing /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_complex.py took 0.057 seconds
+[2025-06-12T18:32:48.595+0200] {processor.py:161} INFO - Started process (PID=396253) to work on /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_complex.py
+[2025-06-12T18:32:48.596+0200] {processor.py:830} INFO - Processing file /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_complex.py for tasks to queue
+[2025-06-12T18:32:48.598+0200] {logging_mixin.py:188} INFO - [2025-06-12T18:32:48.598+0200] {dagbag.py:540} INFO - Filling up the DagBag from /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_complex.py
+[2025-06-12T18:32:48.605+0200] {processor.py:840} INFO - DAG(s) 'example_complex' retrieved from /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_complex.py
+[2025-06-12T18:32:48.623+0200] {logging_mixin.py:188} INFO - [2025-06-12T18:32:48.623+0200] {dag.py:3096} INFO - Sync 1 DAGs
+[2025-06-12T18:32:48.632+0200] {logging_mixin.py:188} INFO - [2025-06-12T18:32:48.632+0200] {dag.py:3954} INFO - Setting next_dagrun for example_complex to None, run_after=None
+[2025-06-12T18:32:48.656+0200] {processor.py:183} INFO - Processing /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_complex.py took 0.065 seconds
+[2025-06-12T18:33:59.337+0200] {processor.py:161} INFO - Started process (PID=396590) to work on /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_complex.py
+[2025-06-12T18:33:59.345+0200] {processor.py:830} INFO - Processing file /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_complex.py for tasks to queue
+[2025-06-12T18:33:59.347+0200] {logging_mixin.py:188} INFO - [2025-06-12T18:33:59.347+0200] {dagbag.py:540} INFO - Filling up the DagBag from /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_complex.py
+[2025-06-12T18:33:59.367+0200] {processor.py:840} INFO - DAG(s) 'example_complex' retrieved from /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_complex.py
+[2025-06-12T18:33:59.417+0200] {logging_mixin.py:188} INFO - [2025-06-12T18:33:59.417+0200] {dag.py:3096} INFO - Sync 1 DAGs
+[2025-06-12T18:33:59.437+0200] {logging_mixin.py:188} INFO - [2025-06-12T18:33:59.436+0200] {dag.py:3954} INFO - Setting next_dagrun for example_complex to None, run_after=None
+[2025-06-12T18:33:59.466+0200] {processor.py:183} INFO - Processing /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_complex.py took 0.145 seconds
+[2025-06-12T18:35:09.199+0200] {processor.py:161} INFO - Started process (PID=396945) to work on /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_complex.py
+[2025-06-12T18:35:09.201+0200] {processor.py:830} INFO - Processing file /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_complex.py for tasks to queue
+[2025-06-12T18:35:09.203+0200] {logging_mixin.py:188} INFO - [2025-06-12T18:35:09.202+0200] {dagbag.py:540} INFO - Filling up the DagBag from /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_complex.py
+[2025-06-12T18:35:09.211+0200] {processor.py:840} INFO - DAG(s) 'example_complex' retrieved from /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_complex.py
+[2025-06-12T18:35:09.245+0200] {logging_mixin.py:188} INFO - [2025-06-12T18:35:09.245+0200] {dag.py:3096} INFO - Sync 1 DAGs
+[2025-06-12T18:35:09.254+0200] {logging_mixin.py:188} INFO - [2025-06-12T18:35:09.253+0200] {dag.py:3954} INFO - Setting next_dagrun for example_complex to None, run_after=None
+[2025-06-12T18:35:09.273+0200] {processor.py:183} INFO - Processing /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_complex.py took 0.080 seconds
+[2025-06-12T18:40:09.528+0200] {processor.py:161} INFO - Started process (PID=398279) to work on /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_complex.py
+[2025-06-12T18:40:09.530+0200] {processor.py:830} INFO - Processing file /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_complex.py for tasks to queue
+[2025-06-12T18:40:09.533+0200] {logging_mixin.py:188} INFO - [2025-06-12T18:40:09.532+0200] {dagbag.py:540} INFO - Filling up the DagBag from /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_complex.py
+[2025-06-12T18:40:09.542+0200] {processor.py:840} INFO - DAG(s) 'example_complex' retrieved from /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_complex.py
+[2025-06-12T18:40:09.663+0200] {logging_mixin.py:188} INFO - [2025-06-12T18:40:09.662+0200] {dag.py:3096} INFO - Sync 1 DAGs
+[2025-06-12T18:40:09.675+0200] {logging_mixin.py:188} INFO - [2025-06-12T18:40:09.675+0200] {dag.py:3954} INFO - Setting next_dagrun for example_complex to None, run_after=None
+[2025-06-12T18:40:09.709+0200] {processor.py:183} INFO - Processing /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_complex.py took 0.186 seconds
+[2025-06-12T18:41:23.776+0200] {processor.py:161} INFO - Started process (PID=398939) to work on /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_complex.py
+[2025-06-12T18:41:23.778+0200] {processor.py:830} INFO - Processing file /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_complex.py for tasks to queue
+[2025-06-12T18:41:23.779+0200] {logging_mixin.py:188} INFO - [2025-06-12T18:41:23.779+0200] {dagbag.py:540} INFO - Filling up the DagBag from /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_complex.py
+[2025-06-12T18:41:23.787+0200] {processor.py:840} INFO - DAG(s) 'example_complex' retrieved from /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_complex.py
+[2025-06-12T18:41:23.808+0200] {logging_mixin.py:188} INFO - [2025-06-12T18:41:23.808+0200] {dag.py:3096} INFO - Sync 1 DAGs
+[2025-06-12T18:41:23.818+0200] {logging_mixin.py:188} INFO - [2025-06-12T18:41:23.818+0200] {dag.py:3954} INFO - Setting next_dagrun for example_complex to None, run_after=None
+[2025-06-12T18:41:23.842+0200] {processor.py:183} INFO - Processing /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_complex.py took 0.071 seconds
+[2025-06-12T18:42:19.312+0200] {processor.py:161} INFO - Started process (PID=399350) to work on /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_complex.py
+[2025-06-12T18:42:19.313+0200] {processor.py:830} INFO - Processing file /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_complex.py for tasks to queue
+[2025-06-12T18:42:19.316+0200] {logging_mixin.py:188} INFO - [2025-06-12T18:42:19.315+0200] {dagbag.py:540} INFO - Filling up the DagBag from /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_complex.py
+[2025-06-12T18:42:19.328+0200] {processor.py:840} INFO - DAG(s) 'example_complex' retrieved from /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_complex.py
+[2025-06-12T18:42:19.350+0200] {logging_mixin.py:188} INFO - [2025-06-12T18:42:19.350+0200] {dag.py:3096} INFO - Sync 1 DAGs
+[2025-06-12T18:42:19.360+0200] {logging_mixin.py:188} INFO - [2025-06-12T18:42:19.360+0200] {dag.py:3954} INFO - Setting next_dagrun for example_complex to None, run_after=None
+[2025-06-12T18:42:19.385+0200] {processor.py:183} INFO - Processing /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_complex.py took 0.078 seconds
+[2025-06-12T18:43:33.489+0200] {processor.py:161} INFO - Started process (PID=399899) to work on /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_complex.py
+[2025-06-12T18:43:33.490+0200] {processor.py:830} INFO - Processing file /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_complex.py for tasks to queue
+[2025-06-12T18:43:33.492+0200] {logging_mixin.py:188} INFO - [2025-06-12T18:43:33.491+0200] {dagbag.py:540} INFO - Filling up the DagBag from /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_complex.py
+[2025-06-12T18:43:33.500+0200] {processor.py:840} INFO - DAG(s) 'example_complex' retrieved from /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_complex.py
+[2025-06-12T18:43:33.517+0200] {logging_mixin.py:188} INFO - [2025-06-12T18:43:33.517+0200] {dag.py:3096} INFO - Sync 1 DAGs
+[2025-06-12T18:43:33.525+0200] {logging_mixin.py:188} INFO - [2025-06-12T18:43:33.525+0200] {dag.py:3954} INFO - Setting next_dagrun for example_complex to None, run_after=None
+[2025-06-12T18:43:33.547+0200] {processor.py:183} INFO - Processing /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_complex.py took 0.063 seconds
+[2025-06-12T18:44:51.077+0200] {processor.py:161} INFO - Started process (PID=400507) to work on /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_complex.py
+[2025-06-12T18:44:51.079+0200] {processor.py:830} INFO - Processing file /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_complex.py for tasks to queue
+[2025-06-12T18:44:51.080+0200] {logging_mixin.py:188} INFO - [2025-06-12T18:44:51.080+0200] {dagbag.py:540} INFO - Filling up the DagBag from /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_complex.py
+[2025-06-12T18:44:51.086+0200] {processor.py:840} INFO - DAG(s) 'example_complex' retrieved from /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_complex.py
+[2025-06-12T18:44:51.102+0200] {logging_mixin.py:188} INFO - [2025-06-12T18:44:51.102+0200] {dag.py:3096} INFO - Sync 1 DAGs
+[2025-06-12T18:44:51.110+0200] {logging_mixin.py:188} INFO - [2025-06-12T18:44:51.110+0200] {dag.py:3954} INFO - Setting next_dagrun for example_complex to None, run_after=None
+[2025-06-12T18:44:51.144+0200] {processor.py:183} INFO - Processing /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_complex.py took 0.071 seconds
+[2025-06-12T18:46:05.977+0200] {processor.py:161} INFO - Started process (PID=400911) to work on /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_complex.py
+[2025-06-12T18:46:05.979+0200] {processor.py:830} INFO - Processing file /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_complex.py for tasks to queue
+[2025-06-12T18:46:05.980+0200] {logging_mixin.py:188} INFO - [2025-06-12T18:46:05.980+0200] {dagbag.py:540} INFO - Filling up the DagBag from /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_complex.py
+[2025-06-12T18:46:05.987+0200] {processor.py:840} INFO - DAG(s) 'example_complex' retrieved from /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_complex.py
+[2025-06-12T18:46:06.004+0200] {logging_mixin.py:188} INFO - [2025-06-12T18:46:06.004+0200] {dag.py:3096} INFO - Sync 1 DAGs
+[2025-06-12T18:46:06.012+0200] {logging_mixin.py:188} INFO - [2025-06-12T18:46:06.012+0200] {dag.py:3954} INFO - Setting next_dagrun for example_complex to None, run_after=None
+[2025-06-12T18:46:06.032+0200] {processor.py:183} INFO - Processing /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_complex.py took 0.060 seconds
+[2025-06-12T18:47:12.945+0200] {processor.py:161} INFO - Started process (PID=401171) to work on /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_complex.py
+[2025-06-12T18:47:12.947+0200] {processor.py:830} INFO - Processing file /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_complex.py for tasks to queue
+[2025-06-12T18:47:12.948+0200] {logging_mixin.py:188} INFO - [2025-06-12T18:47:12.948+0200] {dagbag.py:540} INFO - Filling up the DagBag from /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_complex.py
+[2025-06-12T18:47:12.956+0200] {processor.py:840} INFO - DAG(s) 'example_complex' retrieved from /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_complex.py
+[2025-06-12T18:47:12.974+0200] {logging_mixin.py:188} INFO - [2025-06-12T18:47:12.974+0200] {dag.py:3096} INFO - Sync 1 DAGs
+[2025-06-12T18:47:12.983+0200] {logging_mixin.py:188} INFO - [2025-06-12T18:47:12.983+0200] {dag.py:3954} INFO - Setting next_dagrun for example_complex to None, run_after=None
+[2025-06-12T18:47:13.005+0200] {processor.py:183} INFO - Processing /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_complex.py took 0.064 seconds
+[2025-06-12T18:48:20.907+0200] {processor.py:161} INFO - Started process (PID=401578) to work on /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_complex.py
+[2025-06-12T18:48:20.909+0200] {processor.py:830} INFO - Processing file /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_complex.py for tasks to queue
+[2025-06-12T18:48:20.910+0200] {logging_mixin.py:188} INFO - [2025-06-12T18:48:20.909+0200] {dagbag.py:540} INFO - Filling up the DagBag from /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_complex.py
+[2025-06-12T18:48:20.916+0200] {processor.py:840} INFO - DAG(s) 'example_complex' retrieved from /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_complex.py
+[2025-06-12T18:48:20.932+0200] {logging_mixin.py:188} INFO - [2025-06-12T18:48:20.932+0200] {dag.py:3096} INFO - Sync 1 DAGs
+[2025-06-12T18:48:20.939+0200] {logging_mixin.py:188} INFO - [2025-06-12T18:48:20.939+0200] {dag.py:3954} INFO - Setting next_dagrun for example_complex to None, run_after=None
+[2025-06-12T18:48:20.959+0200] {processor.py:183} INFO - Processing /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_complex.py took 0.057 seconds
+[2025-06-12T18:49:22.247+0200] {processor.py:161} INFO - Started process (PID=402045) to work on /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_complex.py
+[2025-06-12T18:49:22.249+0200] {processor.py:830} INFO - Processing file /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_complex.py for tasks to queue
+[2025-06-12T18:49:22.250+0200] {logging_mixin.py:188} INFO - [2025-06-12T18:49:22.250+0200] {dagbag.py:540} INFO - Filling up the DagBag from /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_complex.py
+[2025-06-12T18:49:22.257+0200] {processor.py:840} INFO - DAG(s) 'example_complex' retrieved from /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_complex.py
+[2025-06-12T18:49:22.275+0200] {logging_mixin.py:188} INFO - [2025-06-12T18:49:22.275+0200] {dag.py:3096} INFO - Sync 1 DAGs
+[2025-06-12T18:49:22.283+0200] {logging_mixin.py:188} INFO - [2025-06-12T18:49:22.283+0200] {dag.py:3954} INFO - Setting next_dagrun for example_complex to None, run_after=None
+[2025-06-12T18:49:22.305+0200] {processor.py:183} INFO - Processing /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_complex.py took 0.063 seconds
+[2025-06-12T18:50:30.722+0200] {processor.py:161} INFO - Started process (PID=402487) to work on /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_complex.py
+[2025-06-12T18:50:30.723+0200] {processor.py:830} INFO - Processing file /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_complex.py for tasks to queue
+[2025-06-12T18:50:30.725+0200] {logging_mixin.py:188} INFO - [2025-06-12T18:50:30.724+0200] {dagbag.py:540} INFO - Filling up the DagBag from /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_complex.py
+[2025-06-12T18:50:30.739+0200] {processor.py:840} INFO - DAG(s) 'example_complex' retrieved from /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_complex.py
+[2025-06-12T18:50:30.767+0200] {logging_mixin.py:188} INFO - [2025-06-12T18:50:30.767+0200] {dag.py:3096} INFO - Sync 1 DAGs
+[2025-06-12T18:50:30.778+0200] {logging_mixin.py:188} INFO - [2025-06-12T18:50:30.778+0200] {dag.py:3954} INFO - Setting next_dagrun for example_complex to None, run_after=None
+[2025-06-12T18:50:30.803+0200] {processor.py:183} INFO - Processing /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_complex.py took 0.085 seconds
+[2025-06-12T18:51:44.273+0200] {processor.py:161} INFO - Started process (PID=403178) to work on /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_complex.py
+[2025-06-12T18:51:44.275+0200] {processor.py:830} INFO - Processing file /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_complex.py for tasks to queue
+[2025-06-12T18:51:44.276+0200] {logging_mixin.py:188} INFO - [2025-06-12T18:51:44.276+0200] {dagbag.py:540} INFO - Filling up the DagBag from /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_complex.py
+[2025-06-12T18:51:44.284+0200] {processor.py:840} INFO - DAG(s) 'example_complex' retrieved from /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_complex.py
+[2025-06-12T18:51:44.302+0200] {logging_mixin.py:188} INFO - [2025-06-12T18:51:44.302+0200] {dag.py:3096} INFO - Sync 1 DAGs
+[2025-06-12T18:51:44.310+0200] {logging_mixin.py:188} INFO - [2025-06-12T18:51:44.309+0200] {dag.py:3954} INFO - Setting next_dagrun for example_complex to None, run_after=None
+[2025-06-12T18:51:44.335+0200] {processor.py:183} INFO - Processing /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_complex.py took 0.066 seconds
+[2025-06-12T18:52:56.715+0200] {processor.py:161} INFO - Started process (PID=403555) to work on /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_complex.py
+[2025-06-12T18:52:56.717+0200] {processor.py:830} INFO - Processing file /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_complex.py for tasks to queue
+[2025-06-12T18:52:56.719+0200] {logging_mixin.py:188} INFO - [2025-06-12T18:52:56.718+0200] {dagbag.py:540} INFO - Filling up the DagBag from /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_complex.py
+[2025-06-12T18:52:56.726+0200] {processor.py:840} INFO - DAG(s) 'example_complex' retrieved from /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_complex.py
+[2025-06-12T18:52:56.749+0200] {logging_mixin.py:188} INFO - [2025-06-12T18:52:56.749+0200] {dag.py:3096} INFO - Sync 1 DAGs
+[2025-06-12T18:52:56.759+0200] {logging_mixin.py:188} INFO - [2025-06-12T18:52:56.758+0200] {dag.py:3954} INFO - Setting next_dagrun for example_complex to None, run_after=None
+[2025-06-12T18:52:56.890+0200] {processor.py:183} INFO - Processing /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_complex.py took 0.179 seconds
+[2025-06-12T18:54:08.611+0200] {processor.py:161} INFO - Started process (PID=403941) to work on /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_complex.py
+[2025-06-12T18:54:08.613+0200] {processor.py:830} INFO - Processing file /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_complex.py for tasks to queue
+[2025-06-12T18:54:08.614+0200] {logging_mixin.py:188} INFO - [2025-06-12T18:54:08.614+0200] {dagbag.py:540} INFO - Filling up the DagBag from /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_complex.py
+[2025-06-12T18:54:08.622+0200] {processor.py:840} INFO - DAG(s) 'example_complex' retrieved from /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_complex.py
+[2025-06-12T18:54:08.644+0200] {logging_mixin.py:188} INFO - [2025-06-12T18:54:08.644+0200] {dag.py:3096} INFO - Sync 1 DAGs
+[2025-06-12T18:54:08.780+0200] {logging_mixin.py:188} INFO - [2025-06-12T18:54:08.780+0200] {dag.py:3954} INFO - Setting next_dagrun for example_complex to None, run_after=None
+[2025-06-12T18:54:08.802+0200] {processor.py:183} INFO - Processing /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_complex.py took 0.197 seconds
+[2025-06-12T18:55:21.257+0200] {processor.py:161} INFO - Started process (PID=404261) to work on /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_complex.py
+[2025-06-12T18:55:21.259+0200] {processor.py:830} INFO - Processing file /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_complex.py for tasks to queue
+[2025-06-12T18:55:21.260+0200] {logging_mixin.py:188} INFO - [2025-06-12T18:55:21.260+0200] {dagbag.py:540} INFO - Filling up the DagBag from /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_complex.py
+[2025-06-12T18:55:21.269+0200] {processor.py:840} INFO - DAG(s) 'example_complex' retrieved from /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_complex.py
+[2025-06-12T18:55:21.290+0200] {logging_mixin.py:188} INFO - [2025-06-12T18:55:21.290+0200] {dag.py:3096} INFO - Sync 1 DAGs
+[2025-06-12T18:55:21.301+0200] {logging_mixin.py:188} INFO - [2025-06-12T18:55:21.301+0200] {dag.py:3954} INFO - Setting next_dagrun for example_complex to None, run_after=None
+[2025-06-12T18:55:21.326+0200] {processor.py:183} INFO - Processing /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_complex.py took 0.073 seconds
+[2025-06-12T18:56:38.882+0200] {processor.py:161} INFO - Started process (PID=404551) to work on /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_complex.py
+[2025-06-12T18:56:38.884+0200] {processor.py:830} INFO - Processing file /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_complex.py for tasks to queue
+[2025-06-12T18:56:38.885+0200] {logging_mixin.py:188} INFO - [2025-06-12T18:56:38.885+0200] {dagbag.py:540} INFO - Filling up the DagBag from /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_complex.py
+[2025-06-12T18:56:38.891+0200] {processor.py:840} INFO - DAG(s) 'example_complex' retrieved from /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_complex.py
+[2025-06-12T18:56:38.907+0200] {logging_mixin.py:188} INFO - [2025-06-12T18:56:38.907+0200] {dag.py:3096} INFO - Sync 1 DAGs
+[2025-06-12T18:56:38.915+0200] {logging_mixin.py:188} INFO - [2025-06-12T18:56:38.914+0200] {dag.py:3954} INFO - Setting next_dagrun for example_complex to None, run_after=None
+[2025-06-12T18:56:38.934+0200] {processor.py:183} INFO - Processing /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_complex.py took 0.056 seconds
+[2025-06-12T18:57:45.012+0200] {processor.py:161} INFO - Started process (PID=404819) to work on /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_complex.py
+[2025-06-12T18:57:45.013+0200] {processor.py:830} INFO - Processing file /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_complex.py for tasks to queue
+[2025-06-12T18:57:45.015+0200] {logging_mixin.py:188} INFO - [2025-06-12T18:57:45.014+0200] {dagbag.py:540} INFO - Filling up the DagBag from /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_complex.py
+[2025-06-12T18:57:45.022+0200] {processor.py:840} INFO - DAG(s) 'example_complex' retrieved from /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_complex.py
+[2025-06-12T18:57:45.043+0200] {logging_mixin.py:188} INFO - [2025-06-12T18:57:45.042+0200] {dag.py:3096} INFO - Sync 1 DAGs
+[2025-06-12T18:57:45.051+0200] {logging_mixin.py:188} INFO - [2025-06-12T18:57:45.051+0200] {dag.py:3954} INFO - Setting next_dagrun for example_complex to None, run_after=None
+[2025-06-12T18:57:45.076+0200] {processor.py:183} INFO - Processing /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_complex.py took 0.070 seconds
+[2025-06-12T18:58:52.135+0200] {processor.py:161} INFO - Started process (PID=405200) to work on /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_complex.py
+[2025-06-12T18:58:52.136+0200] {processor.py:830} INFO - Processing file /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_complex.py for tasks to queue
+[2025-06-12T18:58:52.137+0200] {logging_mixin.py:188} INFO - [2025-06-12T18:58:52.137+0200] {dagbag.py:540} INFO - Filling up the DagBag from /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_complex.py
+[2025-06-12T18:58:52.145+0200] {processor.py:840} INFO - DAG(s) 'example_complex' retrieved from /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_complex.py
+[2025-06-12T18:58:52.163+0200] {logging_mixin.py:188} INFO - [2025-06-12T18:58:52.163+0200] {dag.py:3096} INFO - Sync 1 DAGs
+[2025-06-12T18:58:52.171+0200] {logging_mixin.py:188} INFO - [2025-06-12T18:58:52.171+0200] {dag.py:3954} INFO - Setting next_dagrun for example_complex to None, run_after=None
+[2025-06-12T18:58:52.190+0200] {processor.py:183} INFO - Processing /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_complex.py took 0.060 seconds
+[2025-06-12T18:59:59.595+0200] {processor.py:161} INFO - Started process (PID=405583) to work on /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_complex.py
+[2025-06-12T18:59:59.597+0200] {processor.py:830} INFO - Processing file /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_complex.py for tasks to queue
+[2025-06-12T18:59:59.598+0200] {logging_mixin.py:188} INFO - [2025-06-12T18:59:59.598+0200] {dagbag.py:540} INFO - Filling up the DagBag from /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_complex.py
+[2025-06-12T18:59:59.605+0200] {processor.py:840} INFO - DAG(s) 'example_complex' retrieved from /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_complex.py
+[2025-06-12T18:59:59.622+0200] {logging_mixin.py:188} INFO - [2025-06-12T18:59:59.622+0200] {dag.py:3096} INFO - Sync 1 DAGs
+[2025-06-12T18:59:59.631+0200] {logging_mixin.py:188} INFO - [2025-06-12T18:59:59.631+0200] {dag.py:3954} INFO - Setting next_dagrun for example_complex to None, run_after=None
+[2025-06-12T18:59:59.653+0200] {processor.py:183} INFO - Processing /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_complex.py took 0.063 seconds
+[2025-06-12T19:01:09.936+0200] {processor.py:161} INFO - Started process (PID=405963) to work on /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_complex.py
+[2025-06-12T19:01:09.938+0200] {processor.py:830} INFO - Processing file /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_complex.py for tasks to queue
+[2025-06-12T19:01:09.939+0200] {logging_mixin.py:188} INFO - [2025-06-12T19:01:09.939+0200] {dagbag.py:540} INFO - Filling up the DagBag from /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_complex.py
+[2025-06-12T19:01:09.947+0200] {processor.py:840} INFO - DAG(s) 'example_complex' retrieved from /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_complex.py
+[2025-06-12T19:01:09.969+0200] {logging_mixin.py:188} INFO - [2025-06-12T19:01:09.969+0200] {dag.py:3096} INFO - Sync 1 DAGs
+[2025-06-12T19:01:09.979+0200] {logging_mixin.py:188} INFO - [2025-06-12T19:01:09.979+0200] {dag.py:3954} INFO - Setting next_dagrun for example_complex to None, run_after=None
+[2025-06-12T19:01:10.001+0200] {processor.py:183} INFO - Processing /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_complex.py took 0.070 seconds
+[2025-06-12T19:02:14.177+0200] {processor.py:161} INFO - Started process (PID=406347) to work on /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_complex.py
+[2025-06-12T19:02:14.178+0200] {processor.py:830} INFO - Processing file /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_complex.py for tasks to queue
+[2025-06-12T19:02:14.180+0200] {logging_mixin.py:188} INFO - [2025-06-12T19:02:14.179+0200] {dagbag.py:540} INFO - Filling up the DagBag from /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_complex.py
+[2025-06-12T19:02:14.189+0200] {processor.py:840} INFO - DAG(s) 'example_complex' retrieved from /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_complex.py
+[2025-06-12T19:02:14.207+0200] {logging_mixin.py:188} INFO - [2025-06-12T19:02:14.207+0200] {dag.py:3096} INFO - Sync 1 DAGs
+[2025-06-12T19:02:14.216+0200] {logging_mixin.py:188} INFO - [2025-06-12T19:02:14.216+0200] {dag.py:3954} INFO - Setting next_dagrun for example_complex to None, run_after=None
+[2025-06-12T19:02:14.237+0200] {processor.py:183} INFO - Processing /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_complex.py took 0.066 seconds
+[2025-06-12T19:03:26.561+0200] {processor.py:161} INFO - Started process (PID=406757) to work on /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_complex.py
+[2025-06-12T19:03:26.562+0200] {processor.py:830} INFO - Processing file /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_complex.py for tasks to queue
+[2025-06-12T19:03:26.564+0200] {logging_mixin.py:188} INFO - [2025-06-12T19:03:26.564+0200] {dagbag.py:540} INFO - Filling up the DagBag from /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_complex.py
+[2025-06-12T19:03:26.575+0200] {processor.py:840} INFO - DAG(s) 'example_complex' retrieved from /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_complex.py
+[2025-06-12T19:03:26.596+0200] {logging_mixin.py:188} INFO - [2025-06-12T19:03:26.596+0200] {dag.py:3096} INFO - Sync 1 DAGs
+[2025-06-12T19:03:26.605+0200] {logging_mixin.py:188} INFO - [2025-06-12T19:03:26.605+0200] {dag.py:3954} INFO - Setting next_dagrun for example_complex to None, run_after=None
+[2025-06-12T19:03:26.625+0200] {processor.py:183} INFO - Processing /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_complex.py took 0.071 seconds
+[2025-06-12T19:04:33.215+0200] {processor.py:161} INFO - Started process (PID=407167) to work on /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_complex.py
+[2025-06-12T19:04:33.217+0200] {processor.py:830} INFO - Processing file /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_complex.py for tasks to queue
+[2025-06-12T19:04:33.219+0200] {logging_mixin.py:188} INFO - [2025-06-12T19:04:33.218+0200] {dagbag.py:540} INFO - Filling up the DagBag from /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_complex.py
+[2025-06-12T19:04:33.226+0200] {processor.py:840} INFO - DAG(s) 'example_complex' retrieved from /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_complex.py
+[2025-06-12T19:04:33.244+0200] {logging_mixin.py:188} INFO - [2025-06-12T19:04:33.244+0200] {dag.py:3096} INFO - Sync 1 DAGs
+[2025-06-12T19:04:33.254+0200] {logging_mixin.py:188} INFO - [2025-06-12T19:04:33.254+0200] {dag.py:3954} INFO - Setting next_dagrun for example_complex to None, run_after=None
+[2025-06-12T19:04:33.273+0200] {processor.py:183} INFO - Processing /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_complex.py took 0.063 seconds
+[2025-06-12T19:05:38.647+0200] {processor.py:161} INFO - Started process (PID=407548) to work on /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_complex.py
+[2025-06-12T19:05:38.648+0200] {processor.py:830} INFO - Processing file /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_complex.py for tasks to queue
+[2025-06-12T19:05:38.649+0200] {logging_mixin.py:188} INFO - [2025-06-12T19:05:38.649+0200] {dagbag.py:540} INFO - Filling up the DagBag from /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_complex.py
+[2025-06-12T19:05:38.656+0200] {processor.py:840} INFO - DAG(s) 'example_complex' retrieved from /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_complex.py
+[2025-06-12T19:05:38.675+0200] {logging_mixin.py:188} INFO - [2025-06-12T19:05:38.675+0200] {dag.py:3096} INFO - Sync 1 DAGs
+[2025-06-12T19:05:38.685+0200] {logging_mixin.py:188} INFO - [2025-06-12T19:05:38.685+0200] {dag.py:3954} INFO - Setting next_dagrun for example_complex to None, run_after=None
+[2025-06-12T19:05:38.704+0200] {processor.py:183} INFO - Processing /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_complex.py took 0.063 seconds

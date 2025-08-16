@@ -1,0 +1,210 @@
+[2025-07-08T14:29:34.023+0200] {processor.py:161} INFO - Started process (PID=35664) to work on /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_params_trigger_ui.py
+[2025-07-08T14:29:34.024+0200] {processor.py:830} INFO - Processing file /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_params_trigger_ui.py for tasks to queue
+[2025-07-08T14:29:34.024+0200] {logging_mixin.py:188} INFO - [2025-07-08T14:29:34.024+0200] {dagbag.py:540} INFO - Filling up the DagBag from /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_params_trigger_ui.py
+[2025-07-08T14:29:34.035+0200] {processor.py:840} INFO - DAG(s) 'example_params_trigger_ui' retrieved from /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_params_trigger_ui.py
+[2025-07-08T14:29:34.060+0200] {logging_mixin.py:188} INFO - [2025-07-08T14:29:34.060+0200] {dag.py:3096} INFO - Sync 1 DAGs
+[2025-07-08T14:29:34.069+0200] {logging_mixin.py:188} INFO - [2025-07-08T14:29:34.069+0200] {dag.py:3954} INFO - Setting next_dagrun for example_params_trigger_ui to None, run_after=None
+[2025-07-08T14:29:34.096+0200] {processor.py:183} INFO - Processing /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_params_trigger_ui.py took 0.080 seconds
+[2025-07-08T14:30:29.385+0200] {processor.py:161} INFO - Started process (PID=36043) to work on /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_params_trigger_ui.py
+[2025-07-08T14:30:29.387+0200] {processor.py:830} INFO - Processing file /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_params_trigger_ui.py for tasks to queue
+[2025-07-08T14:30:29.389+0200] {logging_mixin.py:188} INFO - [2025-07-08T14:30:29.388+0200] {dagbag.py:540} INFO - Filling up the DagBag from /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_params_trigger_ui.py
+[2025-07-08T14:30:29.404+0200] {processor.py:840} INFO - DAG(s) 'example_params_trigger_ui' retrieved from /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_params_trigger_ui.py
+[2025-07-08T14:30:29.444+0200] {logging_mixin.py:188} INFO - [2025-07-08T14:30:29.444+0200] {dag.py:3096} INFO - Sync 1 DAGs
+[2025-07-08T14:30:29.454+0200] {logging_mixin.py:188} INFO - [2025-07-08T14:30:29.454+0200] {dag.py:3954} INFO - Setting next_dagrun for example_params_trigger_ui to None, run_after=None
+[2025-07-08T14:30:29.476+0200] {processor.py:183} INFO - Processing /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_params_trigger_ui.py took 0.097 seconds
+[2025-07-08T14:31:26.287+0200] {processor.py:161} INFO - Started process (PID=36323) to work on /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_params_trigger_ui.py
+[2025-07-08T14:31:26.289+0200] {processor.py:830} INFO - Processing file /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_params_trigger_ui.py for tasks to queue
+[2025-07-08T14:31:26.290+0200] {logging_mixin.py:188} INFO - [2025-07-08T14:31:26.290+0200] {dagbag.py:540} INFO - Filling up the DagBag from /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_params_trigger_ui.py
+[2025-07-08T14:31:26.306+0200] {processor.py:840} INFO - DAG(s) 'example_params_trigger_ui' retrieved from /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_params_trigger_ui.py
+[2025-07-08T14:31:26.342+0200] {logging_mixin.py:188} INFO - [2025-07-08T14:31:26.342+0200] {dag.py:3096} INFO - Sync 1 DAGs
+[2025-07-08T14:31:26.354+0200] {logging_mixin.py:188} INFO - [2025-07-08T14:31:26.353+0200] {dag.py:3954} INFO - Setting next_dagrun for example_params_trigger_ui to None, run_after=None
+[2025-07-08T14:31:26.378+0200] {processor.py:183} INFO - Processing /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_params_trigger_ui.py took 0.097 seconds
+[2025-07-08T14:32:24.056+0200] {processor.py:161} INFO - Started process (PID=36698) to work on /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_params_trigger_ui.py
+[2025-07-08T14:32:24.058+0200] {processor.py:830} INFO - Processing file /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_params_trigger_ui.py for tasks to queue
+[2025-07-08T14:32:24.059+0200] {logging_mixin.py:188} INFO - [2025-07-08T14:32:24.059+0200] {dagbag.py:540} INFO - Filling up the DagBag from /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_params_trigger_ui.py
+[2025-07-08T14:32:24.073+0200] {processor.py:840} INFO - DAG(s) 'example_params_trigger_ui' retrieved from /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_params_trigger_ui.py
+[2025-07-08T14:32:24.112+0200] {logging_mixin.py:188} INFO - [2025-07-08T14:32:24.111+0200] {dag.py:3096} INFO - Sync 1 DAGs
+[2025-07-08T14:32:24.123+0200] {logging_mixin.py:188} INFO - [2025-07-08T14:32:24.123+0200] {dag.py:3954} INFO - Setting next_dagrun for example_params_trigger_ui to None, run_after=None
+[2025-07-08T14:32:24.150+0200] {processor.py:183} INFO - Processing /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_params_trigger_ui.py took 0.101 seconds
+[2025-07-08T14:33:22.997+0200] {processor.py:161} INFO - Started process (PID=37006) to work on /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_params_trigger_ui.py
+[2025-07-08T14:33:22.999+0200] {processor.py:830} INFO - Processing file /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_params_trigger_ui.py for tasks to queue
+[2025-07-08T14:33:23.000+0200] {logging_mixin.py:188} INFO - [2025-07-08T14:33:23.000+0200] {dagbag.py:540} INFO - Filling up the DagBag from /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_params_trigger_ui.py
+[2025-07-08T14:33:23.023+0200] {processor.py:840} INFO - DAG(s) 'example_params_trigger_ui' retrieved from /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_params_trigger_ui.py
+[2025-07-08T14:33:23.063+0200] {logging_mixin.py:188} INFO - [2025-07-08T14:33:23.062+0200] {dag.py:3096} INFO - Sync 1 DAGs
+[2025-07-08T14:33:23.075+0200] {logging_mixin.py:188} INFO - [2025-07-08T14:33:23.075+0200] {dag.py:3954} INFO - Setting next_dagrun for example_params_trigger_ui to None, run_after=None
+[2025-07-08T14:33:23.102+0200] {processor.py:183} INFO - Processing /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_params_trigger_ui.py took 0.114 seconds
+[2025-07-08T14:34:26.949+0200] {processor.py:161} INFO - Started process (PID=37345) to work on /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_params_trigger_ui.py
+[2025-07-08T14:34:26.951+0200] {processor.py:830} INFO - Processing file /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_params_trigger_ui.py for tasks to queue
+[2025-07-08T14:34:26.953+0200] {logging_mixin.py:188} INFO - [2025-07-08T14:34:26.952+0200] {dagbag.py:540} INFO - Filling up the DagBag from /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_params_trigger_ui.py
+[2025-07-08T14:34:26.969+0200] {processor.py:840} INFO - DAG(s) 'example_params_trigger_ui' retrieved from /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_params_trigger_ui.py
+[2025-07-08T14:34:26.998+0200] {logging_mixin.py:188} INFO - [2025-07-08T14:34:26.998+0200] {dag.py:3096} INFO - Sync 1 DAGs
+[2025-07-08T14:34:27.008+0200] {logging_mixin.py:188} INFO - [2025-07-08T14:34:27.008+0200] {dag.py:3954} INFO - Setting next_dagrun for example_params_trigger_ui to None, run_after=None
+[2025-07-08T14:34:27.032+0200] {processor.py:183} INFO - Processing /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_params_trigger_ui.py took 0.097 seconds
+[2025-07-08T14:35:26.327+0200] {processor.py:161} INFO - Started process (PID=37654) to work on /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_params_trigger_ui.py
+[2025-07-08T14:35:26.330+0200] {processor.py:830} INFO - Processing file /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_params_trigger_ui.py for tasks to queue
+[2025-07-08T14:35:26.331+0200] {logging_mixin.py:188} INFO - [2025-07-08T14:35:26.330+0200] {dagbag.py:540} INFO - Filling up the DagBag from /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_params_trigger_ui.py
+[2025-07-08T14:35:26.349+0200] {processor.py:840} INFO - DAG(s) 'example_params_trigger_ui' retrieved from /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_params_trigger_ui.py
+[2025-07-08T14:35:26.387+0200] {logging_mixin.py:188} INFO - [2025-07-08T14:35:26.387+0200] {dag.py:3096} INFO - Sync 1 DAGs
+[2025-07-08T14:35:26.397+0200] {logging_mixin.py:188} INFO - [2025-07-08T14:35:26.397+0200] {dag.py:3954} INFO - Setting next_dagrun for example_params_trigger_ui to None, run_after=None
+[2025-07-08T14:35:26.424+0200] {processor.py:183} INFO - Processing /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_params_trigger_ui.py took 0.108 seconds
+[2025-07-08T14:36:21.899+0200] {processor.py:161} INFO - Started process (PID=37960) to work on /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_params_trigger_ui.py
+[2025-07-08T14:36:21.901+0200] {processor.py:830} INFO - Processing file /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_params_trigger_ui.py for tasks to queue
+[2025-07-08T14:36:21.903+0200] {logging_mixin.py:188} INFO - [2025-07-08T14:36:21.902+0200] {dagbag.py:540} INFO - Filling up the DagBag from /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_params_trigger_ui.py
+[2025-07-08T14:36:21.931+0200] {processor.py:840} INFO - DAG(s) 'example_params_trigger_ui' retrieved from /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_params_trigger_ui.py
+[2025-07-08T14:36:21.974+0200] {logging_mixin.py:188} INFO - [2025-07-08T14:36:21.974+0200] {dag.py:3096} INFO - Sync 1 DAGs
+[2025-07-08T14:36:21.985+0200] {logging_mixin.py:188} INFO - [2025-07-08T14:36:21.985+0200] {dag.py:3954} INFO - Setting next_dagrun for example_params_trigger_ui to None, run_after=None
+[2025-07-08T14:36:22.009+0200] {processor.py:183} INFO - Processing /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_params_trigger_ui.py took 0.123 seconds
+[2025-07-08T14:38:26.987+0200] {processor.py:161} INFO - Started process (PID=39172) to work on /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_params_trigger_ui.py
+[2025-07-08T14:38:26.990+0200] {processor.py:830} INFO - Processing file /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_params_trigger_ui.py for tasks to queue
+[2025-07-08T14:38:26.991+0200] {logging_mixin.py:188} INFO - [2025-07-08T14:38:26.991+0200] {dagbag.py:540} INFO - Filling up the DagBag from /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_params_trigger_ui.py
+[2025-07-08T14:38:27.011+0200] {processor.py:840} INFO - DAG(s) 'example_params_trigger_ui' retrieved from /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_params_trigger_ui.py
+[2025-07-08T14:38:27.061+0200] {logging_mixin.py:188} INFO - [2025-07-08T14:38:27.061+0200] {dag.py:3096} INFO - Sync 1 DAGs
+[2025-07-08T14:38:27.078+0200] {logging_mixin.py:188} INFO - [2025-07-08T14:38:27.077+0200] {dag.py:3954} INFO - Setting next_dagrun for example_params_trigger_ui to None, run_after=None
+[2025-07-08T14:38:27.104+0200] {processor.py:183} INFO - Processing /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_params_trigger_ui.py took 0.127 seconds
+[2025-07-08T14:39:18.533+0200] {processor.py:161} INFO - Started process (PID=39521) to work on /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_params_trigger_ui.py
+[2025-07-08T14:39:18.536+0200] {processor.py:830} INFO - Processing file /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_params_trigger_ui.py for tasks to queue
+[2025-07-08T14:39:18.536+0200] {logging_mixin.py:188} INFO - [2025-07-08T14:39:18.536+0200] {dagbag.py:540} INFO - Filling up the DagBag from /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_params_trigger_ui.py
+[2025-07-08T14:39:18.556+0200] {processor.py:840} INFO - DAG(s) 'example_params_trigger_ui' retrieved from /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_params_trigger_ui.py
+[2025-07-08T14:39:18.615+0200] {logging_mixin.py:188} INFO - [2025-07-08T14:39:18.615+0200] {dag.py:3096} INFO - Sync 1 DAGs
+[2025-07-08T14:39:18.631+0200] {logging_mixin.py:188} INFO - [2025-07-08T14:39:18.630+0200] {dag.py:3954} INFO - Setting next_dagrun for example_params_trigger_ui to None, run_after=None
+[2025-07-08T14:39:18.665+0200] {processor.py:183} INFO - Processing /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_params_trigger_ui.py took 0.140 seconds
+[2025-07-08T14:40:17.494+0200] {processor.py:161} INFO - Started process (PID=39827) to work on /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_params_trigger_ui.py
+[2025-07-08T14:40:17.495+0200] {processor.py:830} INFO - Processing file /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_params_trigger_ui.py for tasks to queue
+[2025-07-08T14:40:17.496+0200] {logging_mixin.py:188} INFO - [2025-07-08T14:40:17.496+0200] {dagbag.py:540} INFO - Filling up the DagBag from /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_params_trigger_ui.py
+[2025-07-08T14:40:17.510+0200] {processor.py:840} INFO - DAG(s) 'example_params_trigger_ui' retrieved from /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_params_trigger_ui.py
+[2025-07-08T14:40:17.549+0200] {logging_mixin.py:188} INFO - [2025-07-08T14:40:17.548+0200] {dag.py:3096} INFO - Sync 1 DAGs
+[2025-07-08T14:40:17.560+0200] {logging_mixin.py:188} INFO - [2025-07-08T14:40:17.560+0200] {dag.py:3954} INFO - Setting next_dagrun for example_params_trigger_ui to None, run_after=None
+[2025-07-08T14:40:17.583+0200] {processor.py:183} INFO - Processing /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_params_trigger_ui.py took 0.095 seconds
+[2025-07-08T14:41:22.125+0200] {processor.py:161} INFO - Started process (PID=40169) to work on /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_params_trigger_ui.py
+[2025-07-08T14:41:22.126+0200] {processor.py:830} INFO - Processing file /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_params_trigger_ui.py for tasks to queue
+[2025-07-08T14:41:22.127+0200] {logging_mixin.py:188} INFO - [2025-07-08T14:41:22.127+0200] {dagbag.py:540} INFO - Filling up the DagBag from /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_params_trigger_ui.py
+[2025-07-08T14:41:22.143+0200] {processor.py:840} INFO - DAG(s) 'example_params_trigger_ui' retrieved from /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_params_trigger_ui.py
+[2025-07-08T14:41:22.180+0200] {logging_mixin.py:188} INFO - [2025-07-08T14:41:22.179+0200] {dag.py:3096} INFO - Sync 1 DAGs
+[2025-07-08T14:41:22.192+0200] {logging_mixin.py:188} INFO - [2025-07-08T14:41:22.191+0200] {dag.py:3954} INFO - Setting next_dagrun for example_params_trigger_ui to None, run_after=None
+[2025-07-08T14:41:22.222+0200] {processor.py:183} INFO - Processing /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_params_trigger_ui.py took 0.106 seconds
+[2025-07-08T14:42:23.940+0200] {processor.py:161} INFO - Started process (PID=40480) to work on /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_params_trigger_ui.py
+[2025-07-08T14:42:23.942+0200] {processor.py:830} INFO - Processing file /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_params_trigger_ui.py for tasks to queue
+[2025-07-08T14:42:23.943+0200] {logging_mixin.py:188} INFO - [2025-07-08T14:42:23.942+0200] {dagbag.py:540} INFO - Filling up the DagBag from /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_params_trigger_ui.py
+[2025-07-08T14:42:23.962+0200] {processor.py:840} INFO - DAG(s) 'example_params_trigger_ui' retrieved from /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_params_trigger_ui.py
+[2025-07-08T14:42:24.001+0200] {logging_mixin.py:188} INFO - [2025-07-08T14:42:24.001+0200] {dag.py:3096} INFO - Sync 1 DAGs
+[2025-07-08T14:42:24.015+0200] {logging_mixin.py:188} INFO - [2025-07-08T14:42:24.015+0200] {dag.py:3954} INFO - Setting next_dagrun for example_params_trigger_ui to None, run_after=None
+[2025-07-08T14:42:24.042+0200] {processor.py:183} INFO - Processing /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_params_trigger_ui.py took 0.112 seconds
+[2025-07-08T14:43:28.632+0200] {processor.py:161} INFO - Started process (PID=40859) to work on /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_params_trigger_ui.py
+[2025-07-08T14:43:28.633+0200] {processor.py:830} INFO - Processing file /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_params_trigger_ui.py for tasks to queue
+[2025-07-08T14:43:28.635+0200] {logging_mixin.py:188} INFO - [2025-07-08T14:43:28.634+0200] {dagbag.py:540} INFO - Filling up the DagBag from /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_params_trigger_ui.py
+[2025-07-08T14:43:28.648+0200] {processor.py:840} INFO - DAG(s) 'example_params_trigger_ui' retrieved from /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_params_trigger_ui.py
+[2025-07-08T14:43:28.680+0200] {logging_mixin.py:188} INFO - [2025-07-08T14:43:28.680+0200] {dag.py:3096} INFO - Sync 1 DAGs
+[2025-07-08T14:43:28.693+0200] {logging_mixin.py:188} INFO - [2025-07-08T14:43:28.693+0200] {dag.py:3954} INFO - Setting next_dagrun for example_params_trigger_ui to None, run_after=None
+[2025-07-08T14:43:28.714+0200] {processor.py:183} INFO - Processing /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_params_trigger_ui.py took 0.090 seconds
+[2025-07-08T14:44:31.917+0200] {processor.py:161} INFO - Started process (PID=41202) to work on /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_params_trigger_ui.py
+[2025-07-08T14:44:31.918+0200] {processor.py:830} INFO - Processing file /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_params_trigger_ui.py for tasks to queue
+[2025-07-08T14:44:31.920+0200] {logging_mixin.py:188} INFO - [2025-07-08T14:44:31.919+0200] {dagbag.py:540} INFO - Filling up the DagBag from /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_params_trigger_ui.py
+[2025-07-08T14:44:31.938+0200] {processor.py:840} INFO - DAG(s) 'example_params_trigger_ui' retrieved from /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_params_trigger_ui.py
+[2025-07-08T14:44:31.976+0200] {logging_mixin.py:188} INFO - [2025-07-08T14:44:31.975+0200] {dag.py:3096} INFO - Sync 1 DAGs
+[2025-07-08T14:44:31.987+0200] {logging_mixin.py:188} INFO - [2025-07-08T14:44:31.987+0200] {dag.py:3954} INFO - Setting next_dagrun for example_params_trigger_ui to None, run_after=None
+[2025-07-08T14:44:32.012+0200] {processor.py:183} INFO - Processing /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_params_trigger_ui.py took 0.106 seconds
+[2025-07-08T14:45:33.946+0200] {processor.py:161} INFO - Started process (PID=41543) to work on /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_params_trigger_ui.py
+[2025-07-08T14:45:33.948+0200] {processor.py:830} INFO - Processing file /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_params_trigger_ui.py for tasks to queue
+[2025-07-08T14:45:33.949+0200] {logging_mixin.py:188} INFO - [2025-07-08T14:45:33.949+0200] {dagbag.py:540} INFO - Filling up the DagBag from /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_params_trigger_ui.py
+[2025-07-08T14:45:33.969+0200] {processor.py:840} INFO - DAG(s) 'example_params_trigger_ui' retrieved from /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_params_trigger_ui.py
+[2025-07-08T14:45:34.003+0200] {logging_mixin.py:188} INFO - [2025-07-08T14:45:34.003+0200] {dag.py:3096} INFO - Sync 1 DAGs
+[2025-07-08T14:45:34.014+0200] {logging_mixin.py:188} INFO - [2025-07-08T14:45:34.014+0200] {dag.py:3954} INFO - Setting next_dagrun for example_params_trigger_ui to None, run_after=None
+[2025-07-08T14:45:34.040+0200] {processor.py:183} INFO - Processing /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_params_trigger_ui.py took 0.107 seconds
+[2025-07-08T14:46:33.361+0200] {processor.py:161} INFO - Started process (PID=41854) to work on /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_params_trigger_ui.py
+[2025-07-08T14:46:33.363+0200] {processor.py:830} INFO - Processing file /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_params_trigger_ui.py for tasks to queue
+[2025-07-08T14:46:33.364+0200] {logging_mixin.py:188} INFO - [2025-07-08T14:46:33.364+0200] {dagbag.py:540} INFO - Filling up the DagBag from /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_params_trigger_ui.py
+[2025-07-08T14:46:33.380+0200] {processor.py:840} INFO - DAG(s) 'example_params_trigger_ui' retrieved from /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_params_trigger_ui.py
+[2025-07-08T14:46:33.421+0200] {logging_mixin.py:188} INFO - [2025-07-08T14:46:33.421+0200] {dag.py:3096} INFO - Sync 1 DAGs
+[2025-07-08T14:46:33.434+0200] {logging_mixin.py:188} INFO - [2025-07-08T14:46:33.434+0200] {dag.py:3954} INFO - Setting next_dagrun for example_params_trigger_ui to None, run_after=None
+[2025-07-08T14:46:33.457+0200] {processor.py:183} INFO - Processing /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_params_trigger_ui.py took 0.108 seconds
+[2025-07-08T14:47:32.850+0200] {processor.py:161} INFO - Started process (PID=42162) to work on /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_params_trigger_ui.py
+[2025-07-08T14:47:32.852+0200] {processor.py:830} INFO - Processing file /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_params_trigger_ui.py for tasks to queue
+[2025-07-08T14:47:32.853+0200] {logging_mixin.py:188} INFO - [2025-07-08T14:47:32.853+0200] {dagbag.py:540} INFO - Filling up the DagBag from /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_params_trigger_ui.py
+[2025-07-08T14:47:32.880+0200] {processor.py:840} INFO - DAG(s) 'example_params_trigger_ui' retrieved from /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_params_trigger_ui.py
+[2025-07-08T14:47:32.915+0200] {logging_mixin.py:188} INFO - [2025-07-08T14:47:32.914+0200] {dag.py:3096} INFO - Sync 1 DAGs
+[2025-07-08T14:47:32.930+0200] {logging_mixin.py:188} INFO - [2025-07-08T14:47:32.930+0200] {dag.py:3954} INFO - Setting next_dagrun for example_params_trigger_ui to None, run_after=None
+[2025-07-08T14:47:32.964+0200] {processor.py:183} INFO - Processing /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_params_trigger_ui.py took 0.125 seconds
+[2025-07-08T14:48:36.957+0200] {processor.py:161} INFO - Started process (PID=42505) to work on /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_params_trigger_ui.py
+[2025-07-08T14:48:36.960+0200] {processor.py:830} INFO - Processing file /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_params_trigger_ui.py for tasks to queue
+[2025-07-08T14:48:36.961+0200] {logging_mixin.py:188} INFO - [2025-07-08T14:48:36.961+0200] {dagbag.py:540} INFO - Filling up the DagBag from /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_params_trigger_ui.py
+[2025-07-08T14:48:36.981+0200] {processor.py:840} INFO - DAG(s) 'example_params_trigger_ui' retrieved from /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_params_trigger_ui.py
+[2025-07-08T14:48:37.032+0200] {logging_mixin.py:188} INFO - [2025-07-08T14:48:37.032+0200] {dag.py:3096} INFO - Sync 1 DAGs
+[2025-07-08T14:48:37.044+0200] {logging_mixin.py:188} INFO - [2025-07-08T14:48:37.044+0200] {dag.py:3954} INFO - Setting next_dagrun for example_params_trigger_ui to None, run_after=None
+[2025-07-08T14:48:37.081+0200] {processor.py:183} INFO - Processing /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_params_trigger_ui.py took 0.137 seconds
+[2025-07-08T14:49:40.955+0200] {processor.py:161} INFO - Started process (PID=42848) to work on /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_params_trigger_ui.py
+[2025-07-08T14:49:40.957+0200] {processor.py:830} INFO - Processing file /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_params_trigger_ui.py for tasks to queue
+[2025-07-08T14:49:40.958+0200] {logging_mixin.py:188} INFO - [2025-07-08T14:49:40.958+0200] {dagbag.py:540} INFO - Filling up the DagBag from /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_params_trigger_ui.py
+[2025-07-08T14:49:40.976+0200] {processor.py:840} INFO - DAG(s) 'example_params_trigger_ui' retrieved from /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_params_trigger_ui.py
+[2025-07-08T14:49:41.021+0200] {logging_mixin.py:188} INFO - [2025-07-08T14:49:41.021+0200] {dag.py:3096} INFO - Sync 1 DAGs
+[2025-07-08T14:49:41.032+0200] {logging_mixin.py:188} INFO - [2025-07-08T14:49:41.031+0200] {dag.py:3954} INFO - Setting next_dagrun for example_params_trigger_ui to None, run_after=None
+[2025-07-08T14:49:41.063+0200] {processor.py:183} INFO - Processing /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_params_trigger_ui.py took 0.119 seconds
+[2025-07-08T14:50:45.903+0200] {processor.py:161} INFO - Started process (PID=43222) to work on /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_params_trigger_ui.py
+[2025-07-08T14:50:45.906+0200] {processor.py:830} INFO - Processing file /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_params_trigger_ui.py for tasks to queue
+[2025-07-08T14:50:45.907+0200] {logging_mixin.py:188} INFO - [2025-07-08T14:50:45.906+0200] {dagbag.py:540} INFO - Filling up the DagBag from /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_params_trigger_ui.py
+[2025-07-08T14:50:45.934+0200] {processor.py:840} INFO - DAG(s) 'example_params_trigger_ui' retrieved from /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_params_trigger_ui.py
+[2025-07-08T14:50:45.965+0200] {logging_mixin.py:188} INFO - [2025-07-08T14:50:45.964+0200] {dag.py:3096} INFO - Sync 1 DAGs
+[2025-07-08T14:50:45.975+0200] {logging_mixin.py:188} INFO - [2025-07-08T14:50:45.975+0200] {dag.py:3954} INFO - Setting next_dagrun for example_params_trigger_ui to None, run_after=None
+[2025-07-08T14:50:45.999+0200] {processor.py:183} INFO - Processing /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_params_trigger_ui.py took 0.110 seconds
+[2025-07-08T14:51:42.622+0200] {processor.py:161} INFO - Started process (PID=43501) to work on /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_params_trigger_ui.py
+[2025-07-08T14:51:42.624+0200] {processor.py:830} INFO - Processing file /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_params_trigger_ui.py for tasks to queue
+[2025-07-08T14:51:42.625+0200] {logging_mixin.py:188} INFO - [2025-07-08T14:51:42.624+0200] {dagbag.py:540} INFO - Filling up the DagBag from /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_params_trigger_ui.py
+[2025-07-08T14:51:42.639+0200] {processor.py:840} INFO - DAG(s) 'example_params_trigger_ui' retrieved from /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_params_trigger_ui.py
+[2025-07-08T14:51:42.668+0200] {logging_mixin.py:188} INFO - [2025-07-08T14:51:42.668+0200] {dag.py:3096} INFO - Sync 1 DAGs
+[2025-07-08T14:51:42.678+0200] {logging_mixin.py:188} INFO - [2025-07-08T14:51:42.678+0200] {dag.py:3954} INFO - Setting next_dagrun for example_params_trigger_ui to None, run_after=None
+[2025-07-08T14:51:42.698+0200] {processor.py:183} INFO - Processing /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_params_trigger_ui.py took 0.087 seconds
+[2025-07-08T15:59:41.256+0200] {processor.py:161} INFO - Started process (PID=43868) to work on /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_params_trigger_ui.py
+[2025-07-08T15:59:41.267+0200] {processor.py:830} INFO - Processing file /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_params_trigger_ui.py for tasks to queue
+[2025-07-08T15:59:41.269+0200] {logging_mixin.py:188} INFO - [2025-07-08T15:59:41.268+0200] {dagbag.py:540} INFO - Filling up the DagBag from /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_params_trigger_ui.py
+[2025-07-08T15:59:41.333+0200] {processor.py:840} INFO - DAG(s) 'example_params_trigger_ui' retrieved from /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_params_trigger_ui.py
+[2025-07-08T15:59:41.467+0200] {logging_mixin.py:188} INFO - [2025-07-08T15:59:41.467+0200] {dag.py:3096} INFO - Sync 1 DAGs
+[2025-07-08T15:59:41.508+0200] {logging_mixin.py:188} INFO - [2025-07-08T15:59:41.507+0200] {dag.py:3954} INFO - Setting next_dagrun for example_params_trigger_ui to None, run_after=None
+[2025-07-08T15:59:41.561+0200] {processor.py:183} INFO - Processing /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_params_trigger_ui.py took 0.323 seconds
+[2025-07-08T16:00:51.351+0200] {processor.py:161} INFO - Started process (PID=44291) to work on /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_params_trigger_ui.py
+[2025-07-08T16:00:51.358+0200] {processor.py:830} INFO - Processing file /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_params_trigger_ui.py for tasks to queue
+[2025-07-08T16:00:51.359+0200] {logging_mixin.py:188} INFO - [2025-07-08T16:00:51.358+0200] {dagbag.py:540} INFO - Filling up the DagBag from /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_params_trigger_ui.py
+[2025-07-08T16:00:51.373+0200] {processor.py:840} INFO - DAG(s) 'example_params_trigger_ui' retrieved from /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_params_trigger_ui.py
+[2025-07-08T16:00:51.424+0200] {logging_mixin.py:188} INFO - [2025-07-08T16:00:51.423+0200] {dag.py:3096} INFO - Sync 1 DAGs
+[2025-07-08T16:00:51.435+0200] {logging_mixin.py:188} INFO - [2025-07-08T16:00:51.435+0200] {dag.py:3954} INFO - Setting next_dagrun for example_params_trigger_ui to None, run_after=None
+[2025-07-08T16:00:51.485+0200] {processor.py:183} INFO - Processing /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_params_trigger_ui.py took 0.139 seconds
+[2025-07-08T16:01:47.681+0200] {processor.py:161} INFO - Started process (PID=44569) to work on /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_params_trigger_ui.py
+[2025-07-08T16:01:47.683+0200] {processor.py:830} INFO - Processing file /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_params_trigger_ui.py for tasks to queue
+[2025-07-08T16:01:47.684+0200] {logging_mixin.py:188} INFO - [2025-07-08T16:01:47.683+0200] {dagbag.py:540} INFO - Filling up the DagBag from /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_params_trigger_ui.py
+[2025-07-08T16:01:47.697+0200] {processor.py:840} INFO - DAG(s) 'example_params_trigger_ui' retrieved from /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_params_trigger_ui.py
+[2025-07-08T16:01:47.729+0200] {logging_mixin.py:188} INFO - [2025-07-08T16:01:47.729+0200] {dag.py:3096} INFO - Sync 1 DAGs
+[2025-07-08T16:01:47.742+0200] {logging_mixin.py:188} INFO - [2025-07-08T16:01:47.741+0200] {dag.py:3954} INFO - Setting next_dagrun for example_params_trigger_ui to None, run_after=None
+[2025-07-08T16:01:47.774+0200] {processor.py:183} INFO - Processing /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_params_trigger_ui.py took 0.100 seconds
+[2025-07-08T16:02:41.872+0200] {processor.py:161} INFO - Started process (PID=44876) to work on /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_params_trigger_ui.py
+[2025-07-08T16:02:41.874+0200] {processor.py:830} INFO - Processing file /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_params_trigger_ui.py for tasks to queue
+[2025-07-08T16:02:41.875+0200] {logging_mixin.py:188} INFO - [2025-07-08T16:02:41.874+0200] {dagbag.py:540} INFO - Filling up the DagBag from /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_params_trigger_ui.py
+[2025-07-08T16:02:41.888+0200] {processor.py:840} INFO - DAG(s) 'example_params_trigger_ui' retrieved from /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_params_trigger_ui.py
+[2025-07-08T16:02:41.917+0200] {logging_mixin.py:188} INFO - [2025-07-08T16:02:41.916+0200] {dag.py:3096} INFO - Sync 1 DAGs
+[2025-07-08T16:02:41.925+0200] {logging_mixin.py:188} INFO - [2025-07-08T16:02:41.925+0200] {dag.py:3954} INFO - Setting next_dagrun for example_params_trigger_ui to None, run_after=None
+[2025-07-08T16:02:41.954+0200] {processor.py:183} INFO - Processing /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_params_trigger_ui.py took 0.087 seconds
+[2025-07-08T16:03:39.232+0200] {processor.py:161} INFO - Started process (PID=45183) to work on /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_params_trigger_ui.py
+[2025-07-08T16:03:39.234+0200] {processor.py:830} INFO - Processing file /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_params_trigger_ui.py for tasks to queue
+[2025-07-08T16:03:39.236+0200] {logging_mixin.py:188} INFO - [2025-07-08T16:03:39.235+0200] {dagbag.py:540} INFO - Filling up the DagBag from /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_params_trigger_ui.py
+[2025-07-08T16:03:39.248+0200] {processor.py:840} INFO - DAG(s) 'example_params_trigger_ui' retrieved from /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_params_trigger_ui.py
+[2025-07-08T16:03:39.279+0200] {logging_mixin.py:188} INFO - [2025-07-08T16:03:39.278+0200] {dag.py:3096} INFO - Sync 1 DAGs
+[2025-07-08T16:03:39.289+0200] {logging_mixin.py:188} INFO - [2025-07-08T16:03:39.289+0200] {dag.py:3954} INFO - Setting next_dagrun for example_params_trigger_ui to None, run_after=None
+[2025-07-08T16:03:39.308+0200] {processor.py:183} INFO - Processing /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_params_trigger_ui.py took 0.081 seconds
+[2025-07-08T16:04:29.501+0200] {processor.py:161} INFO - Started process (PID=45456) to work on /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_params_trigger_ui.py
+[2025-07-08T16:04:29.502+0200] {processor.py:830} INFO - Processing file /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_params_trigger_ui.py for tasks to queue
+[2025-07-08T16:04:29.503+0200] {logging_mixin.py:188} INFO - [2025-07-08T16:04:29.503+0200] {dagbag.py:540} INFO - Filling up the DagBag from /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_params_trigger_ui.py
+[2025-07-08T16:04:29.514+0200] {processor.py:840} INFO - DAG(s) 'example_params_trigger_ui' retrieved from /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_params_trigger_ui.py
+[2025-07-08T16:04:29.540+0200] {logging_mixin.py:188} INFO - [2025-07-08T16:04:29.540+0200] {dag.py:3096} INFO - Sync 1 DAGs
+[2025-07-08T16:04:29.550+0200] {logging_mixin.py:188} INFO - [2025-07-08T16:04:29.550+0200] {dag.py:3954} INFO - Setting next_dagrun for example_params_trigger_ui to None, run_after=None
+[2025-07-08T16:04:29.576+0200] {processor.py:183} INFO - Processing /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_params_trigger_ui.py took 0.082 seconds
+[2025-07-08T16:05:26.530+0200] {processor.py:161} INFO - Started process (PID=45762) to work on /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_params_trigger_ui.py
+[2025-07-08T16:05:26.532+0200] {processor.py:830} INFO - Processing file /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_params_trigger_ui.py for tasks to queue
+[2025-07-08T16:05:26.533+0200] {logging_mixin.py:188} INFO - [2025-07-08T16:05:26.532+0200] {dagbag.py:540} INFO - Filling up the DagBag from /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_params_trigger_ui.py
+[2025-07-08T16:05:26.544+0200] {processor.py:840} INFO - DAG(s) 'example_params_trigger_ui' retrieved from /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_params_trigger_ui.py
+[2025-07-08T16:05:26.567+0200] {logging_mixin.py:188} INFO - [2025-07-08T16:05:26.567+0200] {dag.py:3096} INFO - Sync 1 DAGs
+[2025-07-08T16:05:26.577+0200] {logging_mixin.py:188} INFO - [2025-07-08T16:05:26.577+0200] {dag.py:3954} INFO - Setting next_dagrun for example_params_trigger_ui to None, run_after=None
+[2025-07-08T16:05:26.596+0200] {processor.py:183} INFO - Processing /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_params_trigger_ui.py took 0.070 seconds
+[2025-07-08T19:07:45.548+0200] {processor.py:161} INFO - Started process (PID=46073) to work on /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_params_trigger_ui.py
+[2025-07-08T19:07:45.550+0200] {processor.py:830} INFO - Processing file /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_params_trigger_ui.py for tasks to queue
+[2025-07-08T19:07:45.552+0200] {logging_mixin.py:188} INFO - [2025-07-08T19:07:45.551+0200] {dagbag.py:540} INFO - Filling up the DagBag from /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_params_trigger_ui.py
+[2025-07-08T19:07:45.621+0200] {processor.py:840} INFO - DAG(s) 'example_params_trigger_ui' retrieved from /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_params_trigger_ui.py
+[2025-07-10T11:08:52.175+0200] {logging_mixin.py:188} INFO - [2025-07-10T11:08:52.174+0200] {dag.py:3096} INFO - Sync 1 DAGs
+[2025-07-10T11:08:52.230+0200] {logging_mixin.py:188} INFO - [2025-07-10T11:08:52.230+0200] {dag.py:3954} INFO - Setting next_dagrun for example_params_trigger_ui to None, run_after=None
+[2025-07-10T11:08:53.807+0200] {processor.py:183} INFO - Processing /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_params_trigger_ui.py took 1.923 seconds

@@ -1,0 +1,25 @@
+[2025-06-13T20:34:54.869+0200] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2025-06-13T20:34:54.878+0200] {taskinstance.py:2073} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: macro_trading_dag.compute_assets_performance manual__2025-06-13T18:34:11.743359+00:00 [queued]>
+[2025-06-13T20:34:54.882+0200] {taskinstance.py:2073} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: macro_trading_dag.compute_assets_performance manual__2025-06-13T18:34:11.743359+00:00 [queued]>
+[2025-06-13T20:34:54.883+0200] {taskinstance.py:2303} INFO - Starting attempt 1 of 3
+[2025-06-13T20:34:54.899+0200] {taskinstance.py:2327} INFO - Executing <Task(SparkSubmitOperator): compute_assets_performance> on 2025-06-13 18:34:11.743359+00:00
+[2025-06-13T20:34:54.905+0200] {standard_task_runner.py:90} INFO - Running: ['airflow', 'tasks', 'run', 'macro_trading_dag', 'compute_assets_performance', 'manual__2025-06-13T18:34:11.743359+00:00', '--job-id', '535', '--raw', '--subdir', 'DAGS_FOLDER/macro_trading_dag.py', '--cfg-path', '/tmp/tmpybg22np4']
+[2025-06-13T20:34:54.906+0200] {standard_task_runner.py:91} INFO - Job 535: Subtask compute_assets_performance
+[2025-06-13T20:34:54.912+0200] {logging_mixin.py:188} WARNING - /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/task/task_runner/standard_task_runner.py:61 DeprecationWarning: This process (pid=545103) is multi-threaded, use of fork() may lead to deadlocks in the child.
+[2025-06-13T20:34:54.912+0200] {standard_task_runner.py:63} INFO - Started process 545114 to run task
+[2025-06-13T20:34:54.955+0200] {task_command.py:426} INFO - Running <TaskInstance: macro_trading_dag.compute_assets_performance manual__2025-06-13T18:34:11.743359+00:00 [running]> on host N15I711-16GR512.localdomain
+[2025-06-13T20:34:55.009+0200] {taskinstance.py:2644} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='airflow' AIRFLOW_CTX_DAG_ID='macro_trading_dag' AIRFLOW_CTX_TASK_ID='compute_assets_performance' AIRFLOW_CTX_EXECUTION_DATE='2025-06-13T18:34:11.743359+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-06-13T18:34:11.743359+00:00'
+[2025-06-13T20:34:55.010+0200] {taskinstance.py:430} INFO - ::endgroup::
+[2025-06-13T20:34:55.013+0200] {base.py:84} INFO - Using connection ID 'spark_local' for task execution.
+[2025-06-13T20:34:55.013+0200] {spark_submit.py:351} INFO - Spark-Submit cmd: spark-submit --master local[*] --conf spark.pyspark.python=/home/leoja/airflow_venv/bin/python --conf spark.pyspark.driver.python=/home/leoja/airflow_venv/bin/python --name compute_assets_performance /home/leoja/airflow/spark_jobs/compute_assets_performance.py /home/leoja/airflow/data/quadrants.parquet /home/leoja/airflow/data/Assets_daily.parquet /home/leoja/airflow/data/assets_performance_by_quadrant.parquet
+[2025-06-13T20:34:56.304+0200] {spark_submit.py:521} INFO - 25/06/13 20:34:56 WARN Utils: Your hostname, N15I711-16GR512 resolves to a loopback address: 127.0.1.1; using 10.255.255.254 instead (on interface lo)
+[2025-06-13T20:34:56.307+0200] {spark_submit.py:521} INFO - 25/06/13 20:34:56 WARN Utils: Set SPARK_LOCAL_IP if you need to bind to another address
+[2025-06-13T20:34:58.345+0200] {spark_submit.py:521} INFO - [compute_assets_performance] Parquet écrit → /home/leoja/airflow/data/assets_performance_by_quadrant.parquet
+[2025-06-13T20:34:58.349+0200] {spark_submit.py:521} INFO - [compute_assets_performance] CSV écrit     → /home/leoja/airflow/data/assets_performance_by_quadrant.csv
+[2025-06-13T20:34:58.469+0200] {spark_submit.py:521} INFO - 25/06/13 20:34:58 INFO ShutdownHookManager: Shutdown hook called
+[2025-06-13T20:34:58.469+0200] {spark_submit.py:521} INFO - 25/06/13 20:34:58 INFO ShutdownHookManager: Deleting directory /tmp/spark-0379afdd-d8a6-4ee3-973c-c13394d49ac6
+[2025-06-13T20:34:58.500+0200] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2025-06-13T20:34:58.504+0200] {taskinstance.py:1205} INFO - Marking task as SUCCESS. dag_id=macro_trading_dag, task_id=compute_assets_performance, execution_date=20250613T183411, start_date=20250613T183454, end_date=20250613T183458
+[2025-06-13T20:34:58.540+0200] {local_task_job_runner.py:240} INFO - Task exited with return code 0
+[2025-06-13T20:34:58.556+0200] {taskinstance.py:3482} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2025-06-13T20:34:58.564+0200] {local_task_job_runner.py:222} INFO - ::endgroup::

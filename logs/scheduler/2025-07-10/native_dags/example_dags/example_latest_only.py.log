@@ -1,0 +1,140 @@
+[2025-07-10T11:11:25.176+0200] {processor.py:161} INFO - Started process (PID=49208) to work on /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_latest_only.py
+[2025-07-10T11:11:25.177+0200] {processor.py:830} INFO - Processing file /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_latest_only.py for tasks to queue
+[2025-07-10T11:11:25.178+0200] {logging_mixin.py:188} INFO - [2025-07-10T11:11:25.177+0200] {dagbag.py:540} INFO - Filling up the DagBag from /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_latest_only.py
+[2025-07-10T11:11:25.182+0200] {processor.py:840} INFO - DAG(s) 'latest_only' retrieved from /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_latest_only.py
+[2025-07-10T11:11:25.196+0200] {logging_mixin.py:188} INFO - [2025-07-10T11:11:25.196+0200] {dag.py:3096} INFO - Sync 1 DAGs
+[2025-07-10T11:11:25.210+0200] {logging_mixin.py:188} INFO - [2025-07-10T11:11:25.210+0200] {dag.py:3954} INFO - Setting next_dagrun for latest_only to 2025-07-10 04:00:00+00:00, run_after=2025-07-10 08:00:00+00:00
+[2025-07-10T11:11:25.233+0200] {processor.py:183} INFO - Processing /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_latest_only.py took 0.061 seconds
+[2025-07-10T11:12:22.581+0200] {processor.py:161} INFO - Started process (PID=49564) to work on /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_latest_only.py
+[2025-07-10T11:12:22.583+0200] {processor.py:830} INFO - Processing file /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_latest_only.py for tasks to queue
+[2025-07-10T11:12:22.584+0200] {logging_mixin.py:188} INFO - [2025-07-10T11:12:22.583+0200] {dagbag.py:540} INFO - Filling up the DagBag from /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_latest_only.py
+[2025-07-10T11:12:22.591+0200] {processor.py:840} INFO - DAG(s) 'latest_only' retrieved from /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_latest_only.py
+[2025-07-10T11:12:22.613+0200] {logging_mixin.py:188} INFO - [2025-07-10T11:12:22.613+0200] {dag.py:3096} INFO - Sync 1 DAGs
+[2025-07-10T11:12:22.644+0200] {logging_mixin.py:188} INFO - [2025-07-10T11:12:22.643+0200] {dag.py:3954} INFO - Setting next_dagrun for latest_only to 2025-07-10 04:00:00+00:00, run_after=2025-07-10 08:00:00+00:00
+[2025-07-10T11:12:22.669+0200] {processor.py:183} INFO - Processing /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_latest_only.py took 0.095 seconds
+[2025-07-10T11:13:16.221+0200] {processor.py:161} INFO - Started process (PID=49824) to work on /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_latest_only.py
+[2025-07-10T11:13:16.223+0200] {processor.py:830} INFO - Processing file /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_latest_only.py for tasks to queue
+[2025-07-10T11:13:16.224+0200] {logging_mixin.py:188} INFO - [2025-07-10T11:13:16.223+0200] {dagbag.py:540} INFO - Filling up the DagBag from /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_latest_only.py
+[2025-07-10T11:13:16.227+0200] {processor.py:840} INFO - DAG(s) 'latest_only' retrieved from /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_latest_only.py
+[2025-07-10T11:13:16.244+0200] {logging_mixin.py:188} INFO - [2025-07-10T11:13:16.243+0200] {dag.py:3096} INFO - Sync 1 DAGs
+[2025-07-10T11:13:16.266+0200] {logging_mixin.py:188} INFO - [2025-07-10T11:13:16.266+0200] {dag.py:3954} INFO - Setting next_dagrun for latest_only to 2025-07-10 04:00:00+00:00, run_after=2025-07-10 08:00:00+00:00
+[2025-07-10T11:13:16.287+0200] {processor.py:183} INFO - Processing /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_latest_only.py took 0.070 seconds
+[2025-07-10T11:14:16.249+0200] {processor.py:161} INFO - Started process (PID=50186) to work on /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_latest_only.py
+[2025-07-10T11:14:16.251+0200] {processor.py:830} INFO - Processing file /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_latest_only.py for tasks to queue
+[2025-07-10T11:14:16.253+0200] {logging_mixin.py:188} INFO - [2025-07-10T11:14:16.252+0200] {dagbag.py:540} INFO - Filling up the DagBag from /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_latest_only.py
+[2025-07-10T11:14:16.257+0200] {processor.py:840} INFO - DAG(s) 'latest_only' retrieved from /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_latest_only.py
+[2025-07-10T11:14:16.269+0200] {logging_mixin.py:188} INFO - [2025-07-10T11:14:16.269+0200] {dag.py:3096} INFO - Sync 1 DAGs
+[2025-07-10T11:14:16.281+0200] {logging_mixin.py:188} INFO - [2025-07-10T11:14:16.281+0200] {dag.py:3954} INFO - Setting next_dagrun for latest_only to 2025-07-10 04:00:00+00:00, run_after=2025-07-10 08:00:00+00:00
+[2025-07-10T11:14:16.304+0200] {processor.py:183} INFO - Processing /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_latest_only.py took 0.060 seconds
+[2025-07-10T11:15:11.346+0200] {processor.py:161} INFO - Started process (PID=50483) to work on /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_latest_only.py
+[2025-07-10T11:15:11.347+0200] {processor.py:830} INFO - Processing file /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_latest_only.py for tasks to queue
+[2025-07-10T11:15:11.348+0200] {logging_mixin.py:188} INFO - [2025-07-10T11:15:11.347+0200] {dagbag.py:540} INFO - Filling up the DagBag from /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_latest_only.py
+[2025-07-10T11:15:11.354+0200] {processor.py:840} INFO - DAG(s) 'latest_only' retrieved from /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_latest_only.py
+[2025-07-10T11:15:11.371+0200] {logging_mixin.py:188} INFO - [2025-07-10T11:15:11.370+0200] {dag.py:3096} INFO - Sync 1 DAGs
+[2025-07-10T11:15:11.392+0200] {logging_mixin.py:188} INFO - [2025-07-10T11:15:11.392+0200] {dag.py:3954} INFO - Setting next_dagrun for latest_only to 2025-07-10 04:00:00+00:00, run_after=2025-07-10 08:00:00+00:00
+[2025-07-10T11:15:11.418+0200] {processor.py:183} INFO - Processing /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_latest_only.py took 0.077 seconds
+[2025-07-10T11:16:02.465+0200] {processor.py:161} INFO - Started process (PID=50770) to work on /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_latest_only.py
+[2025-07-10T11:16:02.466+0200] {processor.py:830} INFO - Processing file /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_latest_only.py for tasks to queue
+[2025-07-10T11:16:02.467+0200] {logging_mixin.py:188} INFO - [2025-07-10T11:16:02.466+0200] {dagbag.py:540} INFO - Filling up the DagBag from /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_latest_only.py
+[2025-07-10T11:16:02.472+0200] {processor.py:840} INFO - DAG(s) 'latest_only' retrieved from /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_latest_only.py
+[2025-07-10T11:16:02.485+0200] {logging_mixin.py:188} INFO - [2025-07-10T11:16:02.484+0200] {dag.py:3096} INFO - Sync 1 DAGs
+[2025-07-10T11:16:02.595+0200] {logging_mixin.py:188} INFO - [2025-07-10T11:16:02.595+0200] {dag.py:3954} INFO - Setting next_dagrun for latest_only to 2025-07-10 04:00:00+00:00, run_after=2025-07-10 08:00:00+00:00
+[2025-07-10T11:16:02.613+0200] {processor.py:183} INFO - Processing /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_latest_only.py took 0.153 seconds
+[2025-07-10T11:16:59.911+0200] {processor.py:161} INFO - Started process (PID=51125) to work on /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_latest_only.py
+[2025-07-10T11:16:59.913+0200] {processor.py:830} INFO - Processing file /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_latest_only.py for tasks to queue
+[2025-07-10T11:16:59.913+0200] {logging_mixin.py:188} INFO - [2025-07-10T11:16:59.913+0200] {dagbag.py:540} INFO - Filling up the DagBag from /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_latest_only.py
+[2025-07-10T11:16:59.918+0200] {processor.py:840} INFO - DAG(s) 'latest_only' retrieved from /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_latest_only.py
+[2025-07-10T11:16:59.930+0200] {logging_mixin.py:188} INFO - [2025-07-10T11:16:59.930+0200] {dag.py:3096} INFO - Sync 1 DAGs
+[2025-07-10T11:16:59.943+0200] {logging_mixin.py:188} INFO - [2025-07-10T11:16:59.943+0200] {dag.py:3954} INFO - Setting next_dagrun for latest_only to 2025-07-10 04:00:00+00:00, run_after=2025-07-10 08:00:00+00:00
+[2025-07-10T11:16:59.982+0200] {processor.py:183} INFO - Processing /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_latest_only.py took 0.075 seconds
+[2025-07-10T11:17:51.715+0200] {processor.py:161} INFO - Started process (PID=51409) to work on /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_latest_only.py
+[2025-07-10T11:17:51.720+0200] {processor.py:830} INFO - Processing file /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_latest_only.py for tasks to queue
+[2025-07-10T11:17:51.721+0200] {logging_mixin.py:188} INFO - [2025-07-10T11:17:51.721+0200] {dagbag.py:540} INFO - Filling up the DagBag from /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_latest_only.py
+[2025-07-10T11:17:51.725+0200] {processor.py:840} INFO - DAG(s) 'latest_only' retrieved from /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_latest_only.py
+[2025-07-10T11:17:51.736+0200] {logging_mixin.py:188} INFO - [2025-07-10T11:17:51.736+0200] {dag.py:3096} INFO - Sync 1 DAGs
+[2025-07-10T11:17:51.747+0200] {logging_mixin.py:188} INFO - [2025-07-10T11:17:51.747+0200] {dag.py:3954} INFO - Setting next_dagrun for latest_only to 2025-07-10 04:00:00+00:00, run_after=2025-07-10 08:00:00+00:00
+[2025-07-10T11:17:51.771+0200] {processor.py:183} INFO - Processing /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_latest_only.py took 0.061 seconds
+[2025-07-10T11:18:48.322+0200] {processor.py:161} INFO - Started process (PID=51789) to work on /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_latest_only.py
+[2025-07-10T11:18:48.323+0200] {processor.py:830} INFO - Processing file /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_latest_only.py for tasks to queue
+[2025-07-10T11:18:48.324+0200] {logging_mixin.py:188} INFO - [2025-07-10T11:18:48.324+0200] {dagbag.py:540} INFO - Filling up the DagBag from /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_latest_only.py
+[2025-07-10T11:18:48.328+0200] {processor.py:840} INFO - DAG(s) 'latest_only' retrieved from /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_latest_only.py
+[2025-07-10T11:18:48.339+0200] {logging_mixin.py:188} INFO - [2025-07-10T11:18:48.339+0200] {dag.py:3096} INFO - Sync 1 DAGs
+[2025-07-10T11:18:48.351+0200] {logging_mixin.py:188} INFO - [2025-07-10T11:18:48.351+0200] {dag.py:3954} INFO - Setting next_dagrun for latest_only to 2025-07-10 04:00:00+00:00, run_after=2025-07-10 08:00:00+00:00
+[2025-07-10T11:18:48.371+0200] {processor.py:183} INFO - Processing /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_latest_only.py took 0.054 seconds
+[2025-07-10T11:19:39.319+0200] {processor.py:161} INFO - Started process (PID=52052) to work on /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_latest_only.py
+[2025-07-10T11:19:39.321+0200] {processor.py:830} INFO - Processing file /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_latest_only.py for tasks to queue
+[2025-07-10T11:19:39.321+0200] {logging_mixin.py:188} INFO - [2025-07-10T11:19:39.321+0200] {dagbag.py:540} INFO - Filling up the DagBag from /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_latest_only.py
+[2025-07-10T11:19:39.325+0200] {processor.py:840} INFO - DAG(s) 'latest_only' retrieved from /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_latest_only.py
+[2025-07-10T11:19:39.335+0200] {logging_mixin.py:188} INFO - [2025-07-10T11:19:39.335+0200] {dag.py:3096} INFO - Sync 1 DAGs
+[2025-07-10T11:19:39.347+0200] {logging_mixin.py:188} INFO - [2025-07-10T11:19:39.347+0200] {dag.py:3954} INFO - Setting next_dagrun for latest_only to 2025-07-10 04:00:00+00:00, run_after=2025-07-10 08:00:00+00:00
+[2025-07-10T11:19:39.366+0200] {processor.py:183} INFO - Processing /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_latest_only.py took 0.052 seconds
+[2025-07-10T11:20:34.281+0200] {processor.py:161} INFO - Started process (PID=52358) to work on /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_latest_only.py
+[2025-07-10T11:20:34.282+0200] {processor.py:830} INFO - Processing file /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_latest_only.py for tasks to queue
+[2025-07-10T11:20:34.283+0200] {logging_mixin.py:188} INFO - [2025-07-10T11:20:34.283+0200] {dagbag.py:540} INFO - Filling up the DagBag from /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_latest_only.py
+[2025-07-10T11:20:34.287+0200] {processor.py:840} INFO - DAG(s) 'latest_only' retrieved from /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_latest_only.py
+[2025-07-10T11:20:34.300+0200] {logging_mixin.py:188} INFO - [2025-07-10T11:20:34.300+0200] {dag.py:3096} INFO - Sync 1 DAGs
+[2025-07-10T11:20:34.313+0200] {logging_mixin.py:188} INFO - [2025-07-10T11:20:34.313+0200] {dag.py:3954} INFO - Setting next_dagrun for latest_only to 2025-07-10 04:00:00+00:00, run_after=2025-07-10 08:00:00+00:00
+[2025-07-10T11:20:34.331+0200] {processor.py:183} INFO - Processing /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_latest_only.py took 0.055 seconds
+[2025-07-10T11:21:22.042+0200] {processor.py:161} INFO - Started process (PID=52606) to work on /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_latest_only.py
+[2025-07-10T11:21:22.043+0200] {processor.py:830} INFO - Processing file /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_latest_only.py for tasks to queue
+[2025-07-10T11:21:22.044+0200] {logging_mixin.py:188} INFO - [2025-07-10T11:21:22.043+0200] {dagbag.py:540} INFO - Filling up the DagBag from /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_latest_only.py
+[2025-07-10T11:21:22.048+0200] {processor.py:840} INFO - DAG(s) 'latest_only' retrieved from /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_latest_only.py
+[2025-07-10T11:21:22.059+0200] {logging_mixin.py:188} INFO - [2025-07-10T11:21:22.059+0200] {dag.py:3096} INFO - Sync 1 DAGs
+[2025-07-10T11:21:22.072+0200] {logging_mixin.py:188} INFO - [2025-07-10T11:21:22.071+0200] {dag.py:3954} INFO - Setting next_dagrun for latest_only to 2025-07-10 04:00:00+00:00, run_after=2025-07-10 08:00:00+00:00
+[2025-07-10T11:21:22.094+0200] {processor.py:183} INFO - Processing /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_latest_only.py took 0.056 seconds
+[2025-07-10T11:22:17.717+0200] {processor.py:161} INFO - Started process (PID=52916) to work on /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_latest_only.py
+[2025-07-10T11:22:17.718+0200] {processor.py:830} INFO - Processing file /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_latest_only.py for tasks to queue
+[2025-07-10T11:22:17.719+0200] {logging_mixin.py:188} INFO - [2025-07-10T11:22:17.719+0200] {dagbag.py:540} INFO - Filling up the DagBag from /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_latest_only.py
+[2025-07-10T11:22:17.725+0200] {processor.py:840} INFO - DAG(s) 'latest_only' retrieved from /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_latest_only.py
+[2025-07-10T11:22:17.740+0200] {logging_mixin.py:188} INFO - [2025-07-10T11:22:17.739+0200] {dag.py:3096} INFO - Sync 1 DAGs
+[2025-07-10T11:22:17.756+0200] {logging_mixin.py:188} INFO - [2025-07-10T11:22:17.756+0200] {dag.py:3954} INFO - Setting next_dagrun for latest_only to 2025-07-10 04:00:00+00:00, run_after=2025-07-10 08:00:00+00:00
+[2025-07-10T11:22:17.781+0200] {processor.py:183} INFO - Processing /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_latest_only.py took 0.070 seconds
+[2025-07-10T11:23:08.503+0200] {processor.py:161} INFO - Started process (PID=53187) to work on /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_latest_only.py
+[2025-07-10T11:23:08.504+0200] {processor.py:830} INFO - Processing file /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_latest_only.py for tasks to queue
+[2025-07-10T11:23:08.505+0200] {logging_mixin.py:188} INFO - [2025-07-10T11:23:08.505+0200] {dagbag.py:540} INFO - Filling up the DagBag from /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_latest_only.py
+[2025-07-10T11:23:08.510+0200] {processor.py:840} INFO - DAG(s) 'latest_only' retrieved from /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_latest_only.py
+[2025-07-10T11:23:08.521+0200] {logging_mixin.py:188} INFO - [2025-07-10T11:23:08.521+0200] {dag.py:3096} INFO - Sync 1 DAGs
+[2025-07-10T11:23:08.535+0200] {logging_mixin.py:188} INFO - [2025-07-10T11:23:08.535+0200] {dag.py:3954} INFO - Setting next_dagrun for latest_only to 2025-07-10 04:00:00+00:00, run_after=2025-07-10 08:00:00+00:00
+[2025-07-10T11:23:08.588+0200] {processor.py:183} INFO - Processing /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_latest_only.py took 0.090 seconds
+[2025-07-10T11:24:07.388+0200] {processor.py:161} INFO - Started process (PID=53463) to work on /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_latest_only.py
+[2025-07-10T11:24:07.389+0200] {processor.py:830} INFO - Processing file /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_latest_only.py for tasks to queue
+[2025-07-10T11:24:07.390+0200] {logging_mixin.py:188} INFO - [2025-07-10T11:24:07.390+0200] {dagbag.py:540} INFO - Filling up the DagBag from /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_latest_only.py
+[2025-07-10T11:24:07.395+0200] {processor.py:840} INFO - DAG(s) 'latest_only' retrieved from /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_latest_only.py
+[2025-07-10T11:24:07.406+0200] {logging_mixin.py:188} INFO - [2025-07-10T11:24:07.406+0200] {dag.py:3096} INFO - Sync 1 DAGs
+[2025-07-10T11:24:07.420+0200] {logging_mixin.py:188} INFO - [2025-07-10T11:24:07.420+0200] {dag.py:3954} INFO - Setting next_dagrun for latest_only to 2025-07-10 04:00:00+00:00, run_after=2025-07-10 08:00:00+00:00
+[2025-07-10T11:24:07.440+0200] {processor.py:183} INFO - Processing /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_latest_only.py took 0.057 seconds
+[2025-07-10T11:24:57.451+0200] {processor.py:161} INFO - Started process (PID=53737) to work on /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_latest_only.py
+[2025-07-10T11:24:57.452+0200] {processor.py:830} INFO - Processing file /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_latest_only.py for tasks to queue
+[2025-07-10T11:24:57.453+0200] {logging_mixin.py:188} INFO - [2025-07-10T11:24:57.453+0200] {dagbag.py:540} INFO - Filling up the DagBag from /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_latest_only.py
+[2025-07-10T11:24:57.458+0200] {processor.py:840} INFO - DAG(s) 'latest_only' retrieved from /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_latest_only.py
+[2025-07-10T11:24:57.470+0200] {logging_mixin.py:188} INFO - [2025-07-10T11:24:57.470+0200] {dag.py:3096} INFO - Sync 1 DAGs
+[2025-07-10T11:24:57.487+0200] {logging_mixin.py:188} INFO - [2025-07-10T11:24:57.487+0200] {dag.py:3954} INFO - Setting next_dagrun for latest_only to 2025-07-10 04:00:00+00:00, run_after=2025-07-10 08:00:00+00:00
+[2025-07-10T11:24:57.511+0200] {processor.py:183} INFO - Processing /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_latest_only.py took 0.070 seconds
+[2025-07-10T11:25:54.632+0200] {processor.py:161} INFO - Started process (PID=54045) to work on /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_latest_only.py
+[2025-07-10T11:25:54.634+0200] {processor.py:830} INFO - Processing file /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_latest_only.py for tasks to queue
+[2025-07-10T11:25:54.635+0200] {logging_mixin.py:188} INFO - [2025-07-10T11:25:54.634+0200] {dagbag.py:540} INFO - Filling up the DagBag from /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_latest_only.py
+[2025-07-10T11:25:54.639+0200] {processor.py:840} INFO - DAG(s) 'latest_only' retrieved from /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_latest_only.py
+[2025-07-10T11:25:54.652+0200] {logging_mixin.py:188} INFO - [2025-07-10T11:25:54.652+0200] {dag.py:3096} INFO - Sync 1 DAGs
+[2025-07-10T11:25:54.667+0200] {logging_mixin.py:188} INFO - [2025-07-10T11:25:54.667+0200] {dag.py:3954} INFO - Setting next_dagrun for latest_only to 2025-07-10 04:00:00+00:00, run_after=2025-07-10 08:00:00+00:00
+[2025-07-10T11:25:54.690+0200] {processor.py:183} INFO - Processing /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_latest_only.py took 0.061 seconds
+[2025-07-10T11:26:42.577+0200] {processor.py:161} INFO - Started process (PID=54299) to work on /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_latest_only.py
+[2025-07-10T11:26:42.578+0200] {processor.py:830} INFO - Processing file /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_latest_only.py for tasks to queue
+[2025-07-10T11:26:42.579+0200] {logging_mixin.py:188} INFO - [2025-07-10T11:26:42.579+0200] {dagbag.py:540} INFO - Filling up the DagBag from /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_latest_only.py
+[2025-07-10T11:26:42.584+0200] {processor.py:840} INFO - DAG(s) 'latest_only' retrieved from /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_latest_only.py
+[2025-07-10T11:26:42.597+0200] {logging_mixin.py:188} INFO - [2025-07-10T11:26:42.597+0200] {dag.py:3096} INFO - Sync 1 DAGs
+[2025-07-10T11:26:42.614+0200] {logging_mixin.py:188} INFO - [2025-07-10T11:26:42.614+0200] {dag.py:3954} INFO - Setting next_dagrun for latest_only to 2025-07-10 04:00:00+00:00, run_after=2025-07-10 08:00:00+00:00
+[2025-07-10T11:26:42.635+0200] {processor.py:183} INFO - Processing /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_latest_only.py took 0.062 seconds
+[2025-07-10T11:45:12.126+0200] {processor.py:161} INFO - Started process (PID=54776) to work on /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_latest_only.py
+[2025-07-10T11:45:12.128+0200] {processor.py:830} INFO - Processing file /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_latest_only.py for tasks to queue
+[2025-07-10T11:45:12.129+0200] {logging_mixin.py:188} INFO - [2025-07-10T11:45:12.128+0200] {dagbag.py:540} INFO - Filling up the DagBag from /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_latest_only.py
+[2025-07-10T11:45:12.135+0200] {processor.py:840} INFO - DAG(s) 'latest_only' retrieved from /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_latest_only.py
+[2025-07-10T11:45:12.154+0200] {logging_mixin.py:188} INFO - [2025-07-10T11:45:12.153+0200] {dag.py:3096} INFO - Sync 1 DAGs
+[2025-07-10T11:45:12.175+0200] {logging_mixin.py:188} INFO - [2025-07-10T11:45:12.174+0200] {dag.py:3954} INFO - Setting next_dagrun for latest_only to 2025-07-10 04:00:00+00:00, run_after=2025-07-10 08:00:00+00:00
+[2025-07-10T11:45:12.201+0200] {processor.py:183} INFO - Processing /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_latest_only.py took 0.081 seconds
+[2025-07-10T11:46:09.435+0200] {processor.py:161} INFO - Started process (PID=55086) to work on /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_latest_only.py
+[2025-07-10T11:46:09.437+0200] {processor.py:830} INFO - Processing file /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_latest_only.py for tasks to queue
+[2025-07-10T11:46:09.438+0200] {logging_mixin.py:188} INFO - [2025-07-10T11:46:09.437+0200] {dagbag.py:540} INFO - Filling up the DagBag from /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_latest_only.py
+[2025-07-10T11:46:09.445+0200] {processor.py:840} INFO - DAG(s) 'latest_only' retrieved from /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_latest_only.py
+[2025-07-10T11:46:09.463+0200] {logging_mixin.py:188} INFO - [2025-07-10T11:46:09.463+0200] {dag.py:3096} INFO - Sync 1 DAGs
+[2025-07-10T11:46:09.489+0200] {logging_mixin.py:188} INFO - [2025-07-10T11:46:09.489+0200] {dag.py:3954} INFO - Setting next_dagrun for latest_only to 2025-07-10 04:00:00+00:00, run_after=2025-07-10 08:00:00+00:00
+[2025-07-10T11:46:09.527+0200] {processor.py:183} INFO - Processing /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_latest_only.py took 0.098 seconds

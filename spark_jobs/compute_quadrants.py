@@ -77,8 +77,7 @@ def write_single_csv(df, output_path: str):
     shutil.rmtree(tmp_dir)
 
 
-def main(indicators_parquet_path: str, output_parquet_path: str, output_csv_path: str, full_df=None):
-
+def main(indicators_parquet_path: str, output_parquet_path: str, output_csv_path: str):
     spark = (
         SparkSession.builder
         .appName("ComputeEconomicQuadrants")
@@ -117,9 +116,8 @@ def main(indicators_parquet_path: str, output_parquet_path: str, output_csv_path
         "High_Yield_Bond_SPREAD",
         "10-2Year_Treasury_Yield_Bond",
         "TAUX_FED",
-    ]
 
-    last_two = full_df.orderBy("date", ascending=False).limit(2).orderBy("date")
+    ]
 
     for ind in indicator_cols:
         prev_val = lag(col(ind), 1).over(window_lag)
@@ -186,12 +184,12 @@ def main(indicators_parquet_path: str, output_parquet_path: str, output_csv_path
         return df, exprs
 
     mappings = {
-        "INFLATION_combined":               (["score_Q2", "score_Q3"], ["score_Q1", "score_Q4"]),
-        "UNEMPLOYMENT_combined":            (["score_Q1", "score_Q2"], ["score_Q3", "score_Q4"]),
-        "CONSUMER_SENTIMENT_combined":      (["score_Q1", "score_Q2"], ["score_Q3", "score_Q4"]),
-        "High_Yield_Bond_SPREAD_combined":  (["score_Q3", "score_Q2"], ["score_Q1", "score_Q4"]),
-        "10-2Year_Treasury_Yield_Bond_combined": (["score_Q4"], ["score_Q3"]),
-        "TAUX_FED_combined":                (["score_Q1", "score_Q2"], ["score_Q3", "score_Q4"]),
+        "INFLATION_combined": (["score_Q2", "score_Q3"], ["score_Q4"]),
+        "UNEMPLOYMENT_combined": (["score_Q1", "score_Q2"], ["score_Q3", "score_Q4"]),
+        "CONSUMER_SENTIMENT_combined": (["score_Q1", "score_Q2"], ["score_Q3", "score_Q4"]),
+        "High_Yield_Bond_SPREAD_combined": (["score_Q3", "score_Q4"], ["score_Q1", "score_Q2"]),  # ⚠️ inversé
+        "10-2Year_Treasury_Yield_Bond_combined": (["score_Q1"], ["score_Q4"]),  # ➕ croissance
+        "TAUX_FED_combined": (["score_Q3", "score_Q4"], ["score_Q1", "score_Q2"]),  # ➕ Q3 stress
     }
 
     for combined_col, (pos_quads, neg_quads) in mappings.items():
@@ -244,6 +242,6 @@ if __name__ == "__main__":
         sys.exit(1)
 
     indicators_path = sys.argv[1]
-    output_parquet = sys.argv[2]
-    output_csv = sys.argv[3]
+    output_parquet  = sys.argv[2]
+    output_csv      = sys.argv[3]
     main(indicators_path, output_parquet, output_csv)

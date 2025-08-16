@@ -47,9 +47,9 @@ FRED_SERIES_MAPPING = {
     'High_Yield_Bond_SPREAD': 'BAMLH0A0HYM2',
     '10-2Year_Treasury_Yield_Bond': 'T10Y2Y',
     'CONSUMER_SENTIMENT': 'UMCSENT',
-    'BARREL PETROL': 'DCOILBRENTEU',
-    'TAUX_FED': 'FEDFUNDS'}
-
+    'TAUX_FED': 'FEDFUNDS',
+    'Real_Gross_Domestic_Product': 'GDPC1' #A191RP1Q027SBEA POUR LA VAR Q
+}
 
 YF_SERIES_MAPPING = {
     'S&P500(LARGE CAP)': {'ticker': '^GSPC', 'series_id': 'SP500'},
@@ -57,6 +57,9 @@ YF_SERIES_MAPPING = {
     "RUSSELL2000(Small CAP)": {'ticker': 'IWM', 'series_id': 'SmallCAP'},
     "REITs(Immobilier US)": {'ticker': 'VNQ', 'series_id': 'US_REIT_VNQ'},
     'US_TREASURY_10Y': {'ticker': 'IEF', 'series_id': 'TREASURY_10Y'},
+    "BARREL PETROL" : { 'ticker': 'ICOM.L', "series_id": "ENERGY"},
+    "OBLIGATION ENTREPRISE" : { 'ticker': 'LQD', "series_id": "OBLIGATION"},
+
 }
 
 default_args = {
@@ -151,7 +154,9 @@ def prepare_indicators_data(base_dir):
         'CONSUMER_SENTIMENT',
         'High_Yield_Bond_SPREAD',
         '10-2Year_Treasury_Yield_Bond',
-        'TAUX_FED']
+        'TAUX_FED',
+        'Real_Gross_Domestic_Product'
+    ]
 
     combined_df = pd.DataFrame()
 
@@ -199,20 +204,27 @@ def format_and_clean_data(base_dir, input_path, data_type):
     print(f"→ format_and_clean_data: on lit le fichier CSV : {input_path}")
     df = pd.read_csv(input_path, parse_dates=['date'])
     print("   Colonnes lues dans df :", df.columns.tolist())
+
     df = df.dropna(how='all', subset=df.columns.difference(['date']))
     df['date'] = pd.to_datetime(df['date'])
     df.set_index('date', inplace=True)
     monthly_df = df.resample('M').last()
 
-    monthly_df = monthly_df.interpolate(method='linear')
+    if data_type == 'Real_Gross_Domestic_Product':
+        monthly_df = monthly_df.ffill(limit=2)
+    else:
+        monthly_df = monthly_df.interpolate(method='linear')
+
     monthly_df.reset_index(inplace=True)
     monthly_df['date'] = monthly_df['date'].dt.strftime('%Y-%m-%d')
     output_path = os.path.join(base_dir, f"{data_type}.parquet")
+    output_csv     = os.path.join(base_dir, f"{data_type}.csv")
     monthly_df.to_parquet(output_path, index=False)
+
     print(f"Données {data_type} mensuelles nettoyées sauvegardées: {output_path}")
     print(monthly_df.tail(5))
-    return output_path
 
+    return output_path
 
 def format_and_clean_data_daily(base_dir, input_path, data_type):
 

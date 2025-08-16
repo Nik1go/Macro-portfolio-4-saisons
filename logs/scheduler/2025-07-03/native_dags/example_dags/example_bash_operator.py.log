@@ -1,0 +1,21 @@
+[2025-07-03T22:44:59.630+0200] {processor.py:161} INFO - Started process (PID=1911) to work on /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_bash_operator.py
+[2025-07-03T22:44:59.630+0200] {processor.py:830} INFO - Processing file /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_bash_operator.py for tasks to queue
+[2025-07-03T22:44:59.632+0200] {logging_mixin.py:188} INFO - [2025-07-03T22:44:59.631+0200] {dagbag.py:540} INFO - Filling up the DagBag from /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_bash_operator.py
+[2025-07-03T22:44:59.641+0200] {processor.py:840} INFO - DAG(s) 'example_bash_operator' retrieved from /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_bash_operator.py
+[2025-07-03T22:44:59.717+0200] {logging_mixin.py:188} INFO - [2025-07-03T22:44:59.717+0200] {dag.py:3096} INFO - Sync 1 DAGs
+[2025-07-03T22:44:59.731+0200] {logging_mixin.py:188} INFO - [2025-07-03T22:44:59.731+0200] {dag.py:3954} INFO - Setting next_dagrun for example_bash_operator to 2025-07-02 00:00:00+00:00, run_after=2025-07-03 00:00:00+00:00
+[2025-07-03T22:44:59.757+0200] {processor.py:183} INFO - Processing /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_bash_operator.py took 0.132 seconds
+[2025-07-03T22:45:55.608+0200] {processor.py:161} INFO - Started process (PID=2597) to work on /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_bash_operator.py
+[2025-07-03T22:45:55.609+0200] {processor.py:830} INFO - Processing file /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_bash_operator.py for tasks to queue
+[2025-07-03T22:45:55.610+0200] {logging_mixin.py:188} INFO - [2025-07-03T22:45:55.610+0200] {dagbag.py:540} INFO - Filling up the DagBag from /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_bash_operator.py
+[2025-07-03T22:45:55.619+0200] {processor.py:840} INFO - DAG(s) 'example_bash_operator' retrieved from /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_bash_operator.py
+[2025-07-03T22:45:55.634+0200] {logging_mixin.py:188} INFO - [2025-07-03T22:45:55.634+0200] {dag.py:3096} INFO - Sync 1 DAGs
+[2025-07-03T22:45:55.648+0200] {logging_mixin.py:188} INFO - [2025-07-03T22:45:55.648+0200] {dag.py:3954} INFO - Setting next_dagrun for example_bash_operator to 2025-07-02 00:00:00+00:00, run_after=2025-07-03 00:00:00+00:00
+[2025-07-03T22:45:55.672+0200] {processor.py:183} INFO - Processing /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_bash_operator.py took 0.068 seconds
+[2025-07-03T23:05:22.971+0200] {processor.py:161} INFO - Started process (PID=3361) to work on /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_bash_operator.py
+[2025-07-03T23:05:22.972+0200] {processor.py:830} INFO - Processing file /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_bash_operator.py for tasks to queue
+[2025-07-03T23:05:22.974+0200] {logging_mixin.py:188} INFO - [2025-07-03T23:05:22.973+0200] {dagbag.py:540} INFO - Filling up the DagBag from /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_bash_operator.py
+[2025-07-03T23:05:22.983+0200] {processor.py:840} INFO - DAG(s) 'example_bash_operator' retrieved from /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_bash_operator.py
+[2025-07-03T23:05:22.999+0200] {logging_mixin.py:188} INFO - [2025-07-03T23:05:22.999+0200] {dag.py:3096} INFO - Sync 1 DAGs
+[2025-07-03T23:05:23.012+0200] {logging_mixin.py:188} INFO - [2025-07-03T23:05:23.012+0200] {dag.py:3954} INFO - Setting next_dagrun for example_bash_operator to 2025-07-02 00:00:00+00:00, run_after=2025-07-03 00:00:00+00:00
+[2025-07-03T23:05:23.034+0200] {processor.py:183} INFO - Processing /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_bash_operator.py took 0.069 seconds

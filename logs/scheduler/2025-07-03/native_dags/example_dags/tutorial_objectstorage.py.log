@@ -1,0 +1,28 @@
+[2025-07-03T22:44:49.759+0200] {processor.py:161} INFO - Started process (PID=1748) to work on /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/tutorial_objectstorage.py
+[2025-07-03T22:44:49.760+0200] {processor.py:830} INFO - Processing file /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/tutorial_objectstorage.py for tasks to queue
+[2025-07-03T22:44:49.761+0200] {logging_mixin.py:188} INFO - [2025-07-03T22:44:49.761+0200] {dagbag.py:540} INFO - Filling up the DagBag from /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/tutorial_objectstorage.py
+[2025-07-03T22:44:49.769+0200] {processor.py:840} INFO - DAG(s) 'tutorial_objectstorage' retrieved from /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/tutorial_objectstorage.py
+[2025-07-03T22:44:49.864+0200] {logging_mixin.py:188} INFO - [2025-07-03T22:44:49.864+0200] {dag.py:3096} INFO - Sync 1 DAGs
+[2025-07-03T22:44:49.875+0200] {logging_mixin.py:188} INFO - [2025-07-03T22:44:49.875+0200] {dag.py:3954} INFO - Setting next_dagrun for tutorial_objectstorage to None, run_after=None
+[2025-07-03T22:44:49.904+0200] {processor.py:183} INFO - Processing /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/tutorial_objectstorage.py took 0.150 seconds
+[2025-07-03T22:45:44.098+0200] {processor.py:161} INFO - Started process (PID=2354) to work on /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/tutorial_objectstorage.py
+[2025-07-03T22:45:44.100+0200] {processor.py:830} INFO - Processing file /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/tutorial_objectstorage.py for tasks to queue
+[2025-07-03T22:45:44.102+0200] {logging_mixin.py:188} INFO - [2025-07-03T22:45:44.101+0200] {dagbag.py:540} INFO - Filling up the DagBag from /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/tutorial_objectstorage.py
+[2025-07-03T22:45:44.133+0200] {processor.py:840} INFO - DAG(s) 'tutorial_objectstorage' retrieved from /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/tutorial_objectstorage.py
+[2025-07-03T22:45:44.163+0200] {logging_mixin.py:188} INFO - [2025-07-03T22:45:44.163+0200] {dag.py:3096} INFO - Sync 1 DAGs
+[2025-07-03T22:45:44.188+0200] {logging_mixin.py:188} INFO - [2025-07-03T22:45:44.188+0200] {dag.py:3954} INFO - Setting next_dagrun for tutorial_objectstorage to None, run_after=None
+[2025-07-03T22:45:44.264+0200] {processor.py:183} INFO - Processing /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/tutorial_objectstorage.py took 0.180 seconds
+[2025-07-03T22:46:40.801+0200] {processor.py:161} INFO - Started process (PID=2869) to work on /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/tutorial_objectstorage.py
+[2025-07-03T22:46:40.803+0200] {processor.py:830} INFO - Processing file /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/tutorial_objectstorage.py for tasks to queue
+[2025-07-03T22:46:40.804+0200] {logging_mixin.py:188} INFO - [2025-07-03T22:46:40.804+0200] {dagbag.py:540} INFO - Filling up the DagBag from /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/tutorial_objectstorage.py
+[2025-07-03T22:46:40.811+0200] {processor.py:840} INFO - DAG(s) 'tutorial_objectstorage' retrieved from /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/tutorial_objectstorage.py
+[2025-07-03T22:46:40.824+0200] {logging_mixin.py:188} INFO - [2025-07-03T22:46:40.823+0200] {dag.py:3096} INFO - Sync 1 DAGs
+[2025-07-03T22:46:40.832+0200] {logging_mixin.py:188} INFO - [2025-07-03T22:46:40.832+0200] {dag.py:3954} INFO - Setting next_dagrun for tutorial_objectstorage to None, run_after=None
+[2025-07-03T22:46:40.855+0200] {processor.py:183} INFO - Processing /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/tutorial_objectstorage.py took 0.059 seconds
+[2025-07-03T23:05:18.855+0200] {processor.py:161} INFO - Started process (PID=3333) to work on /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/tutorial_objectstorage.py
+[2025-07-03T23:05:18.857+0200] {processor.py:830} INFO - Processing file /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/tutorial_objectstorage.py for tasks to queue
+[2025-07-03T23:05:18.859+0200] {logging_mixin.py:188} INFO - [2025-07-03T23:05:18.858+0200] {dagbag.py:540} INFO - Filling up the DagBag from /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/tutorial_objectstorage.py
+[2025-07-03T23:05:18.866+0200] {processor.py:840} INFO - DAG(s) 'tutorial_objectstorage' retrieved from /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/tutorial_objectstorage.py
+[2025-07-03T23:05:18.881+0200] {logging_mixin.py:188} INFO - [2025-07-03T23:05:18.881+0200] {dag.py:3096} INFO - Sync 1 DAGs
+[2025-07-03T23:05:18.889+0200] {logging_mixin.py:188} INFO - [2025-07-03T23:05:18.889+0200] {dag.py:3954} INFO - Setting next_dagrun for tutorial_objectstorage to None, run_after=None
+[2025-07-03T23:05:18.917+0200] {processor.py:183} INFO - Processing /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/tutorial_objectstorage.py took 0.070 seconds

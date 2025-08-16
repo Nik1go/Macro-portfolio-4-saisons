@@ -1,0 +1,30 @@
+[2025-07-08T14:29:08.316+0200] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2025-07-08T14:29:08.332+0200] {taskinstance.py:2073} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: macro_trading_dag.index_to_elasticsearch scheduled__2025-07-07T08:00:00+00:00 [queued]>
+[2025-07-08T14:29:08.338+0200] {taskinstance.py:2073} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: macro_trading_dag.index_to_elasticsearch scheduled__2025-07-07T08:00:00+00:00 [queued]>
+[2025-07-08T14:29:08.338+0200] {taskinstance.py:2303} INFO - Starting attempt 1 of 3
+[2025-07-08T14:29:08.357+0200] {taskinstance.py:2327} INFO - Executing <Task(BashOperator): index_to_elasticsearch> on 2025-07-07 08:00:00+00:00
+[2025-07-08T14:29:08.367+0200] {standard_task_runner.py:90} INFO - Running: ['airflow', 'tasks', 'run', 'macro_trading_dag', 'index_to_elasticsearch', 'scheduled__2025-07-07T08:00:00+00:00', '--job-id', '714', '--raw', '--subdir', 'DAGS_FOLDER/macro_trading_dag.py', '--cfg-path', '/tmp/tmp56ls7yc3']
+[2025-07-08T14:29:08.369+0200] {standard_task_runner.py:91} INFO - Job 714: Subtask index_to_elasticsearch
+[2025-07-08T14:29:08.371+0200] {logging_mixin.py:188} WARNING - /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/task/task_runner/standard_task_runner.py:61 DeprecationWarning: This process (pid=35465) is multi-threaded, use of fork() may lead to deadlocks in the child.
+[2025-07-08T14:29:08.371+0200] {standard_task_runner.py:63} INFO - Started process 35475 to run task
+[2025-07-08T14:29:08.410+0200] {task_command.py:426} INFO - Running <TaskInstance: macro_trading_dag.index_to_elasticsearch scheduled__2025-07-07T08:00:00+00:00 [running]> on host N15I711-16GR512.localdomain
+[2025-07-08T14:29:08.497+0200] {taskinstance.py:2644} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='airflow' AIRFLOW_CTX_DAG_ID='macro_trading_dag' AIRFLOW_CTX_TASK_ID='index_to_elasticsearch' AIRFLOW_CTX_EXECUTION_DATE='2025-07-07T08:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2025-07-07T08:00:00+00:00'
+[2025-07-08T14:29:08.499+0200] {taskinstance.py:430} INFO - ::endgroup::
+[2025-07-08T14:29:08.500+0200] {subprocess.py:63} INFO - Tmp dir root location: /tmp
+[2025-07-08T14:29:08.501+0200] {subprocess.py:75} INFO - Running command: ['/usr/bin/bash', '-c', '\n            cd ~/airflow/index_jobs &&             source ~/airflow/airflow_venv/bin/activate &&             python indexe.py\n        ']
+[2025-07-08T14:29:08.512+0200] {subprocess.py:86} INFO - Output:
+[2025-07-08T14:29:10.331+0200] {subprocess.py:93} INFO - ✅ ES reachable: You Know, for Search
+[2025-07-08T14:29:10.332+0200] {subprocess.py:93} INFO - → Index 'quadrants'…
+[2025-07-08T14:29:10.332+0200] {subprocess.py:93} INFO -    ✅ 248 docs indexed in 'quadrants'
+[2025-07-08T14:29:10.332+0200] {subprocess.py:93} INFO - → Index 'assets_performance'…
+[2025-07-08T14:29:10.332+0200] {subprocess.py:93} INFO -    ✅ 28 docs indexed in 'assets_performance'
+[2025-07-08T14:29:10.332+0200] {subprocess.py:93} INFO - → Index 'backtest_timeseries'…
+[2025-07-08T14:29:10.332+0200] {subprocess.py:93} INFO -    ✅ 248 docs indexed in 'backtest_timeseries'
+[2025-07-08T14:29:10.333+0200] {subprocess.py:93} INFO - → Index 'backtest_stats'…
+[2025-07-08T14:29:10.333+0200] {subprocess.py:93} INFO -    ✅ 1 docs indexed in 'backtest_stats'
+[2025-07-08T14:29:10.351+0200] {subprocess.py:97} INFO - Command exited with return code 0
+[2025-07-08T14:29:10.352+0200] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2025-07-08T14:29:10.373+0200] {taskinstance.py:1205} INFO - Marking task as SUCCESS. dag_id=macro_trading_dag, task_id=index_to_elasticsearch, execution_date=20250707T080000, start_date=20250708T122908, end_date=20250708T122910
+[2025-07-08T14:29:10.432+0200] {local_task_job_runner.py:240} INFO - Task exited with return code 0
+[2025-07-08T14:29:10.440+0200] {taskinstance.py:3482} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2025-07-08T14:29:10.441+0200] {local_task_job_runner.py:222} INFO - ::endgroup::
