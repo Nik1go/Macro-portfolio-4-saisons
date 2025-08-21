@@ -313,3 +313,94 @@
 [2025-08-16T16:01:18.075+0200] {logging_mixin.py:188} INFO - [2025-08-16T16:01:18.075+0200] {dag.py:3096} INFO - Sync 1 DAGs
 [2025-08-16T16:01:18.130+0200] {logging_mixin.py:188} INFO - [2025-08-16T16:01:18.130+0200] {dag.py:3954} INFO - Setting next_dagrun for example_trigger_target_dag to None, run_after=None
 [2025-08-16T16:01:18.320+0200] {processor.py:183} INFO - Processing /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_trigger_target_dag.py took 0.642 seconds
+[2025-08-16T16:02:09.633+0200] {processor.py:161} INFO - Started process (PID=18985) to work on /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_trigger_target_dag.py
+[2025-08-16T16:02:09.635+0200] {processor.py:830} INFO - Processing file /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_trigger_target_dag.py for tasks to queue
+[2025-08-16T16:02:09.636+0200] {logging_mixin.py:188} INFO - [2025-08-16T16:02:09.635+0200] {dagbag.py:540} INFO - Filling up the DagBag from /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_trigger_target_dag.py
+[2025-08-16T16:02:09.640+0200] {processor.py:840} INFO - DAG(s) 'example_trigger_target_dag' retrieved from /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_trigger_target_dag.py
+[2025-08-16T16:02:09.652+0200] {logging_mixin.py:188} INFO - [2025-08-16T16:02:09.652+0200] {dag.py:3096} INFO - Sync 1 DAGs
+[2025-08-16T16:02:09.661+0200] {logging_mixin.py:188} INFO - [2025-08-16T16:02:09.661+0200] {dag.py:3954} INFO - Setting next_dagrun for example_trigger_target_dag to None, run_after=None
+[2025-08-16T16:02:09.706+0200] {processor.py:183} INFO - Processing /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_trigger_target_dag.py took 0.078 seconds
+[2025-08-16T16:03:03.743+0200] {processor.py:161} INFO - Started process (PID=19237) to work on /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_trigger_target_dag.py
+[2025-08-16T16:03:03.745+0200] {processor.py:830} INFO - Processing file /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_trigger_target_dag.py for tasks to queue
+[2025-08-16T16:03:03.746+0200] {logging_mixin.py:188} INFO - [2025-08-16T16:03:03.745+0200] {dagbag.py:540} INFO - Filling up the DagBag from /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_trigger_target_dag.py
+[2025-08-16T16:03:03.751+0200] {processor.py:840} INFO - DAG(s) 'example_trigger_target_dag' retrieved from /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_trigger_target_dag.py
+[2025-08-16T16:03:03.770+0200] {logging_mixin.py:188} INFO - [2025-08-16T16:03:03.769+0200] {dag.py:3096} INFO - Sync 1 DAGs
+[2025-08-16T16:03:03.784+0200] {logging_mixin.py:188} INFO - [2025-08-16T16:03:03.782+0200] {dag.py:3954} INFO - Setting next_dagrun for example_trigger_target_dag to None, run_after=None
+[2025-08-16T16:03:03.816+0200] {processor.py:183} INFO - Processing /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_trigger_target_dag.py took 0.077 seconds
+[2025-08-16T16:03:55.773+0200] {processor.py:161} INFO - Started process (PID=19716) to work on /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_trigger_target_dag.py
+[2025-08-16T16:03:55.775+0200] {processor.py:830} INFO - Processing file /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_trigger_target_dag.py for tasks to queue
+[2025-08-16T16:03:55.775+0200] {logging_mixin.py:188} INFO - [2025-08-16T16:03:55.775+0200] {dagbag.py:540} INFO - Filling up the DagBag from /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_trigger_target_dag.py
+[2025-08-16T16:03:55.780+0200] {processor.py:840} INFO - DAG(s) 'example_trigger_target_dag' retrieved from /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_trigger_target_dag.py
+[2025-08-16T16:03:55.792+0200] {logging_mixin.py:188} INFO - [2025-08-16T16:03:55.791+0200] {dag.py:3096} INFO - Sync 1 DAGs
+[2025-08-16T16:03:55.800+0200] {logging_mixin.py:188} INFO - [2025-08-16T16:03:55.800+0200] {dag.py:3954} INFO - Setting next_dagrun for example_trigger_target_dag to None, run_after=None
+[2025-08-16T16:03:55.836+0200] {processor.py:183} INFO - Processing /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_trigger_target_dag.py took 0.067 seconds
+[2025-08-16T16:04:47.934+0200] {processor.py:161} INFO - Started process (PID=20149) to work on /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_trigger_target_dag.py
+[2025-08-16T16:04:47.946+0200] {processor.py:830} INFO - Processing file /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_trigger_target_dag.py for tasks to queue
+[2025-08-16T16:04:47.948+0200] {logging_mixin.py:188} INFO - [2025-08-16T16:04:47.947+0200] {dagbag.py:540} INFO - Filling up the DagBag from /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_trigger_target_dag.py
+[2025-08-16T16:04:47.954+0200] {processor.py:840} INFO - DAG(s) 'example_trigger_target_dag' retrieved from /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_trigger_target_dag.py
+[2025-08-16T16:04:47.971+0200] {logging_mixin.py:188} INFO - [2025-08-16T16:04:47.971+0200] {dag.py:3096} INFO - Sync 1 DAGs
+[2025-08-16T16:04:47.982+0200] {logging_mixin.py:188} INFO - [2025-08-16T16:04:47.982+0200] {dag.py:3954} INFO - Setting next_dagrun for example_trigger_target_dag to None, run_after=None
+[2025-08-16T16:04:48.078+0200] {processor.py:183} INFO - Processing /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_trigger_target_dag.py took 0.151 seconds
+[2025-08-16T16:05:40.841+0200] {processor.py:161} INFO - Started process (PID=20674) to work on /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_trigger_target_dag.py
+[2025-08-16T16:05:40.842+0200] {processor.py:830} INFO - Processing file /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_trigger_target_dag.py for tasks to queue
+[2025-08-16T16:05:40.843+0200] {logging_mixin.py:188} INFO - [2025-08-16T16:05:40.842+0200] {dagbag.py:540} INFO - Filling up the DagBag from /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_trigger_target_dag.py
+[2025-08-16T16:05:40.847+0200] {processor.py:840} INFO - DAG(s) 'example_trigger_target_dag' retrieved from /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_trigger_target_dag.py
+[2025-08-16T16:05:40.860+0200] {logging_mixin.py:188} INFO - [2025-08-16T16:05:40.860+0200] {dag.py:3096} INFO - Sync 1 DAGs
+[2025-08-16T16:05:40.869+0200] {logging_mixin.py:188} INFO - [2025-08-16T16:05:40.868+0200] {dag.py:3954} INFO - Setting next_dagrun for example_trigger_target_dag to None, run_after=None
+[2025-08-16T16:05:40.896+0200] {processor.py:183} INFO - Processing /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_trigger_target_dag.py took 0.061 seconds
+[2025-08-16T16:06:27.178+0200] {processor.py:161} INFO - Started process (PID=20875) to work on /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_trigger_target_dag.py
+[2025-08-16T16:06:27.179+0200] {processor.py:830} INFO - Processing file /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_trigger_target_dag.py for tasks to queue
+[2025-08-16T16:06:27.180+0200] {logging_mixin.py:188} INFO - [2025-08-16T16:06:27.180+0200] {dagbag.py:540} INFO - Filling up the DagBag from /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_trigger_target_dag.py
+[2025-08-16T16:06:27.184+0200] {processor.py:840} INFO - DAG(s) 'example_trigger_target_dag' retrieved from /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_trigger_target_dag.py
+[2025-08-16T16:06:27.197+0200] {logging_mixin.py:188} INFO - [2025-08-16T16:06:27.197+0200] {dag.py:3096} INFO - Sync 1 DAGs
+[2025-08-16T16:06:27.205+0200] {logging_mixin.py:188} INFO - [2025-08-16T16:06:27.205+0200] {dag.py:3954} INFO - Setting next_dagrun for example_trigger_target_dag to None, run_after=None
+[2025-08-16T16:06:27.232+0200] {processor.py:183} INFO - Processing /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_trigger_target_dag.py took 0.060 seconds
+[2025-08-16T16:07:13.356+0200] {processor.py:161} INFO - Started process (PID=21144) to work on /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_trigger_target_dag.py
+[2025-08-16T16:07:13.357+0200] {processor.py:830} INFO - Processing file /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_trigger_target_dag.py for tasks to queue
+[2025-08-16T16:07:13.358+0200] {logging_mixin.py:188} INFO - [2025-08-16T16:07:13.358+0200] {dagbag.py:540} INFO - Filling up the DagBag from /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_trigger_target_dag.py
+[2025-08-16T16:07:13.363+0200] {processor.py:840} INFO - DAG(s) 'example_trigger_target_dag' retrieved from /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_trigger_target_dag.py
+[2025-08-16T16:07:13.374+0200] {logging_mixin.py:188} INFO - [2025-08-16T16:07:13.374+0200] {dag.py:3096} INFO - Sync 1 DAGs
+[2025-08-16T16:07:13.383+0200] {logging_mixin.py:188} INFO - [2025-08-16T16:07:13.383+0200] {dag.py:3954} INFO - Setting next_dagrun for example_trigger_target_dag to None, run_after=None
+[2025-08-16T16:07:13.403+0200] {processor.py:183} INFO - Processing /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_trigger_target_dag.py took 0.052 seconds
+[2025-08-16T16:08:31.401+0200] {processor.py:161} INFO - Started process (PID=21600) to work on /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_trigger_target_dag.py
+[2025-08-16T16:08:31.404+0200] {processor.py:830} INFO - Processing file /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_trigger_target_dag.py for tasks to queue
+[2025-08-16T16:08:31.406+0200] {logging_mixin.py:188} INFO - [2025-08-16T16:08:31.405+0200] {dagbag.py:540} INFO - Filling up the DagBag from /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_trigger_target_dag.py
+[2025-08-16T16:08:31.416+0200] {processor.py:840} INFO - DAG(s) 'example_trigger_target_dag' retrieved from /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_trigger_target_dag.py
+[2025-08-16T16:08:31.444+0200] {logging_mixin.py:188} INFO - [2025-08-16T16:08:31.443+0200] {dag.py:3096} INFO - Sync 1 DAGs
+[2025-08-16T16:08:31.461+0200] {logging_mixin.py:188} INFO - [2025-08-16T16:08:31.461+0200] {dag.py:3954} INFO - Setting next_dagrun for example_trigger_target_dag to None, run_after=None
+[2025-08-16T16:08:31.506+0200] {processor.py:183} INFO - Processing /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_trigger_target_dag.py took 0.114 seconds
+[2025-08-16T16:09:38.702+0200] {processor.py:161} INFO - Started process (PID=21967) to work on /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_trigger_target_dag.py
+[2025-08-16T16:09:38.704+0200] {processor.py:830} INFO - Processing file /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_trigger_target_dag.py for tasks to queue
+[2025-08-16T16:09:38.706+0200] {logging_mixin.py:188} INFO - [2025-08-16T16:09:38.705+0200] {dagbag.py:540} INFO - Filling up the DagBag from /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_trigger_target_dag.py
+[2025-08-16T16:09:38.714+0200] {processor.py:840} INFO - DAG(s) 'example_trigger_target_dag' retrieved from /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_trigger_target_dag.py
+[2025-08-16T16:09:38.743+0200] {logging_mixin.py:188} INFO - [2025-08-16T16:09:38.742+0200] {dag.py:3096} INFO - Sync 1 DAGs
+[2025-08-16T16:09:38.756+0200] {logging_mixin.py:188} INFO - [2025-08-16T16:09:38.755+0200] {dag.py:3954} INFO - Setting next_dagrun for example_trigger_target_dag to None, run_after=None
+[2025-08-16T16:09:38.798+0200] {processor.py:183} INFO - Processing /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_trigger_target_dag.py took 0.104 seconds
+[2025-08-16T16:10:38.742+0200] {processor.py:161} INFO - Started process (PID=22281) to work on /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_trigger_target_dag.py
+[2025-08-16T16:10:38.743+0200] {processor.py:830} INFO - Processing file /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_trigger_target_dag.py for tasks to queue
+[2025-08-16T16:10:38.744+0200] {logging_mixin.py:188} INFO - [2025-08-16T16:10:38.744+0200] {dagbag.py:540} INFO - Filling up the DagBag from /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_trigger_target_dag.py
+[2025-08-16T16:10:38.754+0200] {processor.py:840} INFO - DAG(s) 'example_trigger_target_dag' retrieved from /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_trigger_target_dag.py
+[2025-08-16T16:10:38.783+0200] {logging_mixin.py:188} INFO - [2025-08-16T16:10:38.782+0200] {dag.py:3096} INFO - Sync 1 DAGs
+[2025-08-16T16:10:38.798+0200] {logging_mixin.py:188} INFO - [2025-08-16T16:10:38.797+0200] {dag.py:3954} INFO - Setting next_dagrun for example_trigger_target_dag to None, run_after=None
+[2025-08-16T16:10:38.843+0200] {processor.py:183} INFO - Processing /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_trigger_target_dag.py took 0.112 seconds
+[2025-08-16T16:11:49.848+0200] {processor.py:161} INFO - Started process (PID=22676) to work on /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_trigger_target_dag.py
+[2025-08-16T16:11:49.852+0200] {processor.py:830} INFO - Processing file /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_trigger_target_dag.py for tasks to queue
+[2025-08-16T16:11:49.854+0200] {logging_mixin.py:188} INFO - [2025-08-16T16:11:49.853+0200] {dagbag.py:540} INFO - Filling up the DagBag from /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_trigger_target_dag.py
+[2025-08-16T16:11:49.866+0200] {processor.py:840} INFO - DAG(s) 'example_trigger_target_dag' retrieved from /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_trigger_target_dag.py
+[2025-08-16T16:11:49.895+0200] {logging_mixin.py:188} INFO - [2025-08-16T16:11:49.894+0200] {dag.py:3096} INFO - Sync 1 DAGs
+[2025-08-16T16:11:49.916+0200] {logging_mixin.py:188} INFO - [2025-08-16T16:11:49.916+0200] {dag.py:3954} INFO - Setting next_dagrun for example_trigger_target_dag to None, run_after=None
+[2025-08-16T16:11:49.974+0200] {processor.py:183} INFO - Processing /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_trigger_target_dag.py took 0.135 seconds
+[2025-08-16T16:13:05.487+0200] {processor.py:161} INFO - Started process (PID=23103) to work on /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_trigger_target_dag.py
+[2025-08-16T16:13:05.490+0200] {processor.py:830} INFO - Processing file /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_trigger_target_dag.py for tasks to queue
+[2025-08-16T16:13:05.492+0200] {logging_mixin.py:188} INFO - [2025-08-16T16:13:05.491+0200] {dagbag.py:540} INFO - Filling up the DagBag from /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_trigger_target_dag.py
+[2025-08-16T16:13:05.505+0200] {processor.py:840} INFO - DAG(s) 'example_trigger_target_dag' retrieved from /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_trigger_target_dag.py
+[2025-08-16T16:13:05.534+0200] {logging_mixin.py:188} INFO - [2025-08-16T16:13:05.533+0200] {dag.py:3096} INFO - Sync 1 DAGs
+[2025-08-16T16:13:05.560+0200] {logging_mixin.py:188} INFO - [2025-08-16T16:13:05.560+0200] {dag.py:3954} INFO - Setting next_dagrun for example_trigger_target_dag to None, run_after=None
+[2025-08-16T16:13:05.600+0200] {processor.py:183} INFO - Processing /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_trigger_target_dag.py took 0.121 seconds
+[2025-08-16T16:14:31.424+0200] {processor.py:161} INFO - Started process (PID=23531) to work on /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_trigger_target_dag.py
+[2025-08-16T16:14:31.428+0200] {processor.py:830} INFO - Processing file /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_trigger_target_dag.py for tasks to queue
+[2025-08-16T16:14:31.432+0200] {logging_mixin.py:188} INFO - [2025-08-16T16:14:31.429+0200] {dagbag.py:540} INFO - Filling up the DagBag from /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_trigger_target_dag.py
+[2025-08-16T16:14:31.444+0200] {processor.py:840} INFO - DAG(s) 'example_trigger_target_dag' retrieved from /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_trigger_target_dag.py
+[2025-08-16T16:14:31.479+0200] {logging_mixin.py:188} INFO - [2025-08-16T16:14:31.479+0200] {dag.py:3096} INFO - Sync 1 DAGs
+[2025-08-16T16:14:31.512+0200] {logging_mixin.py:188} INFO - [2025-08-16T16:14:31.511+0200] {dag.py:3954} INFO - Setting next_dagrun for example_trigger_target_dag to None, run_after=None
+[2025-08-16T16:14:31.953+0200] {processor.py:183} INFO - Processing /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_trigger_target_dag.py took 0.544 seconds

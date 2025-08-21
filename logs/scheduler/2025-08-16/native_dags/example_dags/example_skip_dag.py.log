@@ -376,3 +376,122 @@
 [2025-08-16T16:01:02.404+0200] {logging_mixin.py:188} INFO - [2025-08-16T16:01:02.404+0200] {dag.py:3096} INFO - Sync 1 DAGs
 [2025-08-16T16:01:02.420+0200] {logging_mixin.py:188} INFO - [2025-08-16T16:01:02.419+0200] {dag.py:3954} INFO - Setting next_dagrun for example_skip_dag to 2025-08-15 00:00:00+00:00, run_after=2025-08-16 00:00:00+00:00
 [2025-08-16T16:01:02.458+0200] {processor.py:183} INFO - Processing /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_skip_dag.py took 0.087 seconds
+[2025-08-16T16:01:55.219+0200] {processor.py:161} INFO - Started process (PID=18778) to work on /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_skip_dag.py
+[2025-08-16T16:01:55.222+0200] {processor.py:830} INFO - Processing file /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_skip_dag.py for tasks to queue
+[2025-08-16T16:01:55.223+0200] {logging_mixin.py:188} INFO - [2025-08-16T16:01:55.223+0200] {dagbag.py:540} INFO - Filling up the DagBag from /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_skip_dag.py
+[2025-08-16T16:01:55.227+0200] {processor.py:840} INFO - DAG(s) 'example_skip_dag' retrieved from /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_skip_dag.py
+[2025-08-16T16:01:55.240+0200] {logging_mixin.py:188} INFO - [2025-08-16T16:01:55.239+0200] {dag.py:3096} INFO - Sync 1 DAGs
+[2025-08-16T16:01:55.253+0200] {logging_mixin.py:188} INFO - [2025-08-16T16:01:55.252+0200] {dag.py:3954} INFO - Setting next_dagrun for example_skip_dag to 2025-08-15 00:00:00+00:00, run_after=2025-08-16 00:00:00+00:00
+[2025-08-16T16:01:55.295+0200] {processor.py:183} INFO - Processing /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_skip_dag.py took 0.081 seconds
+[2025-08-16T16:02:50.348+0200] {processor.py:161} INFO - Started process (PID=19133) to work on /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_skip_dag.py
+[2025-08-16T16:02:50.350+0200] {processor.py:830} INFO - Processing file /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_skip_dag.py for tasks to queue
+[2025-08-16T16:02:50.351+0200] {logging_mixin.py:188} INFO - [2025-08-16T16:02:50.351+0200] {dagbag.py:540} INFO - Filling up the DagBag from /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_skip_dag.py
+[2025-08-16T16:02:50.357+0200] {processor.py:840} INFO - DAG(s) 'example_skip_dag' retrieved from /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_skip_dag.py
+[2025-08-16T16:02:50.376+0200] {logging_mixin.py:188} INFO - [2025-08-16T16:02:50.376+0200] {dag.py:3096} INFO - Sync 1 DAGs
+[2025-08-16T16:02:50.390+0200] {logging_mixin.py:188} INFO - [2025-08-16T16:02:50.390+0200] {dag.py:3954} INFO - Setting next_dagrun for example_skip_dag to 2025-08-15 00:00:00+00:00, run_after=2025-08-16 00:00:00+00:00
+[2025-08-16T16:02:50.484+0200] {processor.py:183} INFO - Processing /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_skip_dag.py took 0.141 seconds
+[2025-08-16T16:03:42.783+0200] {processor.py:161} INFO - Started process (PID=19513) to work on /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_skip_dag.py
+[2025-08-16T16:03:42.784+0200] {processor.py:830} INFO - Processing file /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_skip_dag.py for tasks to queue
+[2025-08-16T16:03:42.785+0200] {logging_mixin.py:188} INFO - [2025-08-16T16:03:42.785+0200] {dagbag.py:540} INFO - Filling up the DagBag from /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_skip_dag.py
+[2025-08-16T16:03:42.791+0200] {processor.py:840} INFO - DAG(s) 'example_skip_dag' retrieved from /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_skip_dag.py
+[2025-08-16T16:03:42.806+0200] {logging_mixin.py:188} INFO - [2025-08-16T16:03:42.806+0200] {dag.py:3096} INFO - Sync 1 DAGs
+[2025-08-16T16:03:42.820+0200] {logging_mixin.py:188} INFO - [2025-08-16T16:03:42.820+0200] {dag.py:3954} INFO - Setting next_dagrun for example_skip_dag to 2025-08-15 00:00:00+00:00, run_after=2025-08-16 00:00:00+00:00
+[2025-08-16T16:03:42.846+0200] {processor.py:183} INFO - Processing /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_skip_dag.py took 0.068 seconds
+[2025-08-16T16:04:35.196+0200] {processor.py:161} INFO - Started process (PID=20010) to work on /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_skip_dag.py
+[2025-08-16T16:04:35.197+0200] {processor.py:830} INFO - Processing file /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_skip_dag.py for tasks to queue
+[2025-08-16T16:04:35.198+0200] {logging_mixin.py:188} INFO - [2025-08-16T16:04:35.198+0200] {dagbag.py:540} INFO - Filling up the DagBag from /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_skip_dag.py
+[2025-08-16T16:04:35.202+0200] {processor.py:840} INFO - DAG(s) 'example_skip_dag' retrieved from /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_skip_dag.py
+[2025-08-16T16:04:35.215+0200] {logging_mixin.py:188} INFO - [2025-08-16T16:04:35.215+0200] {dag.py:3096} INFO - Sync 1 DAGs
+[2025-08-16T16:04:35.227+0200] {logging_mixin.py:188} INFO - [2025-08-16T16:04:35.227+0200] {dag.py:3954} INFO - Setting next_dagrun for example_skip_dag to 2025-08-15 00:00:00+00:00, run_after=2025-08-16 00:00:00+00:00
+[2025-08-16T16:04:35.248+0200] {processor.py:183} INFO - Processing /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_skip_dag.py took 0.058 seconds
+[2025-08-16T16:05:27.892+0200] {processor.py:161} INFO - Started process (PID=20532) to work on /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_skip_dag.py
+[2025-08-16T16:05:27.904+0200] {processor.py:830} INFO - Processing file /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_skip_dag.py for tasks to queue
+[2025-08-16T16:05:27.905+0200] {logging_mixin.py:188} INFO - [2025-08-16T16:05:27.904+0200] {dagbag.py:540} INFO - Filling up the DagBag from /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_skip_dag.py
+[2025-08-16T16:05:27.910+0200] {processor.py:840} INFO - DAG(s) 'example_skip_dag' retrieved from /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_skip_dag.py
+[2025-08-16T16:05:27.927+0200] {logging_mixin.py:188} INFO - [2025-08-16T16:05:27.927+0200] {dag.py:3096} INFO - Sync 1 DAGs
+[2025-08-16T16:05:27.946+0200] {logging_mixin.py:188} INFO - [2025-08-16T16:05:27.946+0200] {dag.py:3954} INFO - Setting next_dagrun for example_skip_dag to 2025-08-15 00:00:00+00:00, run_after=2025-08-16 00:00:00+00:00
+[2025-08-16T16:05:27.978+0200] {processor.py:183} INFO - Processing /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_skip_dag.py took 0.092 seconds
+[2025-08-16T16:06:13.800+0200] {processor.py:161} INFO - Started process (PID=20797) to work on /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_skip_dag.py
+[2025-08-16T16:06:13.802+0200] {processor.py:830} INFO - Processing file /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_skip_dag.py for tasks to queue
+[2025-08-16T16:06:13.804+0200] {logging_mixin.py:188} INFO - [2025-08-16T16:06:13.803+0200] {dagbag.py:540} INFO - Filling up the DagBag from /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_skip_dag.py
+[2025-08-16T16:06:13.813+0200] {processor.py:840} INFO - DAG(s) 'example_skip_dag' retrieved from /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_skip_dag.py
+[2025-08-16T16:06:13.842+0200] {logging_mixin.py:188} INFO - [2025-08-16T16:06:13.841+0200] {dag.py:3096} INFO - Sync 1 DAGs
+[2025-08-16T16:06:13.864+0200] {logging_mixin.py:188} INFO - [2025-08-16T16:06:13.863+0200] {dag.py:3954} INFO - Setting next_dagrun for example_skip_dag to 2025-08-15 00:00:00+00:00, run_after=2025-08-16 00:00:00+00:00
+[2025-08-16T16:06:13.897+0200] {processor.py:183} INFO - Processing /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_skip_dag.py took 0.104 seconds
+[2025-08-16T16:06:58.769+0200] {processor.py:161} INFO - Started process (PID=21052) to work on /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_skip_dag.py
+[2025-08-16T16:06:58.771+0200] {processor.py:830} INFO - Processing file /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_skip_dag.py for tasks to queue
+[2025-08-16T16:06:58.772+0200] {logging_mixin.py:188} INFO - [2025-08-16T16:06:58.772+0200] {dagbag.py:540} INFO - Filling up the DagBag from /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_skip_dag.py
+[2025-08-16T16:06:58.776+0200] {processor.py:840} INFO - DAG(s) 'example_skip_dag' retrieved from /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_skip_dag.py
+[2025-08-16T16:06:58.790+0200] {logging_mixin.py:188} INFO - [2025-08-16T16:06:58.790+0200] {dag.py:3096} INFO - Sync 1 DAGs
+[2025-08-16T16:06:58.803+0200] {logging_mixin.py:188} INFO - [2025-08-16T16:06:58.802+0200] {dag.py:3954} INFO - Setting next_dagrun for example_skip_dag to 2025-08-15 00:00:00+00:00, run_after=2025-08-16 00:00:00+00:00
+[2025-08-16T16:06:58.819+0200] {processor.py:183} INFO - Processing /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_skip_dag.py took 0.056 seconds
+[2025-08-16T16:07:44.465+0200] {processor.py:161} INFO - Started process (PID=21369) to work on /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_skip_dag.py
+[2025-08-16T16:07:44.467+0200] {processor.py:830} INFO - Processing file /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_skip_dag.py for tasks to queue
+[2025-08-16T16:07:44.469+0200] {logging_mixin.py:188} INFO - [2025-08-16T16:07:44.468+0200] {dagbag.py:540} INFO - Filling up the DagBag from /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_skip_dag.py
+[2025-08-16T16:07:44.474+0200] {processor.py:840} INFO - DAG(s) 'example_skip_dag' retrieved from /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_skip_dag.py
+[2025-08-16T16:07:44.489+0200] {logging_mixin.py:188} INFO - [2025-08-16T16:07:44.488+0200] {dag.py:3096} INFO - Sync 1 DAGs
+[2025-08-16T16:07:44.502+0200] {logging_mixin.py:188} INFO - [2025-08-16T16:07:44.501+0200] {dag.py:3954} INFO - Setting next_dagrun for example_skip_dag to 2025-08-15 00:00:00+00:00, run_after=2025-08-16 00:00:00+00:00
+[2025-08-16T16:07:44.531+0200] {processor.py:183} INFO - Processing /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_skip_dag.py took 0.070 seconds
+[2025-08-16T16:08:49.352+0200] {processor.py:161} INFO - Started process (PID=21699) to work on /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_skip_dag.py
+[2025-08-16T16:08:49.361+0200] {processor.py:830} INFO - Processing file /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_skip_dag.py for tasks to queue
+[2025-08-16T16:08:49.362+0200] {logging_mixin.py:188} INFO - [2025-08-16T16:08:49.361+0200] {dagbag.py:540} INFO - Filling up the DagBag from /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_skip_dag.py
+[2025-08-16T16:08:49.367+0200] {processor.py:840} INFO - DAG(s) 'example_skip_dag' retrieved from /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_skip_dag.py
+[2025-08-16T16:08:49.385+0200] {logging_mixin.py:188} INFO - [2025-08-16T16:08:49.385+0200] {dag.py:3096} INFO - Sync 1 DAGs
+[2025-08-16T16:08:49.398+0200] {logging_mixin.py:188} INFO - [2025-08-16T16:08:49.398+0200] {dag.py:3954} INFO - Setting next_dagrun for example_skip_dag to 2025-08-15 00:00:00+00:00, run_after=2025-08-16 00:00:00+00:00
+[2025-08-16T16:08:49.460+0200] {processor.py:183} INFO - Processing /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_skip_dag.py took 0.113 seconds
+[2025-08-16T16:09:23.786+0200] {processor.py:161} INFO - Started process (PID=21876) to work on /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_skip_dag.py
+[2025-08-16T16:09:23.788+0200] {processor.py:830} INFO - Processing file /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_skip_dag.py for tasks to queue
+[2025-08-16T16:09:23.789+0200] {logging_mixin.py:188} INFO - [2025-08-16T16:09:23.788+0200] {dagbag.py:540} INFO - Filling up the DagBag from /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_skip_dag.py
+[2025-08-16T16:09:23.795+0200] {processor.py:840} INFO - DAG(s) 'example_skip_dag' retrieved from /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_skip_dag.py
+[2025-08-16T16:09:23.815+0200] {logging_mixin.py:188} INFO - [2025-08-16T16:09:23.815+0200] {dag.py:3096} INFO - Sync 1 DAGs
+[2025-08-16T16:09:23.834+0200] {logging_mixin.py:188} INFO - [2025-08-16T16:09:23.834+0200] {dag.py:3954} INFO - Setting next_dagrun for example_skip_dag to 2025-08-15 00:00:00+00:00, run_after=2025-08-16 00:00:00+00:00
+[2025-08-16T16:09:23.862+0200] {processor.py:183} INFO - Processing /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_skip_dag.py took 0.084 seconds
+[2025-08-16T16:10:23.660+0200] {processor.py:161} INFO - Started process (PID=22211) to work on /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_skip_dag.py
+[2025-08-16T16:10:23.663+0200] {processor.py:830} INFO - Processing file /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_skip_dag.py for tasks to queue
+[2025-08-16T16:10:23.664+0200] {logging_mixin.py:188} INFO - [2025-08-16T16:10:23.663+0200] {dagbag.py:540} INFO - Filling up the DagBag from /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_skip_dag.py
+[2025-08-16T16:10:23.676+0200] {processor.py:840} INFO - DAG(s) 'example_skip_dag' retrieved from /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_skip_dag.py
+[2025-08-16T16:10:23.704+0200] {logging_mixin.py:188} INFO - [2025-08-16T16:10:23.703+0200] {dag.py:3096} INFO - Sync 1 DAGs
+[2025-08-16T16:10:23.733+0200] {logging_mixin.py:188} INFO - [2025-08-16T16:10:23.733+0200] {dag.py:3954} INFO - Setting next_dagrun for example_skip_dag to 2025-08-15 00:00:00+00:00, run_after=2025-08-16 00:00:00+00:00
+[2025-08-16T16:10:23.772+0200] {processor.py:183} INFO - Processing /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_skip_dag.py took 0.128 seconds
+[2025-08-16T16:11:28.143+0200] {processor.py:161} INFO - Started process (PID=22547) to work on /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_skip_dag.py
+[2025-08-16T16:11:28.146+0200] {processor.py:830} INFO - Processing file /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_skip_dag.py for tasks to queue
+[2025-08-16T16:11:28.148+0200] {logging_mixin.py:188} INFO - [2025-08-16T16:11:28.147+0200] {dagbag.py:540} INFO - Filling up the DagBag from /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_skip_dag.py
+[2025-08-16T16:11:28.164+0200] {processor.py:840} INFO - DAG(s) 'example_skip_dag' retrieved from /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_skip_dag.py
+[2025-08-16T16:11:28.196+0200] {logging_mixin.py:188} INFO - [2025-08-16T16:11:28.195+0200] {dag.py:3096} INFO - Sync 1 DAGs
+[2025-08-16T16:11:28.250+0200] {logging_mixin.py:188} INFO - [2025-08-16T16:11:28.248+0200] {dag.py:3954} INFO - Setting next_dagrun for example_skip_dag to 2025-08-15 00:00:00+00:00, run_after=2025-08-16 00:00:00+00:00
+[2025-08-16T16:11:28.310+0200] {processor.py:183} INFO - Processing /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_skip_dag.py took 0.180 seconds
+[2025-08-16T16:12:07.019+0200] {processor.py:161} INFO - Started process (PID=22774) to work on /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_skip_dag.py
+[2025-08-16T16:12:07.022+0200] {processor.py:830} INFO - Processing file /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_skip_dag.py for tasks to queue
+[2025-08-16T16:12:07.024+0200] {logging_mixin.py:188} INFO - [2025-08-16T16:12:07.023+0200] {dagbag.py:540} INFO - Filling up the DagBag from /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_skip_dag.py
+[2025-08-16T16:12:07.040+0200] {processor.py:840} INFO - DAG(s) 'example_skip_dag' retrieved from /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_skip_dag.py
+[2025-08-16T16:12:07.088+0200] {logging_mixin.py:188} INFO - [2025-08-16T16:12:07.088+0200] {dag.py:3096} INFO - Sync 1 DAGs
+[2025-08-16T16:12:07.146+0200] {logging_mixin.py:188} INFO - [2025-08-16T16:12:07.145+0200] {dag.py:3954} INFO - Setting next_dagrun for example_skip_dag to 2025-08-15 00:00:00+00:00, run_after=2025-08-16 00:00:00+00:00
+[2025-08-16T16:12:07.231+0200] {processor.py:183} INFO - Processing /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_skip_dag.py took 0.228 seconds
+[2025-08-16T16:12:43.492+0200] {processor.py:161} INFO - Started process (PID=22978) to work on /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_skip_dag.py
+[2025-08-16T16:12:43.497+0200] {processor.py:830} INFO - Processing file /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_skip_dag.py for tasks to queue
+[2025-08-16T16:12:43.499+0200] {logging_mixin.py:188} INFO - [2025-08-16T16:12:43.498+0200] {dagbag.py:540} INFO - Filling up the DagBag from /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_skip_dag.py
+[2025-08-16T16:12:43.509+0200] {processor.py:840} INFO - DAG(s) 'example_skip_dag' retrieved from /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_skip_dag.py
+[2025-08-16T16:12:43.551+0200] {logging_mixin.py:188} INFO - [2025-08-16T16:12:43.551+0200] {dag.py:3096} INFO - Sync 1 DAGs
+[2025-08-16T16:12:43.600+0200] {logging_mixin.py:188} INFO - [2025-08-16T16:12:43.596+0200] {dag.py:3954} INFO - Setting next_dagrun for example_skip_dag to 2025-08-15 00:00:00+00:00, run_after=2025-08-16 00:00:00+00:00
+[2025-08-16T16:12:43.858+0200] {processor.py:183} INFO - Processing /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_skip_dag.py took 0.378 seconds
+[2025-08-16T16:13:19.234+0200] {processor.py:161} INFO - Started process (PID=23177) to work on /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_skip_dag.py
+[2025-08-16T16:13:19.237+0200] {processor.py:830} INFO - Processing file /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_skip_dag.py for tasks to queue
+[2025-08-16T16:13:19.239+0200] {logging_mixin.py:188} INFO - [2025-08-16T16:13:19.238+0200] {dagbag.py:540} INFO - Filling up the DagBag from /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_skip_dag.py
+[2025-08-16T16:13:19.251+0200] {processor.py:840} INFO - DAG(s) 'example_skip_dag' retrieved from /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_skip_dag.py
+[2025-08-16T16:13:19.278+0200] {logging_mixin.py:188} INFO - [2025-08-16T16:13:19.278+0200] {dag.py:3096} INFO - Sync 1 DAGs
+[2025-08-16T16:13:19.303+0200] {logging_mixin.py:188} INFO - [2025-08-16T16:13:19.302+0200] {dag.py:3954} INFO - Setting next_dagrun for example_skip_dag to 2025-08-15 00:00:00+00:00, run_after=2025-08-16 00:00:00+00:00
+[2025-08-16T16:13:19.349+0200] {processor.py:183} INFO - Processing /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_skip_dag.py took 0.127 seconds
+[2025-08-16T16:13:59.705+0200] {processor.py:161} INFO - Started process (PID=23378) to work on /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_skip_dag.py
+[2025-08-16T16:13:59.708+0200] {processor.py:830} INFO - Processing file /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_skip_dag.py for tasks to queue
+[2025-08-16T16:13:59.712+0200] {logging_mixin.py:188} INFO - [2025-08-16T16:13:59.708+0200] {dagbag.py:540} INFO - Filling up the DagBag from /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_skip_dag.py
+[2025-08-16T16:13:59.725+0200] {processor.py:840} INFO - DAG(s) 'example_skip_dag' retrieved from /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_skip_dag.py
+[2025-08-16T16:13:59.779+0200] {logging_mixin.py:188} INFO - [2025-08-16T16:13:59.779+0200] {dag.py:3096} INFO - Sync 1 DAGs
+[2025-08-16T16:13:59.892+0200] {logging_mixin.py:188} INFO - [2025-08-16T16:13:59.892+0200] {dag.py:3954} INFO - Setting next_dagrun for example_skip_dag to 2025-08-15 00:00:00+00:00, run_after=2025-08-16 00:00:00+00:00
+[2025-08-16T16:14:00.569+0200] {processor.py:183} INFO - Processing /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_skip_dag.py took 0.873 seconds
+[2025-08-16T16:14:49.246+0200] {processor.py:161} INFO - Started process (PID=23628) to work on /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_skip_dag.py
+[2025-08-16T16:14:49.249+0200] {processor.py:830} INFO - Processing file /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_skip_dag.py for tasks to queue
+[2025-08-16T16:14:49.251+0200] {logging_mixin.py:188} INFO - [2025-08-16T16:14:49.250+0200] {dagbag.py:540} INFO - Filling up the DagBag from /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_skip_dag.py
+[2025-08-16T16:14:49.278+0200] {processor.py:840} INFO - DAG(s) 'example_skip_dag' retrieved from /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_skip_dag.py
+[2025-08-16T16:14:49.569+0200] {logging_mixin.py:188} INFO - [2025-08-16T16:14:49.569+0200] {dag.py:3096} INFO - Sync 1 DAGs
+[2025-08-16T16:14:49.610+0200] {logging_mixin.py:188} INFO - [2025-08-16T16:14:49.610+0200] {dag.py:3954} INFO - Setting next_dagrun for example_skip_dag to 2025-08-15 00:00:00+00:00, run_after=2025-08-16 00:00:00+00:00
+[2025-08-16T16:14:49.675+0200] {processor.py:183} INFO - Processing /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_skip_dag.py took 0.447 seconds

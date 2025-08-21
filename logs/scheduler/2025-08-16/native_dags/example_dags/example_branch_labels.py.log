@@ -243,3 +243,73 @@
 [2025-08-16T16:01:00.447+0200] {logging_mixin.py:188} INFO - [2025-08-16T16:01:00.447+0200] {dag.py:3096} INFO - Sync 1 DAGs
 [2025-08-16T16:01:00.460+0200] {logging_mixin.py:188} INFO - [2025-08-16T16:01:00.460+0200] {dag.py:3954} INFO - Setting next_dagrun for example_branch_labels to 2025-08-15 00:00:00+00:00, run_after=2025-08-16 00:00:00+00:00
 [2025-08-16T16:01:00.488+0200] {processor.py:183} INFO - Processing /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_branch_labels.py took 0.071 seconds
+[2025-08-16T16:02:19.182+0200] {processor.py:161} INFO - Started process (PID=19021) to work on /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_branch_labels.py
+[2025-08-16T16:02:19.184+0200] {processor.py:830} INFO - Processing file /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_branch_labels.py for tasks to queue
+[2025-08-16T16:02:19.185+0200] {logging_mixin.py:188} INFO - [2025-08-16T16:02:19.185+0200] {dagbag.py:540} INFO - Filling up the DagBag from /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_branch_labels.py
+[2025-08-16T16:02:19.191+0200] {processor.py:840} INFO - DAG(s) 'example_branch_labels' retrieved from /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_branch_labels.py
+[2025-08-16T16:02:19.251+0200] {logging_mixin.py:188} INFO - [2025-08-16T16:02:19.251+0200] {dag.py:3096} INFO - Sync 1 DAGs
+[2025-08-16T16:02:19.283+0200] {logging_mixin.py:188} INFO - [2025-08-16T16:02:19.283+0200] {dag.py:3954} INFO - Setting next_dagrun for example_branch_labels to 2025-08-15 00:00:00+00:00, run_after=2025-08-16 00:00:00+00:00
+[2025-08-16T16:02:19.352+0200] {processor.py:183} INFO - Processing /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_branch_labels.py took 0.208 seconds
+[2025-08-16T16:03:39.914+0200] {processor.py:161} INFO - Started process (PID=19500) to work on /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_branch_labels.py
+[2025-08-16T16:03:39.915+0200] {processor.py:830} INFO - Processing file /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_branch_labels.py for tasks to queue
+[2025-08-16T16:03:39.916+0200] {logging_mixin.py:188} INFO - [2025-08-16T16:03:39.915+0200] {dagbag.py:540} INFO - Filling up the DagBag from /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_branch_labels.py
+[2025-08-16T16:03:39.924+0200] {processor.py:840} INFO - DAG(s) 'example_branch_labels' retrieved from /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_branch_labels.py
+[2025-08-16T16:03:39.940+0200] {logging_mixin.py:188} INFO - [2025-08-16T16:03:39.939+0200] {dag.py:3096} INFO - Sync 1 DAGs
+[2025-08-16T16:03:39.954+0200] {logging_mixin.py:188} INFO - [2025-08-16T16:03:39.954+0200] {dag.py:3954} INFO - Setting next_dagrun for example_branch_labels to 2025-08-15 00:00:00+00:00, run_after=2025-08-16 00:00:00+00:00
+[2025-08-16T16:03:39.987+0200] {processor.py:183} INFO - Processing /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_branch_labels.py took 0.078 seconds
+[2025-08-16T16:04:59.411+0200] {processor.py:161} INFO - Started process (PID=20259) to work on /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_branch_labels.py
+[2025-08-16T16:04:59.417+0200] {processor.py:830} INFO - Processing file /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_branch_labels.py for tasks to queue
+[2025-08-16T16:04:59.418+0200] {logging_mixin.py:188} INFO - [2025-08-16T16:04:59.418+0200] {dagbag.py:540} INFO - Filling up the DagBag from /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_branch_labels.py
+[2025-08-16T16:04:59.424+0200] {processor.py:840} INFO - DAG(s) 'example_branch_labels' retrieved from /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_branch_labels.py
+[2025-08-16T16:04:59.439+0200] {logging_mixin.py:188} INFO - [2025-08-16T16:04:59.439+0200] {dag.py:3096} INFO - Sync 1 DAGs
+[2025-08-16T16:04:59.453+0200] {logging_mixin.py:188} INFO - [2025-08-16T16:04:59.452+0200] {dag.py:3954} INFO - Setting next_dagrun for example_branch_labels to 2025-08-15 00:00:00+00:00, run_after=2025-08-16 00:00:00+00:00
+[2025-08-16T16:04:59.473+0200] {processor.py:183} INFO - Processing /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_branch_labels.py took 0.066 seconds
+[2025-08-16T16:06:11.011+0200] {processor.py:161} INFO - Started process (PID=20761) to work on /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_branch_labels.py
+[2025-08-16T16:06:11.012+0200] {processor.py:830} INFO - Processing file /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_branch_labels.py for tasks to queue
+[2025-08-16T16:06:11.013+0200] {logging_mixin.py:188} INFO - [2025-08-16T16:06:11.012+0200] {dagbag.py:540} INFO - Filling up the DagBag from /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_branch_labels.py
+[2025-08-16T16:06:11.019+0200] {processor.py:840} INFO - DAG(s) 'example_branch_labels' retrieved from /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_branch_labels.py
+[2025-08-16T16:06:11.032+0200] {logging_mixin.py:188} INFO - [2025-08-16T16:06:11.032+0200] {dag.py:3096} INFO - Sync 1 DAGs
+[2025-08-16T16:06:11.045+0200] {logging_mixin.py:188} INFO - [2025-08-16T16:06:11.044+0200] {dag.py:3954} INFO - Setting next_dagrun for example_branch_labels to 2025-08-15 00:00:00+00:00, run_after=2025-08-16 00:00:00+00:00
+[2025-08-16T16:06:11.067+0200] {processor.py:183} INFO - Processing /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_branch_labels.py took 0.061 seconds
+[2025-08-16T16:07:19.343+0200] {processor.py:161} INFO - Started process (PID=21183) to work on /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_branch_labels.py
+[2025-08-16T16:07:19.344+0200] {processor.py:830} INFO - Processing file /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_branch_labels.py for tasks to queue
+[2025-08-16T16:07:19.345+0200] {logging_mixin.py:188} INFO - [2025-08-16T16:07:19.345+0200] {dagbag.py:540} INFO - Filling up the DagBag from /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_branch_labels.py
+[2025-08-16T16:07:19.351+0200] {processor.py:840} INFO - DAG(s) 'example_branch_labels' retrieved from /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_branch_labels.py
+[2025-08-16T16:07:19.363+0200] {logging_mixin.py:188} INFO - [2025-08-16T16:07:19.363+0200] {dag.py:3096} INFO - Sync 1 DAGs
+[2025-08-16T16:07:19.374+0200] {logging_mixin.py:188} INFO - [2025-08-16T16:07:19.374+0200] {dag.py:3954} INFO - Setting next_dagrun for example_branch_labels to 2025-08-15 00:00:00+00:00, run_after=2025-08-16 00:00:00+00:00
+[2025-08-16T16:07:19.395+0200] {processor.py:183} INFO - Processing /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_branch_labels.py took 0.057 seconds
+[2025-08-16T16:08:46.695+0200] {processor.py:161} INFO - Started process (PID=21689) to work on /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_branch_labels.py
+[2025-08-16T16:08:46.723+0200] {processor.py:830} INFO - Processing file /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_branch_labels.py for tasks to queue
+[2025-08-16T16:08:46.724+0200] {logging_mixin.py:188} INFO - [2025-08-16T16:08:46.723+0200] {dagbag.py:540} INFO - Filling up the DagBag from /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_branch_labels.py
+[2025-08-16T16:08:46.731+0200] {processor.py:840} INFO - DAG(s) 'example_branch_labels' retrieved from /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_branch_labels.py
+[2025-08-16T16:08:46.750+0200] {logging_mixin.py:188} INFO - [2025-08-16T16:08:46.750+0200] {dag.py:3096} INFO - Sync 1 DAGs
+[2025-08-16T16:08:46.769+0200] {logging_mixin.py:188} INFO - [2025-08-16T16:08:46.769+0200] {dag.py:3954} INFO - Setting next_dagrun for example_branch_labels to 2025-08-15 00:00:00+00:00, run_after=2025-08-16 00:00:00+00:00
+[2025-08-16T16:08:46.817+0200] {processor.py:183} INFO - Processing /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_branch_labels.py took 0.129 seconds
+[2025-08-16T16:09:51.876+0200] {processor.py:161} INFO - Started process (PID=22035) to work on /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_branch_labels.py
+[2025-08-16T16:09:51.878+0200] {processor.py:830} INFO - Processing file /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_branch_labels.py for tasks to queue
+[2025-08-16T16:09:51.878+0200] {logging_mixin.py:188} INFO - [2025-08-16T16:09:51.878+0200] {dagbag.py:540} INFO - Filling up the DagBag from /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_branch_labels.py
+[2025-08-16T16:09:51.887+0200] {processor.py:840} INFO - DAG(s) 'example_branch_labels' retrieved from /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_branch_labels.py
+[2025-08-16T16:09:51.910+0200] {logging_mixin.py:188} INFO - [2025-08-16T16:09:51.910+0200] {dag.py:3096} INFO - Sync 1 DAGs
+[2025-08-16T16:09:51.933+0200] {logging_mixin.py:188} INFO - [2025-08-16T16:09:51.932+0200] {dag.py:3954} INFO - Setting next_dagrun for example_branch_labels to 2025-08-15 00:00:00+00:00, run_after=2025-08-16 00:00:00+00:00
+[2025-08-16T16:09:51.965+0200] {processor.py:183} INFO - Processing /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_branch_labels.py took 0.097 seconds
+[2025-08-16T16:11:24.729+0200] {processor.py:161} INFO - Started process (PID=22537) to work on /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_branch_labels.py
+[2025-08-16T16:11:24.732+0200] {processor.py:830} INFO - Processing file /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_branch_labels.py for tasks to queue
+[2025-08-16T16:11:24.734+0200] {logging_mixin.py:188} INFO - [2025-08-16T16:11:24.734+0200] {dagbag.py:540} INFO - Filling up the DagBag from /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_branch_labels.py
+[2025-08-16T16:11:24.745+0200] {processor.py:840} INFO - DAG(s) 'example_branch_labels' retrieved from /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_branch_labels.py
+[2025-08-16T16:11:24.780+0200] {logging_mixin.py:188} INFO - [2025-08-16T16:11:24.779+0200] {dag.py:3096} INFO - Sync 1 DAGs
+[2025-08-16T16:11:24.823+0200] {logging_mixin.py:188} INFO - [2025-08-16T16:11:24.822+0200] {dag.py:3954} INFO - Setting next_dagrun for example_branch_labels to 2025-08-15 00:00:00+00:00, run_after=2025-08-16 00:00:00+00:00
+[2025-08-16T16:11:25.078+0200] {processor.py:183} INFO - Processing /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_branch_labels.py took 0.357 seconds
+[2025-08-16T16:12:39.900+0200] {processor.py:161} INFO - Started process (PID=22944) to work on /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_branch_labels.py
+[2025-08-16T16:12:39.903+0200] {processor.py:830} INFO - Processing file /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_branch_labels.py for tasks to queue
+[2025-08-16T16:12:39.907+0200] {logging_mixin.py:188} INFO - [2025-08-16T16:12:39.904+0200] {dagbag.py:540} INFO - Filling up the DagBag from /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_branch_labels.py
+[2025-08-16T16:12:39.921+0200] {processor.py:840} INFO - DAG(s) 'example_branch_labels' retrieved from /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_branch_labels.py
+[2025-08-16T16:12:39.957+0200] {logging_mixin.py:188} INFO - [2025-08-16T16:12:39.956+0200] {dag.py:3096} INFO - Sync 1 DAGs
+[2025-08-16T16:12:39.995+0200] {logging_mixin.py:188} INFO - [2025-08-16T16:12:39.994+0200] {dag.py:3954} INFO - Setting next_dagrun for example_branch_labels to 2025-08-15 00:00:00+00:00, run_after=2025-08-16 00:00:00+00:00
+[2025-08-16T16:12:40.239+0200] {processor.py:183} INFO - Processing /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_branch_labels.py took 0.354 seconds
+[2025-08-16T16:13:52.292+0200] {processor.py:161} INFO - Started process (PID=23315) to work on /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_branch_labels.py
+[2025-08-16T16:13:52.300+0200] {processor.py:830} INFO - Processing file /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_branch_labels.py for tasks to queue
+[2025-08-16T16:13:52.301+0200] {logging_mixin.py:188} INFO - [2025-08-16T16:13:52.301+0200] {dagbag.py:540} INFO - Filling up the DagBag from /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_branch_labels.py
+[2025-08-16T16:13:52.314+0200] {processor.py:840} INFO - DAG(s) 'example_branch_labels' retrieved from /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_branch_labels.py
+[2025-08-16T16:13:52.367+0200] {logging_mixin.py:188} INFO - [2025-08-16T16:13:52.367+0200] {dag.py:3096} INFO - Sync 1 DAGs
+[2025-08-16T16:13:52.408+0200] {logging_mixin.py:188} INFO - [2025-08-16T16:13:52.408+0200] {dag.py:3954} INFO - Setting next_dagrun for example_branch_labels to 2025-08-15 00:00:00+00:00, run_after=2025-08-16 00:00:00+00:00
+[2025-08-16T16:13:52.751+0200] {processor.py:183} INFO - Processing /home/leoja/airflow/airflow_venv/lib/python3.12/site-packages/airflow/example_dags/example_branch_labels.py took 0.478 seconds
