@@ -22,12 +22,8 @@ logs/
 *.log
 webserver_config.py
 
-# Data files (ne pas pousser les données lourdes)
-data/backup/*.csv
-data/*.parquet
-data/backtest_results/*.csv
-data/backtest_results/*.parquet
-*.parquet
+# Data files - On garde les données mais pas les fichiers temporaires
+# (Vous pouvez commenter cette section si les données sont trop lourdes)
 
 # Spark
 metastore_db/
