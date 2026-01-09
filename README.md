@@ -33,10 +33,17 @@ Le système classe chaque période en **4 quadrants** basés sur deux dimensions
    - Attribution de points aux quadrants selon les règles métier
    - Le quadrant avec le score le plus élevé est sélectionné
 
-### 2. Allocation Dynamique par Quadrant
+### 2. Allocation par Quadrant
 
-Après avoir analysé les rendements,sharpe etc... des actifs sur chaque quadrants on établie un mapping :  
-**Poids statiques par quadrant :**
+Après avoir analysé les rendements,sharpe etc... des actifs sur chaque quadrants on établie un mapping : 
+<img width="650" height="301" alt="image" src="https://github.com/user-attachments/assets/bdd2f996-7d4d-446e-bf97-16b932267c8f" />
+<img width="650" height="301" alt="image" src="https://github.com/user-attachments/assets/0b4d4ca0-c717-4515-bd75-b50ce1b90f49" />
+<img width="650" height="301" alt="image" src="https://github.com/user-attachments/assets/3ead2146-8bae-46af-803b-4946f9a06b01" />
+<img width="650" height="301" alt="image" src="https://github.com/user-attachments/assets/a2631640-3976-4163-8c27-59058d965511" />
+
+
+
+**Poids par quadrant :**
 - Q1 : 50% SmallCAP, 40% SP500, 10% US REIT
 - Q2 : 50% Treasury, 40% Or, 10% Obligations
 - Q3 : 50% Or, 40% SP500, 10% Obligations
@@ -59,6 +66,9 @@ Après avoir analysé les rendements,sharpe etc... des actifs sur chaque quadran
 - Données journalières des actifs depuis 2005
 - Classification des quadrants mensuels
 - Capital initial : 1000€
+
+  <img width="900" height="299" alt="image" src="https://github.com/user-attachments/assets/324a73d1-7073-4e1e-ace2-aa2738ad373c" />
+
 
 **Coûts intégrés :**
 - **Frais de transaction** : 0.35% par mouvement (aller-retour)
@@ -133,17 +143,9 @@ python spark_jobs/backtest_strategy.py \
 ```bash
 cd index_jobs && python indexe.py
 ```
-
-## 📈 Résultats
-
-Les résultats du backtest sont disponibles dans :
-- `data/backtest_results/backtest_timeseries.csv` : Évolution mensuelle
-- `data/backtest_results/backtest_stats.csv` : Statistiques globales
-- `data/backtest_results/backtest_costs.csv` : Décomposition des coûts
-
 Visualisations disponibles sur **Kibana** (http://localhost:5601) après indexation.
 
-## 🔄 Axes d'Amélioration
+##  Axes d'Amélioration
 
 ### 1. **Pondération Dynamique**
 Actuellement, les poids des indicateurs dans le scoring des quadrants sont statiques et définis arbitrairement.  
@@ -201,4 +203,5 @@ FRED_API_KEY = 'votre_clé_api'
 
 **Note** : Ce système est à but éducatif et de recherche. Les performances passées ne garantissent pas les résultats futurs. Consultez un conseiller financier avant toute décision d'investissement.
         Projet développé dans le cadre d'apprentissage à l'analyse quantitative des cycles macro-économiques appliqués au trading systématique.
+
 
