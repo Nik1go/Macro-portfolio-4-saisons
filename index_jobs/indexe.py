@@ -13,11 +13,9 @@ dans un moteur de recherche/visualisation (pour notre projet dans : Kibana).
 3. Connexion à Elasticsearch (avec authentification de base et désactivation des certificats SSL).
 4. Création de l’index s’il n’existe pas encore.
 5. Transformation ligne par ligne en documents JSON puis envoi groupé dans Elasticsearch.
-
-Paramètres attendus :
-Ce script s’utilise en ligne de commande avec 5 arguments :
-```bash
-python3 indexe.py <chemin_parquet> <host_ES> <index_name> <username> <password> """
+cd airflow_venv
+source bin/activate
+python index_jobs/indexe.py """
 
 ES_URL = "http://127.0.0.1:9200"
 HEADERS = {
@@ -83,6 +81,21 @@ CSV_SPECS = {
     "assets_performance":  ("assets_performance_by_quadrant.csv", mapping_a),
     "backtest_timeseries": ("backtest_results/backtest_timeseries.csv",mapping_bt_timeseries),
     "backtest_stats":      ("backtest_results/backtest_stats.csv",     mapping_bt_stats),
+    "backtest_costs":      ("backtest_results/backtest_costs.csv",     {
+        "properties": {
+            "year_month": {"type":"date","format":"yyyy-MM-dd"},
+            "monthly_ter_cost": {"type":"float"},
+            "monthly_transaction_cost": {"type":"float"},
+            "cum_ter_cost": {"type":"float"},
+            "cum_transaction_cost": {"type":"float"},
+            "switches_SP500": {"type":"float"},
+            "switches_GOLD_OZ_USD": {"type":"float"},
+            "switch_cost_SP500": {"type":"float"},
+            "switch_cost_GOLD_OZ_USD": {"type":"float"},
+            "cum_switch_cost_SP500": {"type":"float"},
+            "cum_switch_cost_GOLD_OZ_USD": {"type":"float"}
+        }
+    }),
 }
 
 def create_index(name, mapping):

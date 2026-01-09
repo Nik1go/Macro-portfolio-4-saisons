@@ -14,6 +14,8 @@ from pyspark.sql.functions import (
     expr,
     to_date,
     greatest,
+    lit,
+    coalesce,
 )
 """ compute_quadrants.py
 
@@ -42,37 +44,42 @@ Définition des quadrants :
 Usage :
 Le script s'utilise avec 3 arguments :
 ```bash
-spark-submit compute_quadrants.py <input_indicators.parquet> <output_quadrants.parquet> <output_quadrants.csv> """
+python spark_jobs/compute_quadrants.py data/Indicators.parquet data/quadrants.parquet data/quadrants.csv
+ """
 
 
-def write_single_parquet(df, output_path: str):
-    tmp_dir = output_path + "_tmp_parquet"
+def write_single_file(df, output_path: str, format: str = "parquet"):
+    """
+    Écrit un DataFrame en un seul fichier (CSV ou Parquet) en fusionnant les partitions.
+    Nettoie les fichiers temporaires automatiquement.
+    """
+    tmp_dir = output_path + f"_tmp_{format}"
+
+    # 1. Nettoyage préventif
     if os.path.exists(tmp_dir):
         shutil.rmtree(tmp_dir)
-    df.coalesce(1).write.mode("overwrite").parquet(tmp_dir)
 
-    part_files = glob.glob(os.path.join(tmp_dir, "part-*.parquet"))
+    # 2. Écriture partitionnée
+    writer = df.coalesce(1).write.mode("overwrite")
+
+    if format == "csv":
+        writer.option("header", "true").csv(tmp_dir)
+        pattern = "part-*.csv"
+    else:
+        writer.parquet(tmp_dir)
+        pattern = "part-*.parquet"
+
+    # 3. Récupération du fichier unique
+    part_files = glob.glob(os.path.join(tmp_dir, pattern))
     if not part_files:
-        raise RuntimeError(f"Aucun part-*.parquet trouvé dans {tmp_dir}")
+        raise RuntimeError(f"Erreur Spark : Aucun fichier {pattern} généré dans {tmp_dir}")
+
     single_part = part_files[0]
 
+    # 4. Déplacement final (Atomique)
     if os.path.exists(output_path):
         os.remove(output_path)
-    shutil.move(single_part, output_path)
-    shutil.rmtree(tmp_dir)
 
-def write_single_csv(df, output_path: str):
-
-    tmp_dir = output_path + "_tmp_csv"
-    if os.path.exists(tmp_dir):
-        shutil.rmtree(tmp_dir)
-    df.coalesce(1).write.mode("overwrite").option("header", "true").csv(tmp_dir)
-    part_files = glob.glob(os.path.join(tmp_dir, "part-*.csv"))
-    if not part_files:
-        raise RuntimeError(f"Aucun part-*.csv trouvé dans {tmp_dir}")
-    single_part = part_files[0]
-    if os.path.exists(output_path):
-        os.remove(output_path)
     shutil.move(single_part, output_path)
     shutil.rmtree(tmp_dir)
 
@@ -80,35 +87,19 @@ def write_single_csv(df, output_path: str):
 def main(indicators_parquet_path: str, output_parquet_path: str, output_csv_path: str):
     spark = (
         SparkSession.builder
-        .appName("ComputeEconomicQuadrants")
+        .appName("ComputeEconomicQuadrants_Expanding")
         .getOrCreate()
     )
 
+    # ==========================================
+    # 1. CHARGEMENT
+    # ==========================================
     df_ind = (
         spark.read.parquet(indicators_parquet_path)
         .withColumn("date", to_date(col("date"), "yyyy-MM-dd"))
         .orderBy("date")
     )
 
-    existing_df = None
-    last_date = None
-
-    if Path(output_parquet_path).is_file():
-        existing_df = spark.read.parquet(output_parquet_path)
-        max_row = existing_df.agg({"date": "max"}).collect()[0]
-        last_date = max_row[0]  # type: ignore
-        new_ind = df_ind.filter(col("date") > last_date)
-    else:
-        new_ind = df_ind
-
-    if new_ind.rdd.isEmpty():
-        print(f"Aucune nouvelle donnée après {last_date}. Pas de réécriture.")
-        spark.stop()
-        return
-
-    window_lag = Window.orderBy("date")
-    window_roll = Window.orderBy("date").rowsBetween(-120, -1)
-    working_df = df_ind
     indicator_cols = [
         "INFLATION",
         "UNEMPLOYMENT",
@@ -116,89 +107,120 @@ def main(indicators_parquet_path: str, output_parquet_path: str, output_csv_path
         "High_Yield_Bond_SPREAD",
         "10-2Year_Treasury_Yield_Bond",
         "TAUX_FED",
-
     ]
 
+    # ==========================================
+    # 2. CALCUL DES SCORES (SANS LEAKAGE)
+    # ==========================================
+
+    # A. Fenêtre Extensive (Expanding) : Du début des temps jusqu'à "hier"
+    # Sert à définir la "normalité" historique connue à l'instant T.
+    window_expanding = Window.orderBy("date").rowsBetween(Window.unboundedPreceding, -1)
+
+    # B. Fenêtre Glissante (Rolling) : Court terme (ex: 6 mois) pour le Momentum
+    window_short_term = Window.orderBy("date").rowsBetween(-120, -1)
+
+    working_df = df_ind
+
     for ind in indicator_cols:
-        prev_val = lag(col(ind), 1).over(window_lag)
+        # --- PARTIE 1 : SCORE DE POSITION (Basé sur l'historique connu) ---
+
+        # Moyenne et Ecart-Type de tout ce qui s'est passé AVANT aujourd'hui
         working_df = (
             working_df
-            .withColumn(f"{ind}_delta", (col(ind) - prev_val) / prev_val)
-            .withColumn(f"{ind}_delta_mean", avg(f"{ind}_delta").over(window_roll))
-            .withColumn(f"{ind}_delta_std", stddev_samp(f"{ind}_delta").over(window_roll))
-            .withColumn(
-                f"{ind}_zscore",
-                (col(f"{ind}_delta") - col(f"{ind}_delta_mean")) / col(f"{ind}_delta_std")
-            )
+            .withColumn(f"{ind}_hist_mean", avg(col(ind)).over(window_expanding))
+            .withColumn(f"{ind}_hist_std", stddev_samp(col(ind)).over(window_expanding))
         )
 
-    median_std = {}
-    for ind in indicator_cols:
-        median_val = working_df.select(expr(f"percentile_approx(`{ind}`, 0.5)")).first()[0]
-        std_all = working_df.agg(stddev_samp(col(ind))).first()[0]
-        median_std[ind] = (median_val, std_all)
+        # Z-Score Point-in-Time : (Valeur Actuelle - Moyenne Historique) / Std Historique
+        # On utilise coalesce(..., lit(1)) pour éviter la division par None/Zero au tout début
+        z_score_pos_col = (
+                (col(ind) - col(f"{ind}_hist_mean")) /
+                coalesce(col(f"{ind}_hist_std"), lit(1.0))
+        )
 
-    def pos_score(col_name: str, med: float, std_all: float):
-        return (
-            when(col(col_name) > med + 1.5 * std_all, 2)
-            .when(col(col_name) > med + 0.5 * std_all, 1)
-            .when(col(col_name) < med - 1.5 * std_all, -2)
-            .when(col(col_name) < med - 0.5 * std_all, -1)
+        # Mapping Position (-2 à +2)
+        working_df = working_df.withColumn(
+            f"{ind}_pos_score",
+            when(z_score_pos_col > 1.5, 2)
+            .when(z_score_pos_col > 0.5, 1)
+            .when(z_score_pos_col < -1.5, -2)
+            .when(z_score_pos_col < -0.5, -1)
             .otherwise(0)
         )
 
-    def var_score(z_col_name: str):
-        return (
-            when(col(z_col_name) > 2, 2)
-            .when(col(z_col_name) > 1, 1)
-            .when(col(z_col_name) < -2, -2)
-            .when(col(z_col_name) < -1, -1)
+        # --- PARTIE 2 : SCORE DE VARIATION (Momentum Court Terme) ---
+
+        # Variation en % ou absolue selon la donnée (ici variation simple)
+        prev_val = lag(col(ind), 1).over(Window.orderBy("date"))
+        delta = (col(ind) - prev_val)  # On peut diviser par prev_val si c'est des % relatifs
+
+        # On normalise cette variation par rapport aux 120 derniers jours
+        delta_mean = avg(delta).over(window_short_term)
+        delta_std = stddev_samp(delta).over(window_short_term)
+
+        z_score_var_col = (
+                (delta - delta_mean) /
+                coalesce(delta_std, lit(1.0))
+        )
+
+        # Mapping Variation (-2 à +2)
+        working_df = working_df.withColumn(
+            f"{ind}_var_score",
+            when(z_score_var_col > 2, 2)
+            .when(z_score_var_col > 1, 1)
+            .when(z_score_var_col < -2, -2)
+            .when(z_score_var_col < -1, -1)
             .otherwise(0)
         )
 
-    new_df = working_df.filter(col("date") > last_date) if last_date is not None else working_df
-
-    for ind in indicator_cols:
-        med, std_all = median_std[ind]
-        new_df = (
-            new_df
-            .withColumn(f"{ind}_pos_score", pos_score(ind, med, std_all))
-            .withColumn(f"{ind}_var_score", var_score(f"{ind}_zscore"))
-            .withColumn(f"{ind}_combined", col(f"{ind}_pos_score") + col(f"{ind}_var_score"))
+        # --- COMBINAISON ---
+        working_df = working_df.withColumn(
+            f"{ind}_combined",
+            col(f"{ind}_pos_score") + col(f"{ind}_var_score")
         )
 
-    new_df = (
-        new_df
-        .withColumn("score_Q1", expr("0"))
-        .withColumn("score_Q2", expr("0"))
-        .withColumn("score_Q3", expr("0"))
-        .withColumn("score_Q4", expr("0"))
+    # Nettoyage "Warm-up" : On supprime les 2 premières années où les stats historiques
+    # ne sont pas fiables (std = null ou très volatile).
+    # Ajustez la date selon le début de vos données.
+    working_df = working_df.filter(col(f"{indicator_cols[0]}_hist_std").isNotNull())
+
+    # ==========================================
+    # 3. ATTRIBUTION DES QUADRANTS
+    # ==========================================
+
+    # Initialisation des compteurs
+    working_df = (
+        working_df
+        .withColumn("score_Q1", lit(0))
+        .withColumn("score_Q2", lit(0))
+        .withColumn("score_Q3", lit(0))
+        .withColumn("score_Q4", lit(0))
     )
 
-    def add_points(df, combined_col: str, pos_quads: list, neg_quads: list):
-        exprs = {}
-        for q in pos_quads:
-            exprs[q] = when(col(combined_col) > 0, 1).otherwise(0)
-        for q in neg_quads:
-            exprs[q] = when(col(combined_col) < 0, 1).otherwise(0)
-        return df, exprs
-
+    # Définition des règles (Vos règles métier)
     mappings = {
         "INFLATION_combined": (["score_Q2", "score_Q3"], ["score_Q4"]),
         "UNEMPLOYMENT_combined": (["score_Q1", "score_Q2"], ["score_Q3", "score_Q4"]),
         "CONSUMER_SENTIMENT_combined": (["score_Q1", "score_Q2"], ["score_Q3", "score_Q4"]),
-        "High_Yield_Bond_SPREAD_combined": (["score_Q3", "score_Q4"], ["score_Q1", "score_Q2"]),  # ⚠️ inversé
-        "10-2Year_Treasury_Yield_Bond_combined": (["score_Q1"], ["score_Q4"]),  # ➕ croissance
-        "TAUX_FED_combined": (["score_Q3", "score_Q4"], ["score_Q1", "score_Q2"]),  # ➕ Q3 stress
+        "High_Yield_Bond_SPREAD_combined": (["score_Q3", "score_Q4"], ["score_Q1", "score_Q2"]),
+        "10-2Year_Treasury_Yield_Bond_combined": (["score_Q1"], ["score_Q4"]),
+        "TAUX_FED_combined": (["score_Q3", "score_Q4"], ["score_Q1", "score_Q2"]),
     }
 
+    # Application des points
     for combined_col, (pos_quads, neg_quads) in mappings.items():
-        new_df, exprs = add_points(new_df, combined_col, pos_quads, neg_quads)
-        for q, expr_cond in exprs.items():
-            new_df = new_df.withColumn(q, col(q) + expr_cond)
+        # Si indicateur positif (ex: Forte Inflation) -> On ajoute des points aux quadrants concernés
+        for q in pos_quads:
+            working_df = working_df.withColumn(q, when(col(combined_col) > 0, col(q) + 1).otherwise(col(q)))
 
-    new_df = (
-        new_df
+        # Si indicateur négatif -> On ajoute des points aux autres quadrants
+        for q in neg_quads:
+            working_df = working_df.withColumn(q, when(col(combined_col) < 0, col(q) + 1).otherwise(col(q)))
+
+    # Détermination du Vainqueur
+    working_df = (
+        working_df
         .withColumn(
             "max_score",
             greatest(col("score_Q1"), col("score_Q2"), col("score_Q3"), col("score_Q4"))
@@ -212,36 +234,34 @@ def main(indicators_parquet_path: str, output_parquet_path: str, output_csv_path
         )
     )
 
+    # ==========================================
+    # 4. SÉLECTION ET ÉCRITURE
+    # ==========================================
     final_cols = [
         "date",
         *indicator_cols,
-        *[f"{ind}_delta" for ind in indicator_cols],
-        *[f"{ind}_zscore" for ind in indicator_cols],
         *[f"{ind}_pos_score" for ind in indicator_cols],
         *[f"{ind}_var_score" for ind in indicator_cols],
-        *[f"{ind}_combined" for ind in indicator_cols],
+        # *[f"{ind}_hist_mean" for ind in indicator_cols], # Debug: décommentez pour voir la moyenne évolutive
         "score_Q1", "score_Q2", "score_Q3", "score_Q4", "assigned_quadrant"
     ]
-    new_df = new_df.select(*final_cols)
 
-    if existing_df is not None:
-        merged_df = existing_df.select(*final_cols).unionByName(new_df)
-    else:
-        merged_df = new_df
+    final_df = working_df.select(*final_cols).orderBy("date")
 
-    write_single_parquet(merged_df, output_parquet_path)
-    print(f"✔ Written single-file Parquet → {output_parquet_path}")
-    write_single_csv(merged_df, output_csv_path)
-    print(f"✔ Written single-file CSV   → {output_csv_path}")
+    print("Writing Parquet...")
+    write_single_file(final_df, output_parquet_path, "parquet")
+    print(f"✔ Written Parquet → {output_parquet_path}")
+
+    print("Writing CSV...")
+    write_single_file(final_df, output_csv_path, "csv")
+    print(f"✔ Written CSV     → {output_csv_path}")
 
     spark.stop()
 
+
 if __name__ == "__main__":
     if len(sys.argv) != 4:
-        print("Usage: compute_quadrants.py <input_indicators.parquet> <output_quadrants.parquet> <output_quadrants.csv>")
+        print("Usage: python compute_quadrants.py <input.parquet> <output.parquet> <output.csv>")
         sys.exit(1)
 
-    indicators_path = sys.argv[1]
-    output_parquet  = sys.argv[2]
-    output_csv      = sys.argv[3]
-    main(indicators_path, output_parquet, output_csv)
+    main(sys.argv[1], sys.argv[2], sys.argv[3])

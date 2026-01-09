@@ -57,9 +57,7 @@ YF_SERIES_MAPPING = {
     "RUSSELL2000(Small CAP)": {'ticker': 'IWM', 'series_id': 'SmallCAP'},
     "REITs(Immobilier US)": {'ticker': 'VNQ', 'series_id': 'US_REIT_VNQ'},
     'US_TREASURY_10Y': {'ticker': 'IEF', 'series_id': 'TREASURY_10Y'},
-    "BARREL PETROL" : { 'ticker': 'ICOM.L', "series_id": "ENERGY"},
     "OBLIGATION ENTREPRISE" : { 'ticker': 'LQD', "series_id": "OBLIGATION"},
-
 }
 
 default_args = {
@@ -233,7 +231,6 @@ def format_and_clean_data_daily(base_dir, input_path, data_type):
     df = pd.read_csv(input_path, parse_dates=['date'])
     print("   Colonnes lues dans df :", df.columns.tolist())
     df = df.dropna(how='all', subset=df.columns.difference(['date']))
-    df = df.dropna(how='any', subset=df.columns.difference(['date']))
     df['date'] = pd.to_datetime(df['date'])
     df = df.sort_values('date')
     df['date'] = df['date'].dt.strftime('%Y-%m-%d')
@@ -305,7 +302,7 @@ with DAG(
         task_id='compute_economic_quadrants',
         application="/home/leoja/airflow/spark_jobs/compute_quadrants.py",
         name="compute_economic_quadrants",
-        application_args=[INDICATORS_PARQUET, QUADRANT_OUTPUT, QUADRANT_CSV],
+            application_args=[INDICATORS_PARQUET, QUADRANT_OUTPUT, QUADRANT_CSV],
         conn_id="spark_local",
         conf={
             "spark.pyspark.python": "/home/leoja/airflow_venv/bin/python",
