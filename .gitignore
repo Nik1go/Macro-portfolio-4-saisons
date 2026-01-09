@@ -22,13 +22,12 @@ logs/
 *.log
 webserver_config.py
 
-# Data files (ne pas pousser les données)
-data/backup/
+# Data files (ne pas pousser les données lourdes)
+data/backup/*.csv
 data/*.parquet
-data/*.csv
-data/backtest_results/
+data/backtest_results/*.csv
+data/backtest_results/*.parquet
 *.parquet
-*.csv
 
 # Spark
 metastore_db/
