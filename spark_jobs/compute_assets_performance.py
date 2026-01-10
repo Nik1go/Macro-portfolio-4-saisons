@@ -3,7 +3,6 @@ import os
 import sys
 import pandas as pd
 import numpy as np
-from pyspark.sql.connect.functions import years
 
 """ compute_assets_performance.py
 
@@ -67,8 +66,14 @@ def main():
     if 'date' not in df_assets_wide.columns:
         raise KeyError("La colonne 'date' est absente de Assets_daily.parquet.")
     asset_columns = [c for c in df_assets_wide.columns if c != 'date']
+    
+    # Exclure ENERGY de l'analyse
+    asset_columns = [c for c in asset_columns if c != 'ENERGY']
+    
     if len(asset_columns) == 0:
-        raise ValueError("Aucune colonne d’actif détectée (hormis 'date').")
+        raise ValueError("Aucune colonne d'actif détectée (hormis 'date').")
+    
+    print(f"[compute_assets_performance] Actifs analysés : {asset_columns}")
 
     df_long = df_assets_wide.melt(
         id_vars=['date'],

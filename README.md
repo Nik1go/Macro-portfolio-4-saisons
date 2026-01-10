@@ -164,12 +164,21 @@ Actuellement, les poids des indicateurs dans le scoring des quadrants sont stati
 - **Interpolation mensuelle** : Peut créer des artefacts sur les indicateurs trimestriels
 - **Survivorship bias** : Les ETFs récents n'ont pas d'historique complet
 
-**Solutions proposées :**
+**Solutions implémentées ✅ :**
+- **Correction du look-ahead bias** : Application de lags selon le délai de publication réel
+  - INFLATION (CPI) : +15 jours (publié mi-mois suivant)
+  - UNEMPLOYMENT : +7 jours (premier vendredi du mois)
+  - PIB : +60 jours (2 mois de délai)
+  - CONSUMER_SENTIMENT : +5 jours
+  - Spreads & Taux : 0 jour (temps réel)
+- Forward-fill le PIB (trimestriel → mensuel)
+- Pas d'interpolation sur les données temps réel
+
+**Solutions futures :**
 - Utiliser uniquement des **indicateurs point-in-time** (pas de données révisées)
 - Ajouter des **leading indicators** plus réactifs (ISM PMI, Initial Claims)
 - Implémenter une **validation out-of-sample** stricte (train/test séparé)
 - Tester la **robustesse avec bootstrap** pour évaluer la sensibilité aux données
-- Forward-fill le PIB au lieu d'interpoler linéairement
 
 ### 4. **Gestion des Coûts**
 - Ajouter un seuil de rebalancement (éviter les mouvements < 2%)

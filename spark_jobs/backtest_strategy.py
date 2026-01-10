@@ -35,7 +35,7 @@ N_ABOVE_RISK_ON = int(os.getenv('N_ABOVE_RISK_ON', '5'))
 def compute_monthly_returns_from_parquet(parquet_path, assets):
     df = pd.read_parquet(parquet_path)
     df['date'] = pd.to_datetime(df['date'])
-    monthly = df.set_index('date').resample('ME').last().ffill()
+    monthly = df.set_index('date').resample('M').last().ffill()
     rets = monthly[assets].pct_change().rename(columns=lambda c: f"{c}_ret")
     rets.index = rets.index.to_period('M').to_timestamp()
     return rets

@@ -16,12 +16,13 @@ from pyspark.sql.functions import (
     greatest,
     lit,
     coalesce,
+    last,
 )
 """ compute_quadrants.py
 
 Objectif :
 Ce script Spark permet de déterminer dans quel quadrant économique (Q1 à Q4) se trouve chaque mois,
-en analysant des indicateurs macroéconomiques comme l’inflation, le chômage, ou les spreads de crédit.
+en analysant des indicateurs macroéconomiques comme l'inflation, le chômage, ou les spreads de crédit.
 
 Définition des quadrants :
 - Q1 : Croissance & faible inflation (environnement favorable)
@@ -30,7 +31,7 @@ Définition des quadrants :
 - Q4 : Récession & faible inflation
 
 Étapes réalisées :
-1. Lecture des indicateurs macroéconomiques à partir d’un fichier `.parquet`
+1. Lecture des indicateurs macroéconomiques à partir d'un fichier `.parquet`
 2. Calcul :
    - des deltas (variations mensuelles),
    - des z-scores (anomalies par rapport à l'historique),
@@ -45,7 +46,7 @@ Usage :
 Le script s'utilise avec 3 arguments :
 ```bash
 python spark_jobs/compute_quadrants.py data/Indicators.parquet data/quadrants.parquet data/quadrants.csv
- """
+"""
 
 
 def write_single_file(df, output_path: str, format: str = "parquet"):
@@ -91,14 +92,36 @@ def main(indicators_parquet_path: str, output_parquet_path: str, output_csv_path
         .getOrCreate()
     )
 
-    # ==========================================
-    # 1. CHARGEMENT
-    # ==========================================
     df_ind = (
         spark.read.parquet(indicators_parquet_path)
         .withColumn("date", to_date(col("date"), "yyyy-MM-dd"))
         .orderBy("date")
     )
+
+    # Liste des colonnes Macro "Lentes" (qui ont des trous et des délais de publication)
+    macro_cols = ["INFLATION", "UNEMPLOYMENT", "CONSUMER_SENTIMENT", "Real_Gross_Domestic_Product"]
+    
+    # A. FORWARD FILL (Boucher les trous)
+    window_ff = Window.orderBy("date").rowsBetween(Window.unboundedPreceding, 0)
+    
+    for c in macro_cols:
+        df_ind = df_ind.withColumn(c, last(col(c), ignorenulls=True).over(window_ff))
+
+    # On applique un délai conservateur pour chaque type de donnée.
+    lags_config = {
+        "INFLATION": 18,                  # CPI sort mi-mois. 18 jours ouvrés couvre largement le 15-20 du mois.
+        "UNEMPLOYMENT": 7,                # Sort le 1er vendredi. 7 jours ouvrés est safe.
+        "CONSUMER_SENTIMENT": 10,         # Prelim mi-mois, Final fin de mois.
+        "Real_Gross_Domestic_Product": 60 # PIB : Très lent (2 à 3 mois de retard)
+    }
+
+    window_lag = Window.orderBy("date")
+
+    for col_name, lag_days in lags_config.items():
+        # On décale la colonne de X lignes (jours) vers le bas
+        df_ind = df_ind.withColumn(col_name, lag(col(col_name), lag_days).over(window_lag))
+
+    # Note : High_Yield_Bond_SPREAD, 10-2Year... et TAUX_FED restent à 0 (Temps Réel)
 
     indicator_cols = [
         "INFLATION",
@@ -109,22 +132,14 @@ def main(indicators_parquet_path: str, output_parquet_path: str, output_csv_path
         "TAUX_FED",
     ]
 
-    # ==========================================
-    # 2. CALCUL DES SCORES (SANS LEAKAGE)
-    # ==========================================
-
-    # A. Fenêtre Extensive (Expanding) : Du début des temps jusqu'à "hier"
     # Sert à définir la "normalité" historique connue à l'instant T.
     window_expanding = Window.orderBy("date").rowsBetween(Window.unboundedPreceding, -1)
-
-    # B. Fenêtre Glissante (Rolling) : Court terme (ex: 6 mois) pour le Momentum
+    # Fenêtre Glissante (Rolling) : Court terme (ex: 6 mois) pour le Momentum
     window_short_term = Window.orderBy("date").rowsBetween(-120, -1)
-
     working_df = df_ind
 
     for ind in indicator_cols:
-        # --- PARTIE 1 : SCORE DE POSITION (Basé sur l'historique connu) ---
-
+        # SCORE DE POSITION
         # Moyenne et Ecart-Type de tout ce qui s'est passé AVANT aujourd'hui
         working_df = (
             working_df
@@ -149,8 +164,7 @@ def main(indicators_parquet_path: str, output_parquet_path: str, output_csv_path
             .otherwise(0)
         )
 
-        # --- PARTIE 2 : SCORE DE VARIATION (Momentum Court Terme) ---
-
+        # SCORE DE VARIATION (Momentum Court Terme)
         # Variation en % ou absolue selon la donnée (ici variation simple)
         prev_val = lag(col(ind), 1).over(Window.orderBy("date"))
         delta = (col(ind) - prev_val)  # On peut diviser par prev_val si c'est des % relatifs
@@ -186,7 +200,7 @@ def main(indicators_parquet_path: str, output_parquet_path: str, output_csv_path
     working_df = working_df.filter(col(f"{indicator_cols[0]}_hist_std").isNotNull())
 
     # ==========================================
-    # 3. ATTRIBUTION DES QUADRANTS
+    # 4. ATTRIBUTION DES QUADRANTS
     # ==========================================
 
     # Initialisation des compteurs
@@ -235,7 +249,7 @@ def main(indicators_parquet_path: str, output_parquet_path: str, output_csv_path
     )
 
     # ==========================================
-    # 4. SÉLECTION ET ÉCRITURE
+    # 5. SÉLECTION ET ÉCRITURE
     # ==========================================
     final_cols = [
         "date",
