@@ -1,4 +1,4 @@
-# 🛠️ Guide d'installation (Windows / WSL)
+gi# 🛠️ Guide d'installation (Windows / WSL)
 
 Pour reprendre ce projet sur une machine Windows, voici la marche à suivre.
 
@@ -46,26 +46,51 @@ pip install -r requirements.txt
 
 ## 3. Lancer le projet
 
-### A. Lancer l'interface de visualisation (Streamlit)
-C'est le plus simple pour voir les résultats.
+###  Lancer les scripts de calcul (Spark)
+Si tu veux recalculer les quadrants ou les performances manuellement :
+```bash
+# Exemple pour lancer l'ensemble du dag
+ airflow dags trigger macro_trading_dag 
+```
+### Lancer l'interface de visualisation (Streamlit)
+
+C'est le plus simple pour visualiser les résultats.
 ```bash
 streamlit run streamlit_app.py
 ```
 
-### B. Lancer les scripts de calcul (Spark)
-Si tu veux recalculer les quadrants ou les performances manuellement :
-```bash
-# Exemple pour le backtest
-python spark_jobs/backtest_strategy.py data/quadrants.csv data/Assets_daily.parquet 1000 data/backtest_results
-```
+###  Lancer Airflow (Seulement sur WSL/Linux)
 
-### C. Lancer Airflow (Seulement sur WSL/Linux)
-```bash
-# Démarrer Airflow (dans un autre terminal)
-airflow standalone
-```
+⚠️ **Important pour la première fois :** 
+Airflow a besoin d'une base de données. 
+
+1. **Définir le dossier du projet pour Airflow**
+   ```bash
+   export AIRFLOW_HOME=$(pwd)
+   ```
+
+2. **Initialiser la base de données (si ce n'est pas déjà fait)**
+   ```bash
+   airflow db migrate
+   ```
+   *(Si `migrate` échoue ou n'existe pas, essaie `airflow db init`)*
+
+3. **Créer un utilisateur Admin**
+   ```bash
+   airflow users create --username admin --firstname Admin --lastname User --role Admin --email admin@example.com --password admin
+   ```
+
+4. **Lancer Airflow**
+   ```bash
+   airflow standalone
+   ```
+   Laisse ce terminal ouvert. Airflow va scanner le dossier `dags/` et trouver `macro_trading_dag.py`.
+   Une fois lancé, tu peux aller sur `http://localhost:8080` (login: admin / password: admin).
+
+5. **Déclencher le DAG**
+   Dans un **nouveau** terminal (n'oublie pas le `source venv/bin/activate` et `export AIRFLOW_HOME=$(pwd)`):
+   ```bash
+   airflow dags trigger macro_trading_dag
+   ```
 
 ---
-
-## 💡 Note sur les données
-Assure-toi d'avoir le dossier `data/` avec les données sources, sinon les scripts ne pourront rien charger. Si tu repars de zéro, le DAG Airflow se charge de tout télécharger (Yahoo Finance + FRED).
