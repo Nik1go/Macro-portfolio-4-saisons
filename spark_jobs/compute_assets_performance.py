@@ -33,8 +33,7 @@ Exemple de sortie :
 Usage :
 Ce script attend 3 arguments :
 ```bash
-python spark_jobs/compute_assets_performance.py data/quadrants.parquet data/Assets_daily.parquet data/assets_performance_by_quadrant.parquet
-"""
+python spark_jobs/compute_assets_performance.py data/US/output_dag/quadrants.parquet data/US/output_dag/Assets_daily.parquet data/US/output_dag/assets_performance_by_quadrant.parquet"""
 def main():
     if len(sys.argv) != 4:
         print("Usage: spark-submit compute_assets_performance.py "

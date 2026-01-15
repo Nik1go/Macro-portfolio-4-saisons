@@ -10,11 +10,6 @@ from fredapi import Fred
 
 """ Pipeline Airflow : macro_trading_dag.py
 
-Objectif :
-Ce script définit un pipeline de données complet avec Apache Airflow pour analyser les cycles économiques.
-Il récupère, nettoie, et structure des données macroéconomiques (via FRED API) et financières (via Yahoo Finance),
-puis déclenche des scripts Spark pour identifier les phases du cycle économique et analyser la performance des actifs financiers.
-
 Étapes du pipeline :
 1. `fetch_data` : Récupération des données macro et financières (Yahoo Finance, FRED API)
 2. `prepare_indicators_data` & `prepare_assets_data` : Agrégation des données par type (indicateurs et actifs)
@@ -47,7 +42,6 @@ FRED_API_KEY = 'c4caaa1267e572ae636ff75a2a600f3d'
 
 FRED_SERIES_MAPPING = {
     'INFLATION': 'CPIAUCSL',
-    # UNEMPLOYMENT removed: redundant with INITIAL_CLAIMS
     'High_Yield_Bond_SPREAD': 'BAMLH0A0HYM2',
     '10-2Year_Treasury_Yield_Bond': 'T10Y2Y',
     'CONSUMER_SENTIMENT': 'UMCSENT',
@@ -57,16 +51,16 @@ FRED_SERIES_MAPPING = {
     'VIX': 'VIXCLS',
     'HOUSING_PERMITS': 'PERMIT',
     'IND_PRODUCTION': 'INDPRO',
-    'WTI_CRUDE_OIL': 'DCOILWTICO'  # Daily WTI Spot Price - Leading indicator for cost-push inflation
+    'WTI_CRUDE_OIL': 'DCOILWTICO'  # Daily WTI Spot Price - Leading indicator of inflation
 }
 
-# ✅ Yahoo Finance INDICATORS (not assets) - Market-based leading indicators
+# Yahoo Finance INDICATORS  
 YF_INDICATORS_MAPPING = {
     'US_DOLLAR_INDEX': {'ticker': 'DX-Y.NYB', 'series_id': 'US_DOLLAR_INDEX'},  # Dollar strength: Strong = Deflation signal
     'COPPER': {'ticker': 'HG=F', 'series_id': 'COPPER'}  # Copper Futures: Industrial demand = Growth signal
 }
 
-# ✅ Yahoo Finance ASSETS (tradable securities for portfolio)
+# Yahoo Finance ASSETS (tradable securities for portfolio)
 YF_SERIES_MAPPING = {
     'S&P500(LARGE CAP)': {'ticker': 'SPY', 'series_id': 'SP500'},          # Inception 1993
     "GOLD_OZ_USD": {'ticker': 'GLD', 'series_id': 'GOLD_OZ_USD'},           # Inception 2004
@@ -88,7 +82,7 @@ default_args = {
 
 def fetch_and_save_data(**kwargs):
     fred = Fred(api_key=FRED_API_KEY)
-    base_dir = os.path.expanduser('~/airflow/data')
+    base_dir = os.path.expanduser('~/airflow/data/US')
 
     # --- Données FRED (Indicators) ---
     for name, series_id in FRED_SERIES_MAPPING.items():
@@ -130,7 +124,7 @@ def fetch_and_save_data(**kwargs):
         existing_data = pd.DataFrame()
         if os.path.exists(backup_path):
             existing_data = pd.read_csv(backup_path, parse_dates=['date'])
-            last_date = existing_data['date'].max()
+            last_date = pd.to_datetime(existing_data['date'].max())
             start_date = last_date + pd.Timedelta(days=1)
         else:
             start_date = datetime(2005, 1, 1)
@@ -169,7 +163,7 @@ def fetch_and_save_data(**kwargs):
         existing_data = pd.DataFrame()
         if os.path.exists(backup_path):
             existing_data = pd.read_csv(backup_path, parse_dates=['date'])
-            last_date = existing_data['date'].max()
+            last_date = pd.to_datetime(existing_data['date'].max())
             start_date = last_date + pd.Timedelta(days=1)
         else:
             start_date = datetime(2005, 1, 1)
@@ -201,62 +195,108 @@ def fetch_and_save_data(**kwargs):
             print(f"Aucune nouvelle donnée actif pour {name} ({meta['series_id']})")
 
 def prepare_indicators_data(base_dir):
-    """Combine les indicateurs économiques (FRED + YF Indicators) en un seul DataFrame"""
+    """
+    merge les indicateurs économiques (FRED + YF Indicators) en un seul DataFrame.
+    
+    Algorithm:
+    FRED Data (Continuous Time): Resample to daily + ffill immediately to propagate 
+       weekend releases (e.g., Saturday Initial Claims → Monday).
+    The Merge: Left Join using Yahoo as the left (master) dataframe.
+    Clean Up: Final ffill() for holidays + dropna() for initialization period.
+    """
     backup_dir = os.path.join(base_dir, 'backup')
     
     # ✅ FRED Indicators
     fred_indicators = [
         'INFLATION',
-        # UNEMPLOYMENT removed: redundant with INITIAL_CLAIMS
         'CONSUMER_SENTIMENT',
         'High_Yield_Bond_SPREAD',
         '10-2Year_Treasury_Yield_Bond',
         'TAUX_FED',
-        'Real_Gross_Domestic_Product',  # Kept for historical tracking (but not used in quadrant scoring)
+        'Real_Gross_Domestic_Product',
         'INITIAL_CLAIMS',
         'VIX',
         'HOUSING_PERMITS',
         'IND_PRODUCTION',
-        'WTI_CRUDE_OIL'  # ✅ ADDED: Oil price indicator
+        'WTI_CRUDE_OIL'
     ]
     
-    # ✅ Yahoo Finance Indicators (market-based)
     yf_indicators = list(YF_INDICATORS_MAPPING.keys())  # US_DOLLAR_INDEX, COPPER
 
-    combined_df = pd.DataFrame()
-
-    # Process FRED indicators
+    # Load and resample FRED data to DAILY with immediate ffill
+    # This propagates weekend releases (e.g., Saturday Claims) to next trading day
+    fred_df = None
+    
     for indicator in fred_indicators:
         file_path = os.path.join(backup_dir, f"{indicator}.csv")
         if os.path.exists(file_path):
             df = pd.read_csv(file_path, parse_dates=['date'])
             df = df.rename(columns={'value': indicator})
-
-            if combined_df.empty:
-                combined_df = df
+            df = df.set_index('date')
+            # important to resample to daily to propagate weekend releases
+            df = df.resample('D').ffill()
+            
+            if fred_df is None:
+                fred_df = df
             else:
-                combined_df = pd.merge(combined_df, df, on='date', how='outer')
+                fred_df = fred_df.join(df, how='outer')
         else:
-            print(f"⚠️  Fichier manquant: {file_path}")
+            print(f" Fichier FRED manquant: {file_path}")
     
-    # Process Yahoo Finance indicators
+    if fred_df is not None:
+        # Apply ffill across all FRED columns to handle any remaining gaps
+        fred_df = fred_df.ffill()
+    
+    # Load Yahoo Finance Indicators (Master Time Axis)
+    # These are market data with proper trading day Monday to Friday
+    yahoo_df = None
+    
     for indicator in yf_indicators:
         file_path = os.path.join(backup_dir, f"{indicator}.csv")
         if os.path.exists(file_path):
             df = pd.read_csv(file_path, parse_dates=['date'])
             df = df.rename(columns={'value': indicator})
-
-            if combined_df.empty:
-                combined_df = df
+            
+            # Strip timezone info to match FRED (naive datetime)
+            df['date'] = pd.to_datetime(df['date']).dt.tz_localize(None)
+            df = df.set_index('date')
+            
+            if yahoo_df is None:
+                yahoo_df = df
             else:
-                combined_df = pd.merge(combined_df, df, on='date', how='outer')
+                yahoo_df = yahoo_df.join(df, how='outer')
         else:
-            print(f"⚠️  Fichier manquant: {file_path}")
-
-    output_path = os.path.join(base_dir, 'combined_indicators.csv')
-    combined_df.to_csv(output_path, index=False)
-    print(f"✅ Fichier combiné des indicateurs créé: {output_path}")
+            print(f"  Fichier Yahoo Indicator manquant: {file_path}")
+    
+    # LEFT JOIN - Yahoo as Master, FRED as Continuous Source
+    # Since FRED is now daily-continuous, Monday in Yahoo picks up Saturday's data
+    if yahoo_df is not None and fred_df is not None:
+        # Yahoo defines the trading days (master time axis)
+        combined_df = yahoo_df.join(fred_df, how='left')
+    elif fred_df is not None:
+        combined_df = fred_df
+    elif yahoo_df is not None:
+        combined_df = yahoo_df
+    else:
+        raise ValueError("No indicator data found!")
+    
+    # Final Clean Up - ffill for holidays, dropna for warm-up period
+    combined_df = combined_df.ffill()  # Handle any remaining holidays
+    combined_df = combined_df.dropna()  # Remove initialization period (first rows with NaN)
+    
+    combined_df = combined_df.reset_index()
+    combined_df = combined_df.sort_values('date')
+    
+    print(f"Final combined indicators: {combined_df.shape[0]} dense rows")
+    print(f"   Date range: {combined_df['date'].min()} → {combined_df['date'].max()}")
     print(f"   Colonnes: {combined_df.columns.tolist()}")
+
+    output_dir = os.path.join(base_dir, 'output_dag')
+    os.makedirs(output_dir, exist_ok=True)
+    output_path = os.path.join(output_dir, 'combined_indicators.csv')
+    combined_df.to_csv(output_path, index=False)
+    print(f"Fichier combiné des indicateurs créé: {output_path}")
+    
     return output_path
 
 def prepare_assets_data(base_dir):
@@ -278,7 +318,9 @@ def prepare_assets_data(base_dir):
             else:
                 combined_df = pd.merge(combined_df, df, on='date', how='outer')
 
-    output_path = os.path.join(base_dir, 'combined_assets.csv')
+    output_dir = os.path.join(base_dir, 'output_dag')
+    os.makedirs(output_dir, exist_ok=True)
+    output_path = os.path.join(output_dir, 'combined_assets.csv')
     combined_df.to_csv(output_path, index=False)
     print(f"Fichier combiné des actifs créé: {output_path}")
     return output_path
@@ -289,37 +331,25 @@ def format_and_clean_data(base_dir, input_path, data_type):
     print(f"→ format_and_clean_data: on lit le fichier CSV : {input_path}")
     df = pd.read_csv(input_path, parse_dates=['date'])
 
-    # 1. Nettoyage basique
-    # On supprime les colonnes qui sont entièrement vides, mais on garde les lignes
+    # Nettoyage basique
     df = df.dropna(how='all', subset=df.columns.difference(['date']))
-
-    # 2. Mise en place de l'index temporel
     df['date'] = pd.to_datetime(df['date'])
     df = df.sort_values('date')
-    
-    # 2b. GOLDEN SOURCE: Dédoublonnage strict (garde la dernière valeur si doublon)
     df = df.drop_duplicates(subset=['date'], keep='last')
-    
     df = df.set_index('date')
 
-    # 3. LE FIX EST ICI : Création d'un calendrier continu
-    # Au lieu de compresser par mois, on s'assure d'avoir une ligne pour CHAQUE jour.
-    # start = la toute première date dispo, end = la toute dernière date dispo
+    # Création d'un calendrier continu
     full_idx = pd.date_range(start=df.index.min(), end=df.index.max(), freq='D')
-
-    # On applique ce calendrier. Les jours sans données (weekends, trous) deviennent des NaN.
-    # C'est parfait pour que le "Forward Fill" de Spark fonctionne ensuite.
     df = df.reindex(full_idx)
-
-    # 4. Finalisation pour l'export
     df.index.name = 'date'
     df = df.reset_index()
     df['date'] = df['date'].dt.strftime('%Y-%m-%d')
 
-    # 5. Sauvegarde
-    output_path = os.path.join(base_dir, f"{data_type}.parquet")
-    # On garde aussi un CSV pour que tu puisses vérifier à l'oeil si besoin
-    output_csv = os.path.join(base_dir, f"{data_type}.csv")
+    # 5. Sauvegarde (dans output_dag)
+    output_dir = os.path.join(base_dir, 'output_dag')
+    os.makedirs(output_dir, exist_ok=True)
+    output_path = os.path.join(output_dir, f"{data_type}.parquet")
+    output_csv = os.path.join(output_dir, f"{data_type}.csv")
 
     df.to_parquet(output_path, index=False)
     df.to_csv(output_csv, index=False)
@@ -341,7 +371,9 @@ def format_and_clean_data_daily(base_dir, input_path, data_type):
     df['date'] = pd.to_datetime(df['date'])
     df = df.sort_values('date')
     df['date'] = df['date'].dt.strftime('%Y-%m-%d')
-    output_path = os.path.join(base_dir, f"{data_type}_daily.parquet")
+    output_dir = os.path.join(base_dir, 'output_dag')
+    os.makedirs(output_dir, exist_ok=True)
+    output_path = os.path.join(output_dir, f"{data_type}_daily.parquet")
     df.to_parquet(output_path, index=False)
     print(f"Données {data_type} journalières nettoyées sauvegardées : {output_path}")
     print(df.head(5))
@@ -350,7 +382,7 @@ def format_and_clean_data_daily(base_dir, input_path, data_type):
     return output_path
 
 # === Configuration du DAG ===
-base_dir = os.path.expanduser('~/airflow/data')
+base_dir = os.path.expanduser('~/airflow/data/US')
 
 with DAG(
     dag_id='macro_trading_dag',
@@ -398,10 +430,11 @@ with DAG(
         }
     )
 
-    ASSETS_PERF_OUTPUT = os.path.join(base_dir, "assets_performance_by_quadrant.parquet")
-    INDICATORS_PARQUET = os.path.join(base_dir, "Indicators.parquet")
-    QUADRANT_OUTPUT = os.path.join(base_dir, "quadrants.parquet")
-    QUADRANT_CSV = os.path.join(base_dir, "quadrants.csv")
+    OUTPUT_DIR = os.path.join(base_dir, "output_dag")
+    ASSETS_PERF_OUTPUT = os.path.join(OUTPUT_DIR, "assets_performance_by_quadrant.parquet")
+    INDICATORS_PARQUET = os.path.join(OUTPUT_DIR, "Indicators.parquet")
+    QUADRANT_OUTPUT = os.path.join(OUTPUT_DIR, "quadrants.parquet")
+    QUADRANT_CSV = os.path.join(OUTPUT_DIR, "quadrants.csv")
     BACKTEST_OUTPUT = os.path.join(base_dir, "backtest_results")
 
 

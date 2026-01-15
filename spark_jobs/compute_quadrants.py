@@ -28,8 +28,7 @@ Objectif :
 - Gestion des donnees 'Sparse' (Macro sort 1x/mois) via Forward Fill.
 - Gestion des Lags en 'Jours de Trading' (lignes).
 
-python spark_jobs/compute_quadrants.py data/Indicators.parquet data/quadrants.parquet data/quadrants.csv
-
+python spark_jobs/compute_quadrants.py data/US/output_dag/Indicators.parquet data/US/output_dag/quadrants.parquet data/US/output_dag/quadrants.csv
 """
 
 def write_single_file(df, output_path: str, format: str = "parquet"):
@@ -156,7 +155,6 @@ def main(indicators_parquet_path: str, output_parquet_path: str, output_csv_path
         )
 
         # --- B. SCORE DE VARIATION (Momentum) ---
-        # On garde la logique "Momentum 1 Mois" (approx 20 jours de trading)
         # Delta = Valeur_J - Valeur_J-20
         prev_val = lag(col(ind), 20).over(Window.orderBy("date"))
         delta = col(ind) - prev_val
@@ -213,9 +211,7 @@ def main(indicators_parquet_path: str, output_parquet_path: str, output_csv_path
         "COPPER_combined": (["score_Q1", "score_Q2"], ["score_Q3", "score_Q4"]),  # Industrial demand
     }
     
-    # ✅ AMÉLIORATION: Poids des Indicateurs (Rééquilibrage DOUX)
-    # Poids trop élevés (2.0) = modèle paranoïaque (33% Q4)
-    # Poids doux (1.2/1.1) = tie-breakers subtils sans distorsion
+    # Poids des Indicateurs (Rééquilibrage DOUX)
     INDICATOR_WEIGHTS = {
         # LEADING (1.2): +20% comme tie-breaker
         "10-2Year_Treasury_Yield_Bond_combined": 1.2,
@@ -236,13 +232,13 @@ def main(indicators_parquet_path: str, output_parquet_path: str, output_csv_path
         "IND_PRODUCTION_combined": 1.0
     }
 
-    # ✅ Application des scores avec pondération ET intensité du signal
+    # Application des scores avec pondération ET intensité du signal
     for combined_col, (pos_quads, neg_quads) in mappings.items():
         # Verifier si la colonne existe (au cas ou)
         if combined_col not in working_df.columns:
             continue
         
-        # Récupérer le poids de l'indicateur (défaut = 1.0 si non spécifié)
+        # Récupérer le poids de l'indicateur (défaut = 1.0 )
         weight = INDICATOR_WEIGHTS.get(combined_col, 1.0)
 
         for q in pos_quads:

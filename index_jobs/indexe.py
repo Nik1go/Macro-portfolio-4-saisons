@@ -23,19 +23,19 @@ HEADERS = {
     "Content-Type": "application/vnd.elasticsearch+json;compatible-with=8",
 }
 
-DATA_DIR = os.path.expanduser("~/airflow/data")
+DATA_DIR = os.path.expanduser("~/airflow/data/US")
 
 mapping_q = {
     "properties": {
         "date": {"type": "date", "format": "yyyy-MM-dd"},
         **{fld: {"type": "float"} for fld in [
-            "INFLATION", "UNEMPLOYMENT", "CONSUMER_SENTIMENT",
+            "INFLATION", "CONSUMER_SENTIMENT",
             "High_Yield_Bond_SPREAD", "10-2Year_Treasury_Yield_Bond", "TAUX_FED",
             "Real_Gross_Domestic_Product"
         ]},
         **{f"{fld}_{suf}": {"type": "float"}
            for fld in [
-               "INFLATION", "UNEMPLOYMENT", "CONSUMER_SENTIMENT",
+               "INFLATION", "CONSUMER_SENTIMENT",
                "High_Yield_Bond_SPREAD", "10-2Year_Treasury_Yield_Bond", "TAUX_FED",
                "Real_Gross_Domestic_Product"
            ]
@@ -57,14 +57,21 @@ mapping_a = {
 }
 mapping_bt_timeseries = {
   "properties": {
-    "year_month":        {"type":"date","format":"yyyy-MM-dd"},
-    "quadrant":          {"type":"keyword"},
-    "SP500_ret":         {"type":"float"},
-    "GOLD_OZ_USD_ret":   {"type":"float"},
-    "portfolio_return":  {"type":"float"},
-    "wealth":            {"type":"float"},
-    "SP500_wealth":      {"type":"float"},
-    "GOLD_wealth":       {"type":"float"}
+    "date":                    {"type":"date","format":"yyyy-MM-dd"},
+    "smooth_quadrant":         {"type":"keyword"},
+    "portfolio_return":        {"type":"float"},
+    "wealth":                  {"type":"float"},
+    "SP500_wealth":            {"type":"float"},
+    "GOLD_wealth":             {"type":"float"},
+    "transaction_cost":        {"type":"float"},
+    "ter_cost":                {"type":"float"},
+    "GOLD_OZ_USD_weight":      {"type":"float"},
+    "SmallCAP_weight":         {"type":"float"},
+    "US_REIT_VNQ_weight":      {"type":"float"},
+    "OBLIGATION_weight":       {"type":"float"},
+    "TREASURY_10Y_weight":     {"type":"float"},
+    "NASDAQ_100_weight":       {"type":"float"},
+    "COMMODITIES_weight":      {"type":"float"}
   }
 }
 
@@ -72,28 +79,29 @@ mapping_bt_stats = {
   "properties": {
     **{f"{lbl}_{metric}": {"type":"float"}
        for lbl in ("strategy","SP500","GOLD")
-       for metric in ("vol_annual","sharpe_annual","max_drawdown","avg_year_return")}
+       for metric in ("vol_annual","sharpe_annual","max_drawdown","avg_year_return")},
+    "cum_transaction_cost":  {"type":"float"},
+    "cum_ter_cost":          {"type":"float"},
+    "initial_capital":       {"type":"float"}, 
+    "final_wealth":          {"type":"float"},
+    "total_return":          {"type":"float"},
+    "nb_switch_sp500":       {"type":"float"},
+    "nb_switch_gold_oz_usd": {"type":"float"}
   }
 }
 
 CSV_SPECS = {
-    "quadrants":           ("quadrants.csv",          mapping_q),
-    "assets_performance":  ("assets_performance_by_quadrant.csv", mapping_a),
+    "quadrants":           ("output_dag/quadrants.csv",          mapping_q),
+    "assets_performance":  ("output_dag/assets_performance_by_quadrant.csv", mapping_a),
     "backtest_timeseries": ("backtest_results/backtest_timeseries.csv",mapping_bt_timeseries),
     "backtest_stats":      ("backtest_results/backtest_stats.csv",     mapping_bt_stats),
     "backtest_costs":      ("backtest_results/backtest_costs.csv",     {
         "properties": {
-            "year_month": {"type":"date","format":"yyyy-MM-dd"},
-            "monthly_ter_cost": {"type":"float"},
-            "monthly_transaction_cost": {"type":"float"},
-            "cum_ter_cost": {"type":"float"},
+            "date": {"type":"date","format":"yyyy-MM-dd"},
+            "transaction_cost": {"type":"float"},
+            "ter_cost": {"type":"float"},
             "cum_transaction_cost": {"type":"float"},
-            "switches_SP500": {"type":"float"},
-            "switches_GOLD_OZ_USD": {"type":"float"},
-            "switch_cost_SP500": {"type":"float"},
-            "switch_cost_GOLD_OZ_USD": {"type":"float"},
-            "cum_switch_cost_SP500": {"type":"float"},
-            "cum_switch_cost_GOLD_OZ_USD": {"type":"float"}
+            "cum_ter_cost": {"type":"float"}
         }
     }),
 }

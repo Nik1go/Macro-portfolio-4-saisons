@@ -12,15 +12,16 @@ Core Strategy:
 2. Trend Following: MA150 overlay for SP500/GOLD with 5-day streak confirmation.
 3. Transaction Costs: 0.10% on any allocation change.
 4. Annualized Stats: 252 trading days.
-dans le venv 
-python spark_jobs/backtest_strategy.py data/quadrants.csv data/Assets_daily.parquet 1000 data/backtest_results
 
+dans le venv active  
+python spark_jobs/backtest_strategy.py data/US/output_dag/quadrants.csv data/US/output_dag/Assets_daily.parquet 1000 data/US/backtest_results
 """
 
 TRANSACTION_COST = 0.0010  # 0.10%
 TRADING_DAYS = 252
-MA_WINDOW = 150  # MA150 for trend following
-SMOOTH_WINDOW = 20  # Rolling mode window for quadrant smoothing
+MA_WINDOW = 200 # MA200 for trend following
+SMOOTH_WINDOW = 18# Rolling mode window for quadrant smoothing
+#optimiser pour arriver a une planche de performance entre 16 et 20j
 N_STREAK = 5  # Days below/above MA to trigger action
 
 # UCITS ETFs TER (Total Expense Ratio) - Real costs for European investors
@@ -68,7 +69,7 @@ ALLOCATIONS = {
     # Q3 (Stagflation): DÉFENSE TOTALE.
     # On enlève l'Immo (REITs). On ne garde que ce qui survit au chaos.
     3: {
-        'GOLD_OZ_USD': 0.6,     # L'actif roi. (Regarde ta heatmap: +1.60%)
+        'GOLD_OZ_USD': 0.6,     # L'actif roi en Q3
         'COMMODITIES': 0.2,     # La cause de l'inflation
         'TREASURY_10Y': 0.2,    # Sécurité (Volatilité faible)
         'NASDAQ_100': 0.0,
@@ -87,12 +88,11 @@ ALLOCATIONS = {
         'NASDAQ_100': 0.0, 
         'SmallCAP': 0.0, 
         'US_REIT_VNQ': 0.0, 
-        'OBLIGATION': 0.0,      # OUT (Risque de crédit)
+        'OBLIGATION': 0.0,      # OUT (Risque de deffault de crédit)
         'COMMODITIES': 0.0
     },
 }
 
-# Alias pour compatibilité avec le code existant
 WEIGHTS = ALLOCATIONS
 
 ASSETS = ['SP500', 'GOLD_OZ_USD', 'SmallCAP', 'US_REIT_VNQ', 'OBLIGATION', 'TREASURY_10Y', 'NASDAQ_100', 'COMMODITIES']

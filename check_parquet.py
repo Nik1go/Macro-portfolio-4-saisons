@@ -20,20 +20,7 @@ def inspect_parquet(file_path):
         # Lecture du Parquet
         df = pd.read_parquet(file_path)
 
-        # 1. Infos Générales
-        print(f"📊 Dimensions : {df.shape[0]} lignes x {df.shape[1]} colonnes")
-        print(f"📅 Dates couvertes : de {df['date'].min()} à {df['date'].max()}")
-
-        # 2. Aperçu du Début (Janvier/Février)
-        print("\n--- 5 Premières lignes (Début de l'historique) ---")
-        print(df.head(5))
-
-        # 3. Aperçu de la Fin (Le plus important pour toi !)
-        print("\n--- 20 Dernières lignes (Temps Réel) ---")
-        print(df.tail(20))
-
-        # 4. Check spécifique sur Janvier 2026 (si dispo)
-        print("\n--- Zoom sur Janvier 2026 (Si existe) ---")
+        print("\n Zoom sur YYYY-MM (Janvier 2026 ici )  ")
         try:
             # Filtre basique sur string ou datetime selon ton format
             zoom = df[df['date'].astype(str).str.contains("2026-01")]
@@ -50,7 +37,7 @@ def inspect_parquet(file_path):
 
 if __name__ == "__main__":
     # Utilisation par défaut si pas d'argument
-    default_file = "data/quadrants.parquet"
+    default_file = "data/EU/indicators.parquet"
 
     # Si tu donnes un argument en ligne de commande, on l'utilise
     if len(sys.argv) > 1:
