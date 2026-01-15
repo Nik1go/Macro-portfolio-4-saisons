@@ -19,19 +19,18 @@ import os
 from dbnomics import fetch_series
 
 
-
 # =============================================================================
 # CONFIGURATION
 # =============================================================================
 
 # YFinance Tickers for INDICATORS (Real-Time Reactive)
+# Note: Removed EU_BUND_FUTURE (RX=F empty), using 10Y yield from DBnomics instead
+# Removed IHYG/IBGL (only from 2010), using VIX-like proxy from yield spread
 YF_INDICATOR_TICKERS = {
-    'EU_BUND_FUTURE': 'RX=F',       # Bund Future - Risk-Free/Fear proxy
     'BRENT_USD': 'BZ=F',            # Brent Crude USD (for EUR conversion)
     'COPPER_USD': 'HG=F',           # Copper USD (for EUR conversion)
-    'EUR_USD_RATE': 'EURUSD=X',     # EUR/USD FX Rate
-    'IHYG': 'IHYG.AS',              # iShares Euro High Yield
-    'IBGL': 'IBGL.AS',              # iShares Euro Gov Bond
+    'EUR_USD_RATE': 'EURUSD=X',     # EUR/USD FX Rate (from ~2003)
+    'EU_VIX': '^V2X',               # VSTOXX - Euro Volatility Index (from 2009)
 }
 
 # DBnomics Series for INDICATORS (Slow Context - Monthly)
@@ -44,11 +43,12 @@ DBNOMICS_SERIES = {
 }
 
 # YFinance Tickers for TRADABLE ASSETS
+# Using ETFs with longest available history (pre-2008)
 YF_ASSET_TICKERS = {
-    'EURO_STOXX_50': 'FEZ',      # SPDR EURO STOXX 50 (Large Cap) - TER 0.29%
-    'EU_SMALL_CAP': 'IEUS',     # iShares MSCI Europe Small-Cap - TER 0.40%
-    'INTL_BONDS': 'BNDX',       # Vanguard Total Intl Bond Hedged - TER 0.07%
-    'GOLD': 'GLD',              # SPDR Gold Shares - TER 0.40%
+    'EURO_STOXX_50': 'FEZ',     # SPDR EURO STOXX 50 (from 2002) - TER 0.29%
+    'EU_SMALL_CAP': 'DFE',      # WisdomTree Europe SmallCap Div (from 2006) - TER 0.58%
+    'INTL_BONDS': 'BWX',        # SPDR Intl Treasury Bond (from Oct 2007) - TER 0.35%
+    'GOLD': 'GLD',              # SPDR Gold Shares (from 2004) - TER 0.40%
 }
 
 BASE_DIR = os.path.expanduser('~/airflow/data/EU')
@@ -69,11 +69,11 @@ def fetch_dbnomics_indicators(**kwargs):
     """
     Fetch monthly macro data from DBnomics (Eurostat, OECD).
     Resample to daily and forward-fill.
+    Save raw data to backup/ folder.
     """
     os.makedirs(BASE_DIR, exist_ok=True)
-    
-    if fetch_series is None:
-        raise ImportError("dbnomics library not installed")
+    backup_dir = os.path.join(BASE_DIR, 'backup')
+    os.makedirs(backup_dir, exist_ok=True)
     
     dbnomics_df = pd.DataFrame()
     
@@ -83,7 +83,7 @@ def fetch_dbnomics_indicators(**kwargs):
             df = fetch_series(series_id)
             
             if df.empty:
-                print(f"  ⚠️ No data for {name}")
+                print(f"   No data for {name}")
                 continue
             
             # Extract date and value
@@ -91,6 +91,12 @@ def fetch_dbnomics_indicators(**kwargs):
             df.columns = ['date', name]
             df['date'] = pd.to_datetime(df['date'])
             df[name] = pd.to_numeric(df[name], errors='coerce')
+            
+            # Save raw backup
+            backup_path = os.path.join(backup_dir, f'{name}.csv')
+            df.to_csv(backup_path, index=False)
+            print(f"  Backup saved: {backup_path}")
+            
             df = df.set_index('date').sort_index()
             
             # Resample to daily + ffill
@@ -106,10 +112,15 @@ def fetch_dbnomics_indicators(**kwargs):
         except Exception as e:
             print(f"  ❌ Error fetching {name}: {e}")
     
-    # Calculate EU_YIELD_CURVE = 10Y - 3M
+    # Calculate EU_YIELD_CURVE = 10Y - 3M (Credit Stress Proxy, like HY Spread)
+    # This serves the same role as High_Yield_Bond_SPREAD in the US DAG
     if 'EU_10Y_YIELD' in dbnomics_df.columns and 'EU_3M_RATE' in dbnomics_df.columns:
         dbnomics_df['EU_YIELD_CURVE'] = dbnomics_df['EU_10Y_YIELD'] - dbnomics_df['EU_3M_RATE']
-        print("  ✓ Calculated EU_YIELD_CURVE (10Y - 3M)")
+        # Save to backup
+        calc_df = dbnomics_df[['EU_YIELD_CURVE']].dropna().reset_index()
+        calc_df.columns = ['date', 'value']
+        calc_df.to_csv(os.path.join(backup_dir, 'EU_YIELD_CURVE.csv'), index=False)
+        print("  ✓ Calculated & backed up EU_YIELD_CURVE (10Y - 3M)")
     
     # Final ffill to handle any remaining gaps
     dbnomics_df = dbnomics_df.ffill()
@@ -129,8 +140,11 @@ def fetch_yfinance_indicators(**kwargs):
     """
     Fetch daily market indicators from YFinance.
     Calculate derived indicators (EUR conversions, spreads).
+    Save raw data to backup/ folder.
     """
     os.makedirs(BASE_DIR, exist_ok=True)
+    backup_dir = os.path.join(BASE_DIR, 'backup')
+    os.makedirs(backup_dir, exist_ok=True)
     
     # Fetch all tickers at once
     tickers = list(YF_INDICATOR_TICKERS.values())
@@ -148,11 +162,19 @@ def fetch_yfinance_indicators(**kwargs):
     # Strip timezone
     data.index = pd.to_datetime(data.index).tz_localize(None)
     
+    # Save raw backup per indicator
+    for col in data.columns:
+        backup_df = data[[col]].dropna().reset_index()
+        backup_df.columns = ['date', 'value']
+        backup_path = os.path.join(backup_dir, f'{col}.csv')
+        backup_df.to_csv(backup_path, index=False)
+        print(f"  Backup saved: {backup_path}")
+    
     yf_df = pd.DataFrame(index=data.index)
     
     # Keep direct indicators
-    yf_df['EU_BUND_FUTURE'] = data.get('EU_BUND_FUTURE')
     yf_df['EUR_USD_RATE'] = data.get('EUR_USD_RATE')
+    yf_df['EU_VIX'] = data.get('EU_VIX')  # VSTOXX - European fear gauge
     
     # Calculate EUR-denominated commodities
     eurusd = data.get('EUR_USD_RATE')
@@ -162,18 +184,19 @@ def fetch_yfinance_indicators(**kwargs):
         
         if brent is not None:
             yf_df['EU_BRENT_OIL_EUR'] = brent / eurusd
-            print("  ✓ Calculated EU_BRENT_OIL_EUR")
+            # Save calculated indicator to backup
+            calc_df = yf_df[['EU_BRENT_OIL_EUR']].dropna().reset_index()
+            calc_df.columns = ['date', 'value']
+            calc_df.to_csv(os.path.join(backup_dir, 'EU_BRENT_OIL_EUR.csv'), index=False)
+            print("  ✓ Calculated & backed up EU_BRENT_OIL_EUR")
         
         if copper is not None:
             yf_df['COPPER_EUR'] = copper / eurusd
-            print("  ✓ Calculated COPPER_EUR")
-    
-    # Calculate HY Spread Proxy (IHYG / IBGL)
-    ihyg = data.get('IHYG')
-    ibgl = data.get('IBGL')
-    if ihyg is not None and ibgl is not None:
-        yf_df['EU_HY_SPREAD_PROXY'] = ihyg / ibgl
-        print("  ✓ Calculated EU_HY_SPREAD_PROXY (IHYG/IBGL)")
+            # Save calculated indicator to backup
+            calc_df = yf_df[['COPPER_EUR']].dropna().reset_index()
+            calc_df.columns = ['date', 'value']
+            calc_df.to_csv(os.path.join(backup_dir, 'COPPER_EUR.csv'), index=False)
+            print("  ✓ Calculated & backed up COPPER_EUR")
     
     # Clean up
     yf_df = yf_df.dropna(how='all')
@@ -244,8 +267,11 @@ def fetch_assets(**kwargs):
     """
     Fetch daily ETF prices for tradable assets.
     Strictly separate from indicators.
+    Save raw data to backup/ folder.
     """
     os.makedirs(BASE_DIR, exist_ok=True)
+    backup_dir = os.path.join(BASE_DIR, 'backup')
+    os.makedirs(backup_dir, exist_ok=True)
     
     tickers = list(YF_ASSET_TICKERS.values())
     print(f"Fetching EU Assets: {tickers}")
@@ -261,6 +287,14 @@ def fetch_assets(**kwargs):
     
     # Strip timezone
     data.index = pd.to_datetime(data.index).tz_localize(None)
+    
+    # Save raw backup per asset
+    for col in data.columns:
+        backup_df = data[[col]].dropna().reset_index()
+        backup_df.columns = ['date', 'value']
+        backup_path = os.path.join(backup_dir, f'{col}.csv')
+        backup_df.to_csv(backup_path, index=False)
+        print(f"  Backup saved: {backup_path}")
     
     # Clean
     data = data.dropna(how='all')

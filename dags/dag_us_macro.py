@@ -385,7 +385,7 @@ def format_and_clean_data_daily(base_dir, input_path, data_type):
 base_dir = os.path.expanduser('~/airflow/data/US')
 
 with DAG(
-    dag_id='macro_trading_dag',
+    dag_id='dag_us_macro',
     default_args=default_args,
     description='Stratégie contre-cyclique avec données FRED et Yahoo Finance',
     schedule_interval='0 8 * * *',
