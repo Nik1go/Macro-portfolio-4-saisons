@@ -1,0 +1,12 @@
+apache-airflow-providers-apache-spark==4.3.0
+dbnomics==1.2.7
+fredapi==0.5.2
+kibana==0.7
+pandas-datareader==0.10.0
+pip==25.1.1
+pipreqs==0.5.0
+plotly==5.18.0
+scipy==1.16.3
+streamlit==1.31.0
+tinycss2==1.4.0
+yfinance==0.2.61

@@ -6,10 +6,76 @@ from datetime import datetime
 
 # Configuration de la page
 st.set_page_config(
-    page_title="Stratégie Asset Allocation Macro - All Weather Portfolio",
+    page_title="Quantitative Finance Portfolio",
     page_icon="📊",
-    layout="wide"
+    layout="wide",
+    initial_sidebar_state="expanded"
 )
+
+# Custom CSS for Bloomberg-style theme
+st.markdown("""
+    <style>
+    /* Main theme */
+    .main {
+        background-color: #0a0e27;
+    }
+    
+    /* Card styling */
+    .project-card {
+        background: linear-gradient(135deg, #1e2139 0%, #2a2d4a 100%);
+        padding: 25px;
+        border-radius: 12px;
+        border: 1px solid #3d4263;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+        margin: 10px 0;
+        transition: transform 0.2s;
+    }
+    
+    .project-card:hover {
+        transform: translateY(-5px);
+        border-color: #00d4ff;
+    }
+    
+    /* Metrics styling */
+    .metric-container {
+        background: rgba(30, 33, 57, 0.6);
+        padding: 15px;
+        border-radius: 8px;
+        border-left: 3px solid #00d4ff;
+    }
+    
+    /* Headers */
+    h1, h2, h3 {
+        color: #00d4ff !important;
+        font-weight: 600;
+    }
+    
+    /* Sidebar styling */
+    [data-testid="stSidebar"] {
+        background: linear-gradient(180deg, #1a1d35 0%, #0a0e27 100%);
+    }
+    
+    /* Button styling */
+    .stButton>button {
+        background: linear-gradient(90deg, #00d4ff 0%, #0099cc 100%);
+        color: white;
+        border: none;
+        border-radius: 6px;
+        padding: 10px 24px;
+        font-weight: 600;
+    }
+    
+    .stButton>button:hover {
+        background: linear-gradient(90deg, #0099cc 0%, #007399 100%);
+        transform: scale(1.02);
+    }
+    
+    /* Divider */
+    hr {
+        border-color: #3d4263;
+    }
+    </style>
+""", unsafe_allow_html=True)
 
 # Sidebar
 st.sidebar.title("Navigation")
