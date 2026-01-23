@@ -7,6 +7,13 @@ import os
 import yfinance as yf
 from airflow.providers.apache.spark.operators.spark_submit import SparkSubmitOperator
 from fredapi import Fred
+import sys
+
+# === Dynamic Paths Configuration ===
+# Uses AIRFLOW_HOME env variable, falls back to ~/airflow
+AIRFLOW_HOME = os.environ.get('AIRFLOW_HOME', os.path.expanduser('~/airflow'))
+SPARK_JOBS_DIR = os.path.join(AIRFLOW_HOME, 'spark_jobs')
+VENV_PYTHON = os.path.join(AIRFLOW_HOME + '_venv', 'bin', 'python')  # airflow_venv/bin/python
 
 """ Pipeline Airflow : macro_trading_dag.py
 
@@ -34,8 +41,7 @@ Les fichiers sont sauvegardés dans `~/airflow/data` :
 Ce DAG constitue le cœur du projet : il gère toute la chaîne de collecte, traitement et modélisation pour construire un outil d’analyse macro-financière automatisé.
 
 venv activate 
-airflow dags trigger macro_trading_dag
-
+airflow dags trigger dag_us_macro
 """
 
 FRED_API_KEY = 'c4caaa1267e572ae636ff75a2a600f3d'
@@ -69,7 +75,8 @@ YF_SERIES_MAPPING = {
     'US_TREASURY_10Y': {'ticker': 'IEF', 'series_id': 'TREASURY_10Y'},      # Inception 2002
     "OBLIGATION ENTREPRISE" : { 'ticker': 'LQD', "series_id": "OBLIGATION"},# Inception 2002
     'NASDAQ_100': {'ticker': 'QQQ', 'series_id': 'NASDAQ_100'},            # Inception 1999
-    'COMMODITIES': {'ticker': 'DBC', 'series_id': 'COMMODITIES'}           # Broad Commodities (Historical proxy for SXRS.DE)
+    'COMMODITIES': {'ticker': 'DBC', 'series_id': 'COMMODITIES'},           # Broad Commodities
+    'SHORT_SP500': {'ticker': 'SH', 'series_id': 'SHORT_SP500'}            # ProShares Short S&P500 (Inception 2006) - Inverse ETF
 }
 
 default_args = {
@@ -440,20 +447,20 @@ with DAG(
 
     compute_quadrant_task = SparkSubmitOperator(
         task_id='compute_economic_quadrants',
-        application="/home/leoja/airflow/spark_jobs/compute_quadrants.py",
+        application=os.path.join(SPARK_JOBS_DIR, 'compute_quadrants.py'),
         name="compute_economic_quadrants",
-            application_args=[INDICATORS_PARQUET, QUADRANT_OUTPUT, QUADRANT_CSV],
+        application_args=[INDICATORS_PARQUET, QUADRANT_OUTPUT, QUADRANT_CSV],
         conn_id="spark_local",
         conf={
-            "spark.pyspark.python": "/home/leoja/airflow_venv/bin/python",
-            "spark.pyspark.driver.python": "/home/leoja/airflow_venv/bin/python"
+            "spark.pyspark.python": VENV_PYTHON,
+            "spark.pyspark.driver.python": VENV_PYTHON
         },
         verbose=False
     )
 
     compute_assets_performance_task = SparkSubmitOperator(
         task_id='compute_assets_performance',
-        application="/home/leoja/airflow/spark_jobs/compute_assets_performance.py",
+        application=os.path.join(SPARK_JOBS_DIR, 'compute_assets_performance.py'),
         name="compute_assets_performance",
         application_args=[
             QUADRANT_OUTPUT,
@@ -462,15 +469,15 @@ with DAG(
         ],
         conn_id="spark_local",
         conf={
-            "spark.pyspark.python": "/home/leoja/airflow_venv/bin/python",
-            "spark.pyspark.driver.python": "/home/leoja/airflow_venv/bin/python"
+            "spark.pyspark.python": VENV_PYTHON,
+            "spark.pyspark.driver.python": VENV_PYTHON
         },
         verbose=False
     )
 
     backtest_task = SparkSubmitOperator(
         task_id='backtest_strategy',
-        application="/home/leoja/airflow/spark_jobs/backtest_strategy.py",
+        application=os.path.join(SPARK_JOBS_DIR, 'backtest_strategy.py'),
         name="backtest_strategy",
         application_args=[
             QUADRANT_CSV,
@@ -480,16 +487,16 @@ with DAG(
         ],
         conn_id="spark_local",
         conf={
-            "spark.pyspark.python": "/home/leoja/airflow_venv/bin/python",
-            "spark.pyspark.driver.python": "/home/leoja/airflow_venv/bin/python"
+            "spark.pyspark.python": VENV_PYTHON,
+            "spark.pyspark.driver.python": VENV_PYTHON
         },
         verbose=False
     )
     index_to_elasticsearch = BashOperator(
         task_id='index_to_elasticsearch',
-        bash_command="""
-            cd ~/airflow/index_jobs && \
-            source ~/airflow/airflow_venv/bin/activate && \
+        bash_command=f"""
+            cd {AIRFLOW_HOME}/index_jobs && \
+            source {AIRFLOW_HOME}_venv/bin/activate && \
             python indexe.py
         """,
     )
